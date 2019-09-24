@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Maio-2018 às 19:04
--- Versão do servidor: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Tempo de geração: 24-Set-2019 às 13:58
+-- Versão do servidor: 10.3.16-MariaDB
+-- versão do PHP: 7.2.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sistema`
+-- Banco de dados: `sistema`
 --
 
 -- --------------------------------------------------------
@@ -80,21 +80,23 @@ INSERT INTO `clientes` (`id_cliente`, `id_usuario`, `nome`, `sobrenome`, `endere
 CREATE TABLE `fornecedores` (
   `id_fornecedor` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `sobrenome` varchar(100) NOT NULL,
-  `endereco` varchar(150) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `telefone` varchar(100) NOT NULL,
-  `cpf` varchar(100) NOT NULL
+  `nrofa` int(11) NOT NULL,
+  `consumidor` varchar(100) NOT NULL,
+  `fornecedor` varchar(150) NOT NULL,
+  `camara` varchar(100) NOT NULL,
+  `relator` varchar(100) NOT NULL,
+  `valor` int(100) NOT NULL,
+  `data` date NOT NULL,
+  `ano` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `fornecedores`
 --
 
-INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nome`, `sobrenome`, `endereco`, `email`, `telefone`, `cpf`) VALUES
-(1, 6, 'Pedro Freitas', 'Vasconcelos', 'Rua 5', 'pedro@hotmail.com', '55555', '555555'),
-(3, 6, 'FÃ¡bio Freitas', 'Freitas', 'Rua D', 'fabio@hotmail.com', '3333333', '555555');
+INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nrofa`, `consumidor`, `fornecedor`, `camara`, `relator`, `valor`, `data`, `ano`) VALUES
+(1, 6, 0, 'Vasconcelos', 'Rua 5', 'pedro@hotmail.com', '55555', 555555, '0000-00-00', '0000-00-00'),
+(3, 6, 0, 'Freitas', 'Rua D', 'fabio@hotmail.com', '3333333', 555555, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -191,81 +193,81 @@ CREATE TABLE `vendas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `categorias`
+-- Índices para tabela `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Indexes for table `clientes`
+-- Índices para tabela `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Indexes for table `fornecedores`
+-- Índices para tabela `fornecedores`
 --
 ALTER TABLE `fornecedores`
   ADD PRIMARY KEY (`id_fornecedor`);
 
 --
--- Indexes for table `imagens`
+-- Índices para tabela `imagens`
 --
 ALTER TABLE `imagens`
   ADD PRIMARY KEY (`id_imagem`);
 
 --
--- Indexes for table `produtos`
+-- Índices para tabela `produtos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id_produto`);
 
 --
--- Indexes for table `usuarios`
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `categorias`
+-- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `clientes`
+-- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `fornecedores`
+-- AUTO_INCREMENT de tabela `fornecedores`
 --
 ALTER TABLE `fornecedores`
   MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `imagens`
+-- AUTO_INCREMENT de tabela `imagens`
 --
 ALTER TABLE `imagens`
   MODIFY `id_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `produtos`
+-- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
   MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;

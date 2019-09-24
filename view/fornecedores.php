@@ -23,10 +23,29 @@ if(isset($_SESSION['usuario'])){
 						<input type="text" class="form-control input-sm" id="consumidor" name="consumidor">
 						<label>Fornecedor</label>
 						<input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
-						<label>Câmara</label>
-						<input type="text" class="form-control input-sm" id="camara" name="camara">
-						<label>Relator</label>
-						<input type="text" class="form-control input-sm" id="relator" name="relator">
+						<label>Grau da Sessão</label>
+        				<select class="form-control input-sm" id="camara" name="camara">
+						<option >1 sessão </option>
+						<option> 2 sessão </option>
+        				</select>
+						<label>Relatores</label>
+						<select class="form-control input-sm" id="relator" name="relator">
+						
+						
+						<option>-----</option>
+						<option>Demetrius</option>
+						<option>Edson</option>
+						<option>Filipe</option>
+						<option>Meriene</option>
+						<option>Cyro</option>
+						<option>Juliana</option>
+						<option>Sérgio</option>
+						<option>Fernando</option>
+						<option>Rogério</option>
+						<option>Cláudio</option>
+						</select>
+				
+
 						<label>Valor</label>
 						<input type="number" class="form-control input-sm" id="valor" name="valor">
 						<label>Data</label>
