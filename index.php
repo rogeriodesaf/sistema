@@ -23,17 +23,17 @@
 	<script src="lib/jquery-3.2.1.min.js"></script>
 	<script src="js/funcoes.js"></script>
 </head>
-<body style="background-color: gray">
+<body style="background-color: black">
 	<br><br><br>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
 				<div class="panel panel-primary">
-					<div class="panel panel-heading">Sistema</div>
+					<div class="panel panel-heading">Sistema de Gestão de Processos</div>
 					<div class="panel panel-body">
 						<p>
-							<img src="img/phpoo.png"  width="100%">
+							<img src="img/images.png"  width="100%">
 						</p>
 						<form id="frmLogin">
 							<label>Email</label>
