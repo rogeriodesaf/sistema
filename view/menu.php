@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Begin Navbar -->
+  <!-- Begin Navbar  Menu fixo em toddas as páginas-->
   <div id="nav">
     <div class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="100">
       <div class="container">
@@ -19,7 +19,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail" src="../img/phpoo.png" alt="" width="200px" height="150px"></a>
+          <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail" src="../img/images.png" alt="" width="200px" height="150px"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
 
