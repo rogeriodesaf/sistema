@@ -13,7 +13,7 @@ if(isset($_SESSION['usuario'])){
 	</head>
 	<body>
 		<div class="container">
-			<h1>Fornecedores</h1>
+			<h1>Processos</h1>
 			<div class="row">
 				<div class="col-sm-4">
 					<form id="frmFornecedores">
@@ -51,7 +51,7 @@ if(isset($_SESSION['usuario'])){
 						<label>Data</label>
 						<input type="date" class="form-control input-sm" id="data" name="data">
 						<label>Ano</label>
-						<input type="date" class="form-control input-sm" id="data" name="ano">
+						<input type="number" class="form-control input-sm" id="data" name="ano">
 						<p></p>
 						<span class="btn btn-primary" id="btnAdicionarFornecedores">Salvar</span>
 					</form>
@@ -91,7 +91,7 @@ if(isset($_SESSION['usuario'])){
 							<label>Data</label>
 							<input type="date" class="form-control input-sm" id="dataU" name="dataU">
 							<label>Ano</label>
-							<input type="date" class="form-control input-sm" id="anoU" name="anoU">
+							<input type="number" class="form-control input-sm" id="anoU" name="anoU">
 						</form>
 					</div>
 					<div class="modal-footer">

@@ -21,8 +21,6 @@ class fornecedores{
 	}
 
 
-
-
 	public function obterDados($id){
 		$c = new conectar();
 		$conexao=$c->conexao();
@@ -43,6 +41,7 @@ class fornecedores{
 				'valor' => $mostrar[6],
 				'data' => $mostrar[7],
 				'ano' => $mostrar[8],
+				'total' => $mostrar[9],
 			);
 
 			return $dados;

@@ -1,0 +1,24 @@
+<div class="form-group">
+                <label>Relatores</label>
+                <select class="form-control" name="relator">
+				  
+				  
+					        <option>-----</option>
+                  <option>Demetrius</option>
+                  <option>Edson</option>
+				          <option>Filipe</option>
+                  <option>Meriene</option>
+				          <option>Cyro</option>
+                  <option>Juliana</option>
+				          <option>Sérgio</option>
+                  <option>Fernando</option>
+				          <option>Rogério</option>
+				          <option>Cláudio</option>
+                  </select>
+        </div>
+
+        <label>Grau da Sessão</label>
+        <select class="form-control" name="camara">
+            <option >1 sessão </option>
+            <option> 2 sessão </option>
+        </select>

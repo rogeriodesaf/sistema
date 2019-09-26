@@ -6,7 +6,7 @@ require_once "../../classes/conexao.php";
 	$c = new conectar();
 		$conexao=$c->conexao();
 
-	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores";
+	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano, total FROM fornecedores";
 	$result = mysqli_query($conexao, $sql);
 
 ?>
@@ -23,13 +23,24 @@ require_once "../../classes/conexao.php";
 	 		<td>Valor</td>
 	 		<td>Data</td>
 			<td>Ano</td>
+			
+			
 			<td>Adicionar</td>
 			<td>Excluir</td>
+			
 	</tr>
+	
+	<?php
+
+	$total = 0;
+	?>
 
 	<?php while($mostrar = mysqli_fetch_row($result)): ?>
 
 	<tr>
+
+	
+
 		<td><?php echo $mostrar[1]; ?></td>
 		<td><?php echo $mostrar[2]; ?></td>
 		<td><?php echo $mostrar[3]; ?></td>
@@ -38,6 +49,10 @@ require_once "../../classes/conexao.php";
 		<td><?php echo $mostrar[6]; ?></td>
 		<td><?php echo $mostrar[7]; ?></td>
 		<td><?php echo $mostrar[8]; ?></td>
+
+		
+	
+		
 		<td>
 			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalFornecedoresUpdate" onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
@@ -48,8 +63,25 @@ require_once "../../classes/conexao.php";
 				<span class="glyphicon glyphicon-remove"></span>
 			</span>
 		</td>
+		
 	</tr>
 
 
 <?php endWhile; ?>
+
+
 </table>
+
+
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
+<tr>
+<td>Total</td>
+
+<tr>
+	<td><?php echo  $total ?></td>
+
+</tr>
+
+</table>
+
+</div>

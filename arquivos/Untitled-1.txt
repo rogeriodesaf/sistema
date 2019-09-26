@@ -1,0 +1,92 @@
+<!-- Guia seguinte -->
+        
+        
+        <div class="panel panel-default">
+            <div class="panel-heading" id="heading4">
+                <h3 class="panel-title"><a class="collapsed" href="#collapse3051" data-toggle="collapse"
+                        data-parent="#accordion">SESSÃO 305 | GUIA 19000015662 </a></h3>
+            </div>
+            <!-- painel colapsado - adicionar classe in para deixar expandido -->
+            <div class="panel-collapse collapse" id="collapse3051">
+                <div class="panel-body">
+                    <!-- Relação de processos -->
+                    <table style="height:15px" class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Processo</th>
+                                <th>Recorrente</th>
+                                <th>Advogado</th>
+                                <th>Relator</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- EXEMPLO - FAVOR PREENCHER COM OS DADOS DO PROCESSO -->
+                            <tr>
+                                <td><a href="http://bit.ly/30HpUg7" target="_blank">25001001160011331</a></td>
+                                <td>BANCO BRADESCO FINANCIAMENTOS S.A. </td>
+                                <td>-</td>
+                                <td>DEMÉTRIUS F.SOUZA</td>
+                            </tr>
+                            <!-- EXEMPLO - FAVOR PREENCHER COM OS DADOS DO PROCESSO -->
+                            <tr>
+                                <td><a href="http://bit.ly/2HrMGkw" target="_blank">25001001160005032</a></td>
+                                <td>BANCO BRADESCO S.A</td>
+                                <td>-</td>
+                                <td>DEMÉTRIUS F.SOUZA</td>
+                            </tr>
+                            <!-- EXEMPLO - FAVOR PREENCHER COM OS DADOS DO PROCESSO -->
+                            <tr>
+                                <td><a href="http://bit.ly/2zpdq0v" target="_blank">25001001160002148</a></td>
+                                <td> CONSÓRCIO NACIONAL EMBRACON</td>
+                                <td>-</td>
+                                <td>MERIENE VICTORINO SOARES</td>
+                            </tr>
+                            <!-- EXEMPLO - FAVOR PREENCHER COM OS DADOS DO PROCESSO -->
+                            <tr>
+                                <td><a href="http://bit.ly/2NBs1OL" target="_blank">25001001130013796</a></td>
+                                <td>UNIMED JOÃO PESSOA COOPERATIVA DE TRABALHO MÉDICO</td>
+                                <td>-</td>
+                                <td>DEMÉTRIUS F.SOUZA</td>
+                            </tr>
+                            <!-- EXEMPLO - FAVOR PREENCHER COM OS DADOS DO PROCESSO -->
+                            <tr>
+                                <td><a href="http://bit.ly/2PkdXfg" target="_blank">25001001160007542</a></td>
+                                <td>N CLAUDINO & CIA LTDA; MONDIAL ELETRODOMESTICOS LTDA/ ADRIANO BATISTA LIMEIRA </td>
+                                <td>-</td>
+                                <td>ANTÔNIO FILIPE L.S.FALCÃO</td>
+                            </tr>
+                            <!-- EXEMPLO - FAVOR PREENCHER COM OS DADOS DO PROCESSO -->
+                            <tr>
+                                <td><a href="http://bit.ly/3295tZS" target="_blank">25001018170006805</a></td>
+                                <td>TEC NEW ELETRONICA LTDA /SONY ERICCSON MOBILE COMMUNICATIONS DO BRASIL LTDA/ CADRIF DO BRASIL SEGUROS E GARANTIAS S/A</td>
+                                <td>-</td>
+                                <td>ANTÔNIO FILIPE L.S.FALCÃO</td>
+                            </tr>
+                            <!-- EXEMPLO - FAVOR PREENCHER COM OS DADOS DO PROCESSO -->
+                            <tr>
+                                <td><a href="http://bit.ly/2PiTsj7" target="_blank">25001001180007997</a></td>
+                                <td>LOSANGO PROMOTORA DE VENDAS S.A/td>
+                                <td>-</td>
+                                <td>MERIENE VICTORINO SOARES</td>
+                            </tr>
+                            <!-- EXEMPLO - FAVOR PREENCHER COM OS DADOS DO PROCESSO -->
+                            <tr>
+                                <td><a href="http://bit.ly/2MGs500" target="_blank">25001001180001074</a></td>
+                                <td>BESSA GRILL BAR E RESTAURANTE LTDA/td>
+                                <td>-</td>
+                                <td>DEMÉTRIUS F.SOUZA</td>
+                            </tr>
+                            
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td style="padding-top: 2px; padding-bottom: 1px; line-height: 1; vertical-align: middle;"
+                                    colspan="4">Fonte: Procon-PB 2ª Câmara Recursal</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>

@@ -6,16 +6,16 @@ require_once "../../classes/conexao.php";
 ?>
 
 
-<h4>Vender Produto</h4>
+<h4>Cadastrar Processo</h4>
 <div class="row">
 	<div class="col-sm-4">
 		<form id="frmVendasProdutos">
-			<label>Selecionar Cliente</label>
+			<label>Selecionar Relator</label>
 			<select class="form-control input-sm" id="clienteVenda" name="clienteVenda">
 				<option value="A">Selecionar</option>
-				<option value="0">Sem Clientes</option>
+				
 				<?php
-				$sql="SELECT id_cliente,nome,sobrenome 
+				$sql="SELECT id_cliente,nome,sobrenome
 				from clientes";
 				$result=mysqli_query($conexao,$sql);
 				while ($cliente=mysqli_fetch_row($result)):
@@ -23,7 +23,7 @@ require_once "../../classes/conexao.php";
 					<option value="<?php echo $cliente[0] ?>"><?php echo $cliente[1]." ".$cliente[2] ?></option>
 				<?php endwhile; ?>
 			</select>
-			<label>Produto</label>
+			<label>Câmara</label>
 			<select class="form-control input-sm" id="produtoVenda" name="produtoVenda">
 				<option value="A">Selecionar</option>
 				<?php
@@ -37,17 +37,17 @@ require_once "../../classes/conexao.php";
 					<option value="<?php echo $produto[0] ?>"><?php echo $produto[1] ?></option>
 				<?php endwhile; ?>
 			</select>
-			<label>Descrição</label>
+			<!--<label>Descrição</label>
 			<textarea readonly="" id="descricaoV" name="descricaoV" class="form-control input-sm"></textarea>
 			<label>Quantidade Estoque</label>
 			<input readonly="" type="text" class="form-control input-sm" id="quantidadeV" name="quantidadeV">
 			<label>Preço</label>
-			<input readonly="" type="text" class="form-control input-sm" id="precoV" name="precoV">
-			<label>Quantidade Vendida</label>
+			<input readonly="" type="text" class="form-control input-sm" id="precoV" name="precoV">!-->
+			<label>Valor</label>
 			<input type="text" class="form-control input-sm" id="quantV" name="quantV">
 			<p></p>
 			<span class="btn btn-primary" id="btnAddVenda">Adicionar</span>
-			<span class="btn btn-danger" id="btnLimparVendas">Limpar Venda</span>
+			<span class="btn btn-danger" id="btnLimparVendas">Limpar Registro</span>
 		</form>
 	</div>
 	<div class="col-sm-3">
@@ -94,7 +94,7 @@ require_once "../../classes/conexao.php";
 
 
 
-			if(quant > quantidade){
+			if(parseInt(quant) > parseInt(quantidade)){
 				alertify.alert("Quantidade inexistente em estoque!!");
 				quant = $('#quantV').val("");
 				return false;
@@ -168,7 +168,7 @@ require_once "../../classes/conexao.php";
 				if(r > 0){
 					$('#tabelaVendasTempLoad').load("vendas/tabelaVendasTemp.php");
 					$('#frmVendasProdutos')[0].reset();
-					alertify.alert("Venda Criada com Sucesso!");
+					alertify.alert("Processo adicionado com Sucesso!");
 				}else if(r==0){
 					alertify.alert("Não possui lista de Vendas");
 				}else{

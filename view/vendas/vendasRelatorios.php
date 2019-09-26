@@ -24,8 +24,8 @@
 				<tr>
 					<td>Código</td>
 					<td>Data</td>
-					<td>Cliente</td>
-					<td>Total da Compra</td>
+					<td>Relator</td>
+					<td>Valor</td>
 					<td>Comprovante</td>
 					<td>Relatório</td>
 				</tr>

@@ -13,7 +13,7 @@ require_once "../../classes/conexao.php";
 
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-	<caption><label>Clientes</label></caption>
+	<caption><label>Relatores</label></caption>
 	<tr>
 			<td>Nome</td>
 	 		<td>Sobrenome</td>

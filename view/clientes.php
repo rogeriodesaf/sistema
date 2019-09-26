@@ -13,7 +13,7 @@ if(isset($_SESSION['usuario'])){
 	</head>
 	<body>
 		<div class="container">
-			<h1>Clientes</h1>
+			<h1>Relatores</h1>
 			<div class="row">
 				<div class="col-sm-4">
 					<form id="frmClientes">

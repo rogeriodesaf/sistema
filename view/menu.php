@@ -31,20 +31,20 @@
             
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list-alt"></span> Gestão Produtos <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list-alt"></span> Câmaras Recursais <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="categorias.php">Categorias</a></li>
-              <li><a href="produtos.php">Produtos</a></li>
+              <li><a href="categorias.php">Câmaras</a></li>
+              <li><a href="produtos.php">Inserção de Câmaras  no Sistema</a></li>
             </ul>
           </li>
 
 
        
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Pessoas <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Cadastro e Gestão de Dados dos Relatores <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="clientes.php">Clientes</a></li>
-              <li><a href="fornecedores.php">Fornecedores</a></li>
+              <li><a href="clientes.php">Dados dos Relatores</a></li>
+              <li><a href="fornecedores.php">Projeto experimental</a></li>
             </ul>
           </li>
 
@@ -52,7 +52,7 @@
 
 
          
-          <li><a href="vendas.php"><span class="glyphicon glyphicon-usd"></span> Vendas</a>
+          <li><a href="vendas.php"><span class="glyphicon glyphicon-list-alt"></span> Processos</a>
           </li>
           
           <li class="dropdown" >

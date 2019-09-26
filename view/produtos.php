@@ -20,18 +20,18 @@ if(isset($_SESSION['usuario'])){
 	</head>
 	<body>
 		<div class="container">
-			<h1>Produtos</h1>
+			<h1>Câmaras</h1>
 			<div class="row">
 				<div class="col-sm-4">
 					<form id="frmProdutos" enctype="multipart/form-data">
 						<label>Categoria</label>
 						<select class="form-control input-sm" id="categoriaSelect" name="categoriaSelect">
-							<option value="A">Selecionar Categoria</option>
+							<option value="A">Selecionar</option>
 							<?php while($mostrar=mysqli_fetch_row($result)): ?>
 								<option value="<?php echo $mostrar[0] ?>"><?php echo $mostrar[1]; ?></option>
 							<?php endwhile; ?>
 						</select>
-						<label>Nome</label>
+						<!--<label>Nome</label>
 						<input type="text" class="form-control input-sm" id="nome" name="nome">
 						<label>Descrição</label>
 						<input type="text" class="form-control input-sm" id="descricao" name="descricao">
@@ -41,7 +41,7 @@ if(isset($_SESSION['usuario'])){
 						<input type="text" class="form-control input-sm" id="preco" name="preco">
 						<label>Imagem</label>
 						<input type="file" id="imagem" name="imagem">
-						<p></p>
+						<p></p>!-->
 						<span id="btnAddProduto" class="btn btn-primary">Adicionar</span>
 					</form>
 				</div>

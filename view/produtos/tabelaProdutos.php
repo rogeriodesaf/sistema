@@ -22,13 +22,13 @@
  ?>
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-	<caption><label>Produtos</label></caption>
+	<caption><label>Cadastro das Câmaras</label></caption>
 	<tr>
-		<td>Nome</td>
-		<td>Descrição</td>
-		<td>Quantidade</td>
-		<td>Preço</td>
-		<td>Imagem</td>
+		<td> Sessão</td>
+		
+		
+		
+		
 		<td>Categoria</td>
 		<td>Editar</td>
 		<td>Excluir</td>
@@ -38,19 +38,10 @@
 
 	<tr>
 		<td><?php echo $mostrar[0]; ?></td>
-		<td><?php echo $mostrar[1]; ?></td>
-		<td><?php echo $mostrar[2]; ?></td>
-		<td>R$ <?php echo $mostrar[3]; ?>,00</td>
-		<td>
-
-
-
-			<?php 
-			$imgVer=explode("/", $mostrar[4]) ; 
-			$imgurl=$imgVer[1]."/".$imgVer[2]."/".$imgVer[3];
-			?>
-			<img width="80" height="80" src="<?php echo $imgurl ?>">
-		</td>
+		
+		
+		
+		
 		<td><?php echo $mostrar[5]; ?></td>
 		<td>
 			<span  data-toggle="modal" data-target="#abremodalUpdateProduto" class="btn btn-warning btn-xs" onclick="addDadosProduto('<?php echo $mostrar[6] ?>')">
