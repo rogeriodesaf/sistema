@@ -6,7 +6,7 @@ require_once "../../classes/conexao.php";
 	$c = new conectar();
 		$conexao=$c->conexao();
 
-	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano, total FROM fornecedores";
+	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores";
 	$result = mysqli_query($conexao, $sql);
 
 ?>
@@ -84,18 +84,17 @@ require_once "../../classes/conexao.php";
 
 $sql2 = "SELECT * FROM fornecedores";
 $buscar2 = mysqli_query($conexao, $sql2);
-
+$valor=0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
 	$id_fornecedor  = $array2['id_fornecedor'];
-	$valor = $array2 ['valor'];
+	$valor = $valor + $array2 ['valor'];
 	?>
-	<?php echo $valor?>
+	
 
 	
 	
 	<?php } ?>
-	      Como soma esse benditos valores?
-	</td>
+	 R$ <?php echo $valor?>
 
 </tr>
 
