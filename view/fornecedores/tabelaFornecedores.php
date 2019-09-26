@@ -75,7 +75,7 @@ require_once "../../classes/conexao.php";
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
 <tr>
-<td>Total</td>
+<td>Total dos valores.</td>
 </tr>
 
 <tr>
