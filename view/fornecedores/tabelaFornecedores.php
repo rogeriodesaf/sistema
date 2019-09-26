@@ -76,9 +76,26 @@ require_once "../../classes/conexao.php";
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
 <tr>
 <td>Total</td>
+</tr>
 
 <tr>
-	<td><?php echo  $total ?></td>
+<td>
+<?php
+
+$sql2 = "SELECT * FROM fornecedores";
+$buscar2 = mysqli_query($conexao, $sql2);
+
+while ($array2 = mysqli_fetch_array($buscar2)) {
+	$id_fornecedor  = $array2['id_fornecedor'];
+	$valor = $array2 ['valor'];
+	?>
+	<?php echo $valor?>
+
+	
+	
+	<?php } ?>
+	      Como soma esse benditos valores?
+	</td>
 
 </tr>
 
