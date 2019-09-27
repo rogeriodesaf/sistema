@@ -98,6 +98,24 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 </tr>
 
+
 </table>
 
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+<caption><label>Total por Relator</label></caption>
+<tr>
+			<td>Demetrius</td>
+	 		<td>Edson</td>
+	 		<td>Filipe</td>
+	 		<td>Meriene</td>
+	 		<td>Cyro</td>
+	 		<td>Juliana</td>
+	 		<td>Sérgio</td>
+			<td>Fernando</td>
+			<td>Rogério</td>
+			<td>Cláudio</td>
+			
+			
+	</tr>
+</table>
 </div>
