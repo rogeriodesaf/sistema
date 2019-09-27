@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>vendas</title>
+	<title>Processos</title>
 	<?php require_once "menu.php"; ?>
 </head>
 <body>
@@ -17,14 +17,15 @@
 		 <h1>Lista de Processos</h1>
 		 <div class="row">
 		 	<div class="col-sm-12">
-		 		<span class="btn btn-default" id="vendaProdutosBtn">Cadastrar Processo</span>
-		 		<span class="btn btn-default" id="vendasFeitasBtn">Lista de Processos</span>
+		 		<span class="btn btn-default" id="cadastrarProcessosBtn">Cadastrar Processo</span>  <!--Isto cria um botão, o btn btn-default é um classe do Bootstrap que faz o botão ficar branco. 
+				 O id gera um identificador com o código JavaScript lá em baixo, e o que está entre as tags é o que vai aparecer escrito no botão. -->
+		 		<span class="btn btn-default" id="listagemProcessosBtn">Lista de Processos</span>
 		 	</div>
 		 </div>
 		 <div class="row">
 		 	<div class="col-sm-12">
-		 		<div id="vendaProdutos"></div>
-		 		<div id="vendasFeitas">
+		 		<div id="cadastrarProcessos"></div>
+		 		<div id="listagemProcessos">
 
 		 			
 <?php 
@@ -37,33 +38,33 @@
 		 		</div>
 		 	</div>
 		 </div>
-	</div>
+	</div>  <!-- Fechamento do container-->
 </body>
 </html>
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#vendaProdutosBtn').click(function(){
-				esconderSessaoVenda();
-				$('#vendaProdutos').load('vendas/vendasDeProdutos.php');
-				$('#vendaProdutos').show();
+			$('#cadastrarProcessosBtn').click(function(){                          //quando clicar no botão vai carregar a função esconderSessão que está na linha 59 do código, carregando a página vendas/vendasdeProdutos.php e mostrando
+				esconderSessaoProcesso();
+				$('#cadastrarProcessos').load('vendas/vendasDeProdutos.php');
+				$('#cadastrarProcessos').show();
 			});
-			$('#vendasFeitasBtn').click(function(){
-				esconderSessaoVenda();
-				$('#vendasFeitas').load('vendas/vendasRelatorios.php');
-				$('#vendasFeitas').show();
+			$('#listagemProcessosBtn').click(function(){
+				esconderSessaoProcesso();
+				$('#listagemProcessos').load('vendas/vendasRelatorios.php');
+				$('#listagemProcessos').show();
 			});
 		});
 
-		function esconderSessaoVenda(){
-			$('#vendaProdutos').hide();
-			$('#vendasFeitas').hide();
+		function esconderSessaoProcesso(){                            //criando a função; 
+			$('#cadastrarProcessos').hide();
+			$('#listagemProcessos').hide();
 		}
 
 	</script>
 
 <?php 
 	}else{
-		header("location:../index.php");
+		header("location:../index.php");                      //se não for identificado um usuário volta pra index, que a página de login.
 	}
  ?>

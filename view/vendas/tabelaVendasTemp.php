@@ -4,19 +4,19 @@
 	
  ?>
 
- <h4>Inserir Processo</h4>
+ <h4>Criar Venda</h4>
  <h4><strong><div id="nomeclienteVenda"></div></strong></h4>
  <table class="table table-bordered table-hover table-condensed" style="text-align: center;">
  	<caption>
- 		<span class="btn btn-success" onclick="criarVenda()"> Inserir Processo
- 			<span class="glyphicon glyphicon-list-alt"></span>
+ 		<span class="btn btn-success" onclick="criarVenda()"> Criar Venda
+ 			<span class="glyphicon glyphicon-usd"></span>
  		</span>
  	</caption>
  	<tr>
- 		<td>Câmara</td>
- 		
- 		<td>Valor</td>
- 		
+ 		<td>Nom</td>
+ 		<td>Descrição</td>
+ 		<td>Preço</td>
+ 		<td>Quantidade</td>
  		<td>Remover</td>
  	</tr>
  	<?php 
@@ -31,9 +31,9 @@
 
  	<tr>
  		<td><?php echo $d[1] ?></td>
- 		
- 		<td><?php echo "R$ ".$d[3].",00" ?></td>
- 		
+ 		<td><?php echo $d[2] ?></td>
+ 		<td><?php echo $d[3]?></td>
+ 		<td><?php echo $d[6]; ?></td>
  		<td>
 
  			
@@ -54,7 +54,7 @@
  ?>
 
  	<tr>
- 		<td>Total : <?php echo "R$ ".$total.",00"; ?></td>
+ 		<td>Total da venda: <?php echo "R$ ".$total.",00"; ?></td>
  	</tr>
 
  </table>
@@ -63,6 +63,6 @@
  <script type="text/javascript">
  	$(document).ready(function(){
  		nome="<?php echo @$cliente ?>";
- 		$('#nomeclienteVenda').text("Relator:  " + nome);
+ 		$('#nomeclienteVenda').text("Nome de cliente: " + nome);
  	});
  </script>
