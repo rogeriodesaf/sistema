@@ -13,8 +13,8 @@ if(isset($_SESSION['usuario'])){
 		<?php require_once "../classes/conexao.php"; 
 		$c= new conectar();
 		$conexao=$c->conexao();
-		$sql="SELECT id_categoria,nome_categoria
-		from categorias";
+		$sql="SELECT id_camara,nome_camara
+		from camara";
 		$result=mysqli_query($conexao,$sql);
 		?>
 	</head>
@@ -24,8 +24,8 @@ if(isset($_SESSION['usuario'])){
 			<div class="row">
 				<div class="col-sm-4">
 					<form id="frmProdutos" enctype="multipart/form-data">
-						<label>Categoria</label>
-						<select class="form-control input-sm" id="categoriaSelect" name="categoriaSelect">
+						<label>Camara</label>
+						<select class="form-control input-sm" id="camaraSelect" name="camaraSelect">
 							<option value="A">Selecionar</option>
 							<?php while($mostrar=mysqli_fetch_row($result)): ?>
 								<option value="<?php echo $mostrar[0] ?>"><?php echo $mostrar[1]; ?></option>
@@ -64,12 +64,12 @@ if(isset($_SESSION['usuario'])){
 					<div class="modal-body">
 						<form id="frmProdutosU" enctype="multipart/form-data">
 							<input type="text" id="idProduto" hidden="" name="idProduto">
-							<label>Categoria</label>
-							<select class="form-control input-sm" id="categoriaSelectU" name="categoriaSelectU">
-								<option value="A">Selecionar Categoria</option>
+							<label>Camara</label>
+							<select class="form-control input-sm" id="camaraSelectU" name="camaraSelectU">
+								<option value="A">Selecionar Camara</option>
 								<?php 
-								$sql="SELECT id_categoria,nome_categoria
-								from categorias";
+								$sql="SELECT id_camara,nome_camara
+								from camara";
 								$result=mysqli_query($conexao,$sql);
 								?>
 								<?php while($mostrar=mysqli_fetch_row($result)): ?>
@@ -108,7 +108,7 @@ if(isset($_SESSION['usuario'])){
 					
 					dado=jQuery.parseJSON(r);
 					$('#idProduto').val(dado['id_produto']);
-					$('#categoriaSelectU').val(dado['id_categoria']);
+					$('#camaraSelectU').val(dado['id_camara']);
 					$('#nomeU').val(dado['nome']);
 					$('#descricaoU').val(dado['descricao']);
 					$('#quantidadeU').val(dado['quantidade']);

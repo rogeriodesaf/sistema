@@ -14,7 +14,6 @@
 ?>
 
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +52,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4"></div>
 		</div>
 	</div>
 </body>

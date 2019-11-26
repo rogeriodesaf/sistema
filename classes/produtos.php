@@ -8,7 +8,7 @@
 
 			$data=date('Y-m-d');
 
-			$sql="INSERT into imagens (id_categoria,
+			$sql="INSERT into imagens (id_camara,
 										nome,
 										url,
 										dataUpload)
@@ -26,7 +26,7 @@
 
 			$data=date('Y-m-d');
 
-			$sql="INSERT into produtos (id_categoria,
+			$sql="INSERT into produtos (id_camara,
 										id_imagem,
 										id_usuario,
 										nome,
@@ -52,7 +52,7 @@
 			$conexao=$c->conexao();
 
 			$sql="SELECT id_produto, 
-						id_categoria, 
+						id_camara, 
 						nome,
 						descricao,
 						quantidade,
@@ -65,7 +65,7 @@
 
 			$dados=array(
 					"id_produto" => $mostrar[0],
-					"id_categoria" => $mostrar[1],
+					"id_camara" => $mostrar[1],
 					"nome" => $mostrar[2],
 					"descricao" => $mostrar[3],
 					"quantidade" => $mostrar[4],
@@ -81,7 +81,7 @@
 			$c= new conectar();
 			$conexao=$c->conexao();
 
-			$sql="UPDATE produtos set id_categoria='$dados[1]', 
+			$sql="UPDATE produtos set id_camara='$dados[1]', 
 										nome='$dados[2]',
 										descricao='$dados[3]',
 										quantidade='$dados[4]',

@@ -92,14 +92,14 @@ class vendas{
 			return $id + 1;
 		}
 	}
-	public function nomeCliente($idCliente){
+	public function nomeRelator($idRelator){
 		$c= new conectar();
 		$conexao=$c->conexao();
 
 
 		 $sql="SELECT sobrenome,nome 
-			from clientes 
-			where id_cliente='$idCliente'";
+			from relatores 
+			where id_relator='$idRelator'";
 		$result=mysqli_query($conexao,$sql);
 
 		$ver=mysqli_fetch_row($result);

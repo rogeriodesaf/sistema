@@ -6,16 +6,16 @@ require_once "../../classes/conexao.php";
 	$c = new conectar();
 		$conexao=$c->conexao();
 
-	$sql = "SELECT id_categoria, nome_categoria FROM categorias";
+	$sql = "SELECT id_camara, nome_camara FROM camara";
 	$result = mysqli_query($conexao, $sql);
 
 ?>
 
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-	<caption><label>Categorias :D</label></caption>
+	<caption><label>Câmaras :D</label></caption>
 	<tr>
-		<td>Categoria</td>
+		<td>Câmara</td>
 		<td>Editar</td>
 		<td>Excluir</td>
 	</tr>
@@ -25,12 +25,12 @@ require_once "../../classes/conexao.php";
 	<tr>
 		<td><?php echo $mostrar[1]; ?></td>
 		<td>
-			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#atualizaCategoria" onclick="adicionarDado('<?php echo $mostrar[0]; ?>','<?php echo $mostrar[1]; ?>')">
+			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#atualizaCamara" onclick="adicionarDado('<?php echo $mostrar[0]; ?>','<?php echo $mostrar[1]; ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
 			</span>
 		</td>
 		<td>
-			<span class="btn btn-danger btn-xs" onclick="eliminaCategoria('<?php echo $mostrar[0]; ?>')">
+			<span class="btn btn-danger btn-xs" onclick="eliminaCamara('<?php echo $mostrar[0]; ?>')">
 				<span class="glyphicon glyphicon-remove"></span>
 			</span>
 		</td>

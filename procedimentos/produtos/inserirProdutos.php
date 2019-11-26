@@ -14,7 +14,7 @@
 	$urlFinal=$pasta.$nomeImg;
 
 	$dadosImg=array(
-		$_POST['categoriaSelect'],
+		$_POST['camaraSelect'],
 		$nomeImg,
 		$urlFinal
 					);
@@ -24,7 +24,7 @@
 
 				if($idimagem > 0){
 
-					$dados[0]=$_POST['categoriaSelect'];
+					$dados[0]=$_POST['camaraSelect'];
 					$dados[1]=$idimagem;
 					$dados[2]=$iduser;
 					$dados[3]=$_POST['nome'];

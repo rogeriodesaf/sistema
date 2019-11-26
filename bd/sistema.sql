@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Set-2019 às 13:58
+-- Tempo de geração: 01-Out-2019 às 21:19
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.2.20
 
@@ -25,51 +25,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categorias`
+-- Estrutura da tabela `camara`
 --
 
-CREATE TABLE `categorias` (
-  `id_categoria` int(11) NOT NULL,
+CREATE TABLE `camara` (
+  `id_camara` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `nome_categoria` varchar(100) NOT NULL,
+  `nome_camara` varchar(100) NOT NULL,
   `dataCaptura` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `categorias`
+-- Extraindo dados da tabela `camara`
 --
 
-INSERT INTO `categorias` (`id_categoria`, `id_usuario`, `nome_categoria`, `dataCaptura`) VALUES
-(3, 6, 'CalÃ§as', '2018-05-17'),
-(4, 6, 'Bermudas', '2018-05-17'),
-(5, 6, 'TÃªnis', '2018-05-17'),
-(6, 6, 'Sapatos', '2018-05-17'),
-(7, 6, 'Camisas', '2018-05-17');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `clientes`
---
-
-CREATE TABLE `clientes` (
-  `id_cliente` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `sobrenome` varchar(100) NOT NULL,
-  `endereco` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `telefone` varchar(100) NOT NULL,
-  `cpf` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `clientes`
---
-
-INSERT INTO `clientes` (`id_cliente`, `id_usuario`, `nome`, `sobrenome`, `endereco`, `email`, `telefone`, `cpf`) VALUES
-(4, 6, 'Paula F', 'Santos', 'Rua A', 'paula@hotmail.com', '555555', '33333'),
-(5, 6, 'Hugo Vasconcelos', 'Freitas', 'Rua C', 'hugovasconcelosf', '988878', '8787878');
+INSERT INTO `camara` (`id_camara`, `id_usuario`, `nome_camara`, `dataCaptura`) VALUES
+(16, 7, '1 Sessão', '2019-09-27');
 
 -- --------------------------------------------------------
 
@@ -85,18 +56,25 @@ CREATE TABLE `fornecedores` (
   `fornecedor` varchar(150) NOT NULL,
   `camara` varchar(100) NOT NULL,
   `relator` varchar(100) NOT NULL,
-  `valor` int(100) NOT NULL,
+  `valor` decimal(50,0) NOT NULL,
   `data` date NOT NULL,
-  `ano` date NOT NULL
+  `ano` int(11) NOT NULL,
+  `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `fornecedores`
 --
 
-INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nrofa`, `consumidor`, `fornecedor`, `camara`, `relator`, `valor`, `data`, `ano`) VALUES
-(1, 6, 0, 'Vasconcelos', 'Rua 5', 'pedro@hotmail.com', '55555', 555555, '0000-00-00', '0000-00-00'),
-(3, 6, 0, 'Freitas', 'Rua D', 'fabio@hotmail.com', '3333333', 555555, '0000-00-00', '0000-00-00');
+INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nrofa`, `consumidor`, `fornecedor`, `camara`, `relator`, `valor`, `data`, `ano`, `total`) VALUES
+(4, 7, 546, 'Lohana', 'Unipe', '2 sessÃ£o', 'Filipe', '258', '2018-01-01', 2019, 0),
+(5, 7, 20, 'RogÃ©rio', 'Celular', '1 sessÃ£o', 'Demetrius', '80', '2019-09-23', 2019, 0),
+(6, 7, 25, 'maria', 'insinuante', '2 sessÃ£o', 'Demetrius', '30', '2019-09-06', 2017, 0),
+(7, 7, 55555, 'maria', 'claro', '2 sessÃ£o', 'Demetrius', '50', '2019-09-06', 2017, 0),
+(8, 7, 1, 'rqerqrqr', 'insinuante', '1 sessÃ£o', 'Demetrius', '7', '2019-09-10', 2000, 0),
+(9, 7, 50, 'rqerqrqr', 'bmg', '1 sessÃ£o', 'Demetrius', '500', '2019-09-19', 2000, 0),
+(10, 7, 46, 'oi', 'qrqrer', '2 sessÃ£o', 'Filipe', '20', '2019-09-06', 2000, 0),
+(11, 7, 20, 'josÃ©', 'ANATEL', '2 sessÃ£o', 'Fernando', '500', '2019-09-07', 2001, 0);
 
 -- --------------------------------------------------------
 
@@ -121,7 +99,10 @@ INSERT INTO `imagens` (`id_imagem`, `id_categoria`, `nome`, `url`, `dataUpload`)
 (5, 7, 'camisa.jpg', '../../arquivos/camisa.jpg', '2018-05-22'),
 (6, 3, 'calca.jpg', '../../arquivos/calca.jpg', '2018-05-22'),
 (7, 5, 'tenis feminino.jpg', '../../arquivos/tenis feminino.jpg', '2018-05-22'),
-(8, 5, 'tenis.jpg', '../../arquivos/tenis.jpg', '2018-05-22');
+(8, 5, 'tenis.jpg', '../../arquivos/tenis.jpg', '2018-05-22'),
+(11, 9, 'Untitled-1.html.txt', '../../arquivos/Untitled-1.html.txt', '2019-09-26'),
+(13, 10, 'Untitled-1.txt', '../../arquivos/Untitled-1.txt', '2019-09-26'),
+(15, 11, 'select.txt', '../../arquivos/select.txt', '2019-09-26');
 
 -- --------------------------------------------------------
 
@@ -146,11 +127,25 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `id_categoria`, `id_imagem`, `id_usuario`, `nome`, `descricao`, `quantidade`, `preco`, `dataCaptura`) VALUES
-(4, 7, 4, 6, 'Camisa Social', 'Camisa Social Masculina Xt89587', 7, 90, '2018-05-22'),
-(5, 7, 5, 6, 'Camisa Barcelona', 'Camisa do Time do Barcelona Oficial', 0, 250, '2018-05-22'),
-(6, 3, 6, 6, 'CalÃ§a Masculina', 'CalÃ§a Masculina Marron', 13, 120, '2018-05-22'),
-(7, 5, 7, 6, 'TÃªnis Feminino', 'TÃªnis Sport Feminino ', 21, 80, '2018-05-22'),
-(8, 5, 8, 6, 'Tenis XT52', 'Tenis Unissex', 16, 95, '2018-05-22');
+(13, 10, 13, 7, '1 Grau', '...', -20, 1, '2019-09-26'),
+(15, 11, 15, 7, '2 Grau', '..', -50, 1, '2019-09-26');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `relatores`
+--
+
+CREATE TABLE `relatores` (
+  `id_relator` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `sobrenome` varchar(100) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telefone` varchar(100) NOT NULL,
+  `cpf` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -193,20 +188,54 @@ CREATE TABLE `vendas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Extraindo dados da tabela `vendas`
+--
+
+INSERT INTO `vendas` (`id_venda`, `id_cliente`, `id_produto`, `id_usuario`, `preco`, `quantidade`, `total_venda`, `dataCompra`) VALUES
+(1, 0, 0, 7, 0, 0, 0, '2019-09-26'),
+(1, 0, 0, 7, 0, 0, 0, '2019-09-26'),
+(1, 0, 0, 7, 0, 2, 0, '2019-09-26'),
+(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+(1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
+(1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
+(1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
+(2, 0, 13, 7, 1, 20000, 20000, '2019-09-26'),
+(3, 8, 13, 7, 1, 20000, 20000, '2019-09-26'),
+(4, 0, 13, 7, 1, 10, 10, '2019-09-26'),
+(5, 11, 15, 7, 1, 5000, 5000, '2019-09-26'),
+(6, 11, 13, 7, 1, 50000, 50000, '2019-09-26'),
+(7, 0, 15, 7, 1, 1, 1, '2019-09-26'),
+(8, 11, 15, 7, 1, 2, 2, '2019-09-26'),
+(9, 9, 15, 7, 1, 50000, 50000, '2019-09-26'),
+(10, 9, 15, 7, 1, 50, 50, '2019-09-26'),
+(10, 8, 13, 7, 1, 20, 20, '2019-09-26'),
+(11, 8, 13, 7, 1, 1, 1, '2019-09-26'),
+(11, 8, 15, 7, 1, 1, 1, '2019-09-26'),
+(12, 8, 13, 7, 0, 42, 0, '2019-09-26'),
+(13, 8, 13, 7, 0, 20, 0, '2019-09-26'),
+(14, 8, 15, 7, 0, 20, 0, '2019-09-26'),
+(14, 8, 15, 7, 0, 20, 0, '2019-09-26'),
+(15, 8, 13, 7, 0, 20, 0, '2019-09-26'),
+(15, 8, 15, 7, 1, 25, 25, '2019-09-26'),
+(16, 8, 13, 7, 0, 20, 0, '2019-09-26'),
+(17, 8, 15, 7, 0, 50, 0, '2019-09-26'),
+(18, 8, 13, 7, 0, 20, 0, '2019-09-27'),
+(18, 8, 13, 7, 0, 20, 0, '2019-09-27');
+
+--
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `categorias`
+-- Índices para tabela `camara`
 --
-ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id_categoria`);
-
---
--- Índices para tabela `clientes`
---
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`id_cliente`);
+ALTER TABLE `camara`
+  ADD PRIMARY KEY (`id_camara`);
 
 --
 -- Índices para tabela `fornecedores`
@@ -227,6 +256,12 @@ ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id_produto`);
 
 --
+-- Índices para tabela `relatores`
+--
+ALTER TABLE `relatores`
+  ADD PRIMARY KEY (`id_relator`);
+
+--
 -- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -237,34 +272,34 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de tabela `categorias`
+-- AUTO_INCREMENT de tabela `camara`
 --
-ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT de tabela `clientes`
---
-ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `camara`
+  MODIFY `id_camara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `fornecedores`
 --
 ALTER TABLE `fornecedores`
-  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `imagens`
 --
 ALTER TABLE `imagens`
-  MODIFY `id_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de tabela `relatores`
+--
+ALTER TABLE `relatores`
+  MODIFY `id_relator` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`

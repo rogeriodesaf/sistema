@@ -8,13 +8,13 @@
 					pro.quantidade,
 					pro.preco,
 					img.url,
-					cat.nome_categoria,
+					cam.nome_camara,
 					pro.id_produto
 		  from produtos as pro 
 		  inner join imagens as img
 		  on pro.id_imagem=img.id_imagem
-		  inner join categorias as cat
-		  on pro.id_categoria=cat.id_categoria";
+		  inner join camara as cam
+		  on pro.id_camara=cam.id_camara";
 	$result=mysqli_query($conexao,$sql);
 
 	
@@ -29,7 +29,7 @@
 		
 		
 		
-		<td>Categoria</td>
+		<td>Câmara</td>
 		<td>Editar</td>
 		<td>Excluir</td>
 	</tr>

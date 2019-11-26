@@ -7,7 +7,7 @@
 
 $dados=array(
 		$_POST['idProduto'],
-	    $_POST['categoriaSelectU'],
+	    $_POST['camaraSelectU'],
 	    $_POST['nomeU'],
 	    $_POST['descricaoU'],
 	    $_POST['quantidadeU'],

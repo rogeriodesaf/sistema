@@ -8,20 +8,20 @@ require_once "../../classes/categorias.php";
 
 $data = date("Y-m-d");
 $idusuario = $_SESSION['iduser'];
-$categoria = $_POST['categoria'];
+$camara = $_POST['camara'];
 
 
-$obj = new categorias();
+$obj = new camaras();
 
 
 
 $dados=array(
 	$idusuario,
-	$categoria,
+	$camara,
 	$data
 
 );
 
-echo $obj->adicionarCategoria($dados);
+echo $obj->adicionarCamara($dados);
 
  ?>

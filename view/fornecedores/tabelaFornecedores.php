@@ -75,7 +75,7 @@ require_once "../../classes/conexao.php";
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
 <tr>
-<td>Total dos valores.</td>
+<td style="background-color: SlateGrey;">Total dos valores.</td>
 </tr>
 
 <tr>
@@ -101,7 +101,63 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 </table>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
+<tr>
+<td style="background-color: SlateGrey;">Total 1ª Grau.</td>
+</tr>
+
+<tr>
+<td>
+<?php
+
+$sql2 = "SELECT * FROM fornecedores";
+$buscar2 = mysqli_query($conexao, $sql2);
+$valor=0;
+while ($array2 = mysqli_fetch_array($buscar2)) {
+	$id_fornecedor  = $array2['id_fornecedor'];
+	$valor = $valor + $array2 ['valor'];
+	?>
+	
+
+	
+	
+	<?php } ?>
+	 R$ <?php echo $valor?>
+
+</tr>
+
+
+</table>
+
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
+<tr >
+<td style="background-color: SlateGrey;" >Total 2ª Grau.</td>
+</tr>
+
+<tr>
+<td>
+<?php
+
+$sql2 = "SELECT * FROM fornecedores";
+$buscar2 = mysqli_query($conexao, $sql2);
+$valor=0;
+while ($array2 = mysqli_fetch_array($buscar2)) {
+	$id_fornecedor  = $array2['id_fornecedor'];
+	$valor = $valor + $array2 ['valor'];
+	?>
+	
+
+	
+	
+	<?php } ?>
+	 R$ <?php echo $valor?>
+
+</tr>
+
+
+</table>
+
+<!-- <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 <caption><label>Total por Relator</label></caption>
 <tr>
 			<td>Demetrius</td>
@@ -117,5 +173,5 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 			
 			
 	</tr>
-</table>
+</table> -->
 </div>

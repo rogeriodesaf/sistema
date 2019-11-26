@@ -17,7 +17,7 @@ if(isset($_SESSION['usuario'])){
 			<div class="row">
 				<div class="col-sm-4">
 					<form id="frmFornecedores">
-						<label>nroFA</label>
+						<label>N° FA</label>
 						<input type="number" class="form-control input-sm" id="nrofa" name="nrofa">
 						<label>Consumidor</label>
 						<input type="text" class="form-control input-sm" id="consumidor" name="consumidor">
@@ -48,12 +48,12 @@ if(isset($_SESSION['usuario'])){
 
 						<label>Valor</label>
 						<input type="number" class="form-control input-sm" id="valor" name="valor">
-						<label>Data</label>
+						<label>Data De Julgamento</label>
 						<input type="date" class="form-control input-sm" id="data" name="data">
 						<label>Ano</label>
 						<input type="number" class="form-control input-sm" id="data" name="ano">
 						<p></p>
-						<span class="btn btn-primary" id="btnAdicionarFornecedores">Salvar</span>
+						<span class="btn btn-primary" id="btnAdicionarFornecedores">Salvar</span>   <!-- btnAcidionarFornecedores é o botão entrar que ao ser clicado carregará a div tabelaFornecedores na linha 138 -->
 					</form>
 				</div>
 				<div class="col-sm-8">
@@ -88,7 +88,7 @@ if(isset($_SESSION['usuario'])){
 							<input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
 							<label>Valor</label>
 							<input type="number" class="form-control input-sm" id="valorU" name="valorU">
-							<label>Data</label>
+							<label>Data De julgamento</label>
 							<input type="date" class="form-control input-sm" id="dataU" name="dataU">
 							<label>Ano</label>
 							<input type="number" class="form-control input-sm" id="anoU" name="anoU">
@@ -104,7 +104,7 @@ if(isset($_SESSION['usuario'])){
 
 	</body>
 	</html>
-
+<!-- Adicionar dados -->
 	<script type="text/javascript">
 		function adicionarDado(idfornecedor){
 
@@ -134,7 +134,7 @@ if(isset($_SESSION['usuario'])){
 				}
 			});
 		}
-
+// Eliminar fornecedores
 		function eliminar(idfornecedor){
 			alertify.confirm('Deseja Excluir este fornecedor?', function(){ 
 				$.ajax({
@@ -158,7 +158,7 @@ if(isset($_SESSION['usuario'])){
 			});
 		}
 	</script>
-
+ <!-- Código que está na div tabelaFornecedores -->
 	<script type="text/javascript">
 		$(document).ready(function(){
 
@@ -169,7 +169,7 @@ if(isset($_SESSION['usuario'])){
 				vazios=validarFormVazio('frmFornecedores');
 
 				if(vazios > 0){
-					alertify.alert("Preencha os Campos!!");
+					alertify.alert("Preencha os Campos!!");   //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
 					return false;
 				}
 
@@ -195,28 +195,28 @@ if(isset($_SESSION['usuario'])){
 	</script>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#btnAdicionarFornecedorU').click(function(){
-				dados=$('#frmFornecedoresU').serialize();
+		// $(document).ready(function(){
+		// 	$('#btnAdicionarFornecedorU').click(function(){
+		// 		dados=$('#frmFornecedoresU').serialize();
 
-				$.ajax({
-					type:"POST",
-					data:dados,
-					url:"../procedimentos/fornecedores/atualizarFornecedores.php",
-					success:function(r){
+		// 		$.ajax({
+		// 			type:"POST",
+		// 			data:dados,
+		// 			url:"../procedimentos/fornecedores/atualizarFornecedores.php",
+		// 			success:function(r){
 
 						
-						if(r==1){
-							$('#frmFornecedores')[0].reset();
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-							alertify.success("Fornecedor atualizado com sucesso!");
-						}else{
-							alertify.error("Não foi possível atualizar fornecedor");
-						}
-					}
-				});
-			})
-		})
+		// 				if(r==1){
+		// 					$('#frmFornecedores')[0].reset();
+		// 					$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+		// 					alertify.success("Fornecedor atualizado com sucesso!");
+		// 				}else{
+		// 					alertify.error("Não foi possível atualizar fornecedor");
+		// 				}
+		// 			}
+		// 		});
+		// 	})
+		// })
 	</script>
 
 

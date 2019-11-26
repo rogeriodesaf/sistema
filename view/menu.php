@@ -30,30 +30,65 @@
 
             
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list-alt"></span> Câmaras Recursais <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="categorias.php">Câmaras</a></li>
-              <li><a href="produtos.php">Inserção de Câmaras  no Sistema</a></li>
-            </ul>
-          </li>
-
+          
 
        
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Cadastro e Gestão de Dados dos Relatores <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Processos de 1ª e 2ª Câmara <span class="caret"></span></a>
+            
             <ul class="dropdown-menu">
-              <li><a href="clientes.php">Dados dos Relatores</a></li>
-              <li><a href="fornecedores.php">Projeto experimental</a></li>
+              <!-- <li><a href="clientes.php">Dados dos Relatores</a></li> -->
+              
+              
+              <li><a href="janeiro.php">Janeiro</a></li>
+              <li><a href="fevereiro.php">Fevereiro</a></li>
+              <li><a href="março.php">Março</a></li>
+              <li><a href="abril.php">Abril</a></li>
+              <li><a href="maio.php">Maio</a></li>
+              <li><a href="junho.php">Junho</a></li>
+              <li><a href="julho.php">Julho</a></li>
+              <li><a href="agosto.php">Agosto</a></li>
+              <li><a href="setembro.php">Setembro</a></li>
+              <li><a href="outubro.php">Outubro</a></li>
+              <li><a href="novembro.php">Novembro</a></li>
+              <li><a href="dezembro.php">Dezembro</a></li>
+              </ul>
+</li>
+<li class="dropdown"> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> 2019 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- <li><a href="clientes.php">Dados dos Relatores</a></li> -->
+              
+              
+              <li><a href="janeiro.php">Janeiro</a></li>
+              <li><a href="fevereiro.php">Fevereiro</a></li>
+              <li><a href="março.php">Março</a></li>
+              <li><a href="abril.php">Abril</a></li>
+              <li><a href="maio.php">Maio</a></li>
+              <li><a href="junho.php">Junho</a></li>
+              <li><a href="julho.php">Julho</a></li>
+              <li><a href="agosto.php">Agosto</a></li>
+              <li><a href="setembro.php">Setembro</a></li>
+              <li><a href="outubro.php">Outubro</a></li>
+              <li><a href="novembro.php">Novembro</a></li>
+              <li><a href="dezembro.php">Dezembro</a></li>
+              </ul>
+
+            
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Total por Relator <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="clientes.php">Total</a></li>
+              
             </ul>
           </li>
 
 
-
-
          
-          <li><a href="vendas.php"><span class="glyphicon glyphicon-list-alt"></span> Processos</a>
-          </li>
+         
+          
           
           <li class="dropdown" >
             <a href="#" style="color: red"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Usuario:   <span class="caret"></span></a>

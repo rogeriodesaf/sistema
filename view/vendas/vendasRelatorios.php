@@ -9,7 +9,7 @@
 
 	$sql="SELECT id_venda,
 				dataCompra,
-				id_cliente 
+				id_relator 
 			from vendas group by id_venda";
 	$result=mysqli_query($conexao,$sql); 
 	?>
@@ -35,10 +35,10 @@
 					<td><?php echo date("d/m/Y", strtotime($ver[1])) ?></td>
 					<td>
 						<?php
-							if($obj->nomeCliente($ver[2])==" "){
+							if($obj->nomeRelator($ver[2])==" "){
 								echo "S/C";
 							}else{
-								echo $obj->nomeCliente($ver[2]);
+								echo $obj->nomeRelator($ver[2]);
 							}
 						 ?>
 					</td>
