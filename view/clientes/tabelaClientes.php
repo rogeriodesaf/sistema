@@ -63,7 +63,14 @@ require_once "../../classes/conexao.php";
 			
 	 		<td>Demetrius</td>
 	 		<td>
-			 
+			 <?php 
+			$sql6= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Demetrius'";
+			echo $sql6;
+
+					
+?>
+
+		
 			 </td>
 	 		<td>
 			 <?php 
