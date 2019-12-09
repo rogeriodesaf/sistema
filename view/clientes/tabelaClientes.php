@@ -62,8 +62,24 @@ require_once "../../classes/conexao.php";
 	<tr>
 			
 	 		<td>Demetrius</td>
-	 		<td></td>
-	 		<td></td>
+	 		<td>
+			 
+			 </td>
+	 		<td>
+			 <?php 
+					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Demetrius'";
+					$buscarrelator = mysqli_query($conexao, $sql5);
+					$valor=0;
+
+					while ($array3 = mysqli_fetch_array( $buscarrelator)) {
+					$valor = $valor + $array3 ['valor'];
+
+					?>
+				
+				<?php } ?>
+		 R$ <?php echo $valor?>
+			 
+			 </td>
 	 		
 			
 			
