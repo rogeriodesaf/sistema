@@ -15,7 +15,7 @@ if(isset($_SESSION['usuario'])){
 		<div class="container">
 			<h1>Relatores</h1>
 			<div class="row">
-				<div class="col-sm-4">
+				<!-- <div class="col-sm-4">
 					<form id="frmClientes">
 						<label>Nome</label>
 						<input type="text" class="form-control input-sm" id="nome" name="nome">
@@ -32,8 +32,8 @@ if(isset($_SESSION['usuario'])){
 						<p></p>
 						<span class="btn btn-primary" id="btnAdicionarCliente">Salvar</span>
 					</form>
-				</div>
-				<div class="col-sm-8">
+				</div> -->
+				<div class="col-sm-10">
 					<div id="tabelaClientesLoad"></div>
 				</div>
 			</div>

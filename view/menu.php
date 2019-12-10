@@ -19,63 +19,89 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail" src="../img/logo procon.png" alt="" width="200px" height="150px"></a>
+          <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail" src="../img/logo procon.png" alt="" width="170px" height="150px"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
 
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right"> <!--deixa os ícones do menu posicionados à direita -->
 
             <li class="active"><a href="inicio.php"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+            </li> <!-- a classe active deixa a parte inicio destacada -->
+
+            
+          
+          <li class="dropdown" >
+            <a href="#" class=" dropdown-toggle" data-toggle="dropdown" role="button"  aria-haspopup="true" aria-expanded="false">Teste<span class="caret"></span></a>
+          <ul class="dropdown-menu row">
+            <li class="col-sm-4" style="min-width:460px;">
+              <h4 >2019</h4>
+              <a href="fevereiro.php">Janeiro</a>
+              <a href="fevereiro.php">Fevereiro</a>
+              <a href="março.php">Março</a>
             </li>
 
-            
-          </li>
-          
+            <li class="col-sm-4" style="min-width:460px;">
+              <h4>2020</h4>
+              <a href="fevereiro.php">Janeiro</a>
+              <a href="fevereiro.php">Fevereiro</a>
+              <a href="março.php">Março</a>
+            </li>
 
+            <li class="col-sm-4" style="min-width:460px;">
+              <h4>2021</h4>
+              <a href="fevereiro.php">Janeiro</a>
+              <a href="fevereiro.php">Fevereiro</a>
+              <a href="março.php">Março</a>
+            </li>
+          </ul>
        
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Processos de 1ª e 2ª Câmara <span class="caret"></span></a>
-            
-            <ul class="dropdown-menu">
-              <!-- <li><a href="clientes.php">Dados dos Relatores</a></li> -->
+              <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Processos de 1ª e 2ª Câmara <span class="caret"></span></a> -->
               
-              
-              <li><a href="janeiro.php">Janeiro</a></li>
-              <li><a href="fevereiro.php">Fevereiro</a></li>
-              <li><a href="março.php">Março</a></li>
-              <li><a href="abril.php">Abril</a></li>
-              <li><a href="maio.php">Maio</a></li>
-              <li><a href="junho.php">Junho</a></li>
-              <li><a href="julho.php">Julho</a></li>
-              <li><a href="agosto.php">Agosto</a></li>
-              <li><a href="setembro.php">Setembro</a></li>
-              <li><a href="outubro.php">Outubro</a></li>
-              <li><a href="novembro.php">Novembro</a></li>
-              <li><a href="dezembro.php">Dezembro</a></li>
-              </ul>
-</li>
-<li class="dropdown"> 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> 2019 <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <!-- <li><a href="clientes.php">Dados dos Relatores</a></li> -->
-              
-              
-              <li><a href="janeiro.php">Janeiro</a></li>
-              <li><a href="fevereiro.php">Fevereiro</a></li>
-              <li><a href="março.php">Março</a></li>
-              <li><a href="abril.php">Abril</a></li>
-              <li><a href="maio.php">Maio</a></li>
-              <li><a href="junho.php">Junho</a></li>
-              <li><a href="julho.php">Julho</a></li>
-              <li><a href="agosto.php">Agosto</a></li>
-              <li><a href="setembro.php">Setembro</a></li>
-              <li><a href="outubro.php">Outubro</a></li>
-              <li><a href="novembro.php">Novembro</a></li>
-              <li><a href="dezembro.php">Dezembro</a></li>
-              </ul>
+                <ul class="dropdown-menu">
+                  <!-- <li><a href="clientes.php">Dados dos Relatores</a></li> -->
+                  
+                   
+                   
+                      
+                  <li><a href="fevereiro.php">Janeiro</a></li>
+                  <li><a href="fevereiro.php">Fevereiro</a></li>
+                  <li><a href="março.php">Março</a></li>
+                  <li><a href="abril.php">Abril</a></li>
+                  <li><a href="maio.php">Maio</a></li>
+                  <li><a href="junho.php">Junho</a></li>
+                  <li><a href="julho.php">Julho</a></li>
+                  <li><a href="agosto.php">Agosto</a></li>
+                  <li><a href="setembro.php">Setembro</a></li>
+                  <li><a href="outubro.php">Outubro</a></li>
+                  <li><a href="novembro.php">Novembro</a></li>
+                  <li><a href="dezembro.php">Dezembro</a></li>
 
-            
+                </ul>
           </li>
+
+          <li class="dropdown"> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> 2019 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <!-- <li><a href="clientes.php">Dados dos Relatores</a></li> -->
+                
+                
+                <li><a href="janeiro.php">Janeiro</a></li>
+                <li><a href="fevereiro.php">Fevereiro</a></li>
+                <li><a href="março.php">Março</a></li>
+                <li><a href="abril.php">Abril</a></li>
+                <li><a href="maio.php">Maio</a></li>
+                <li><a href="junho.php">Junho</a></li>
+                <li><a href="julho.php">Julho</a></li>
+                <li><a href="agosto.php">Agosto</a></li>
+                <li><a href="setembro.php">Setembro</a></li>
+                <li><a href="outubro.php">Outubro</a></li>
+                <li><a href="novembro.php">Novembro</a></li>
+                <li><a href="dezembro.php">Dezembro</a></li>
+                </ul>
+
+              
+            </li>
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Total por Relator <span class="caret"></span></a>

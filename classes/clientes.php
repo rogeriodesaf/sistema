@@ -7,12 +7,13 @@ class clientes{
 
 		
 
-		$sql = "INSERT into clientes (id_usuario, nome, sobrenome, endereco, email, telefone, cpf) VALUES ('$dados[0]', '$dados[1]', 
+		$sql = "INSERT into relatores (id_relator, ,id_usuario,nome,sobrenome, endereco, email, telefone, cpf) VALUES ('$dados[0]', '$dados[1]', 
 		   '$dados[2]',
 		   '$dados[3]',
 			'$dados[4]',
 			'$dados[5]',
-			'$dados[6]')";
+			'$dados[6]',
+			'$dados[7]')";
 
 
 
@@ -26,14 +27,14 @@ class clientes{
 		$c = new conectar();
 		$conexao=$c->conexao();
 
-		$sql = "SELECT id_cliente, nome, sobrenome, endereco, email, telefone, cpf from clientes where id_cliente='$idcliente' ";
+		$sql = "SELECT id_relator, nome, sobrenome, endereco, email, telefone, cpf from relatores where id_relator='$idcliente' ";
 
 			$result = mysqli_query($conexao, $sql);
 			$mostrar = mysqli_fetch_row($result);
 
 
 			$dados = array(
-				'id_cliente' => $mostrar[0],
+				'id_relator' => $mostrar[0],
 				'nome' => $mostrar[1],
 				'sobrenome' => $mostrar[2],
 				'endereco' => $mostrar[3],

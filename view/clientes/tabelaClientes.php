@@ -12,7 +12,7 @@ require_once "../../classes/conexao.php";
 ?>
 
 
-<!-- <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+ <!-- <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Relatores</label></caption>
 	<tr>
 			<td>Nome</td>
@@ -25,30 +25,30 @@ require_once "../../classes/conexao.php";
 		<td>Excluir</td>
 	</tr>
 
-	<?php while($mostrar = mysqli_fetch_row($result)): ?>
+	<?php //while($mostrar = mysqli_fetch_row($result)): ?>
 
 	<tr>
-		<td><?php echo $mostrar[1]; ?></td>
-		<td><?php echo $mostrar[2]; ?></td>
-		<td><?php echo $mostrar[3]; ?></td>
-		<td><?php echo $mostrar[4]; ?></td>
-		<td><?php echo $mostrar[5]; ?></td>
-		<td><?php echo $mostrar[6]; ?></td>
+		<td><?php //echo $mostrar[1]; ?></td>
+		<td><?php //echo $mostrar[2]; ?></td>
+		<td><?php //echo $mostrar[3]; ?></td>
+		<td><?php //echo $mostrar[4]; ?></td>
+		<td><?php //echo $mostrar[5]; ?></td>
+		<td><?php //echo $mostrar[6]; ?></td>
 		<td>
-			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalRelatoresUpdate" onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
+			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalRelatoresUpdate" onclick="adicionarDado('<?php echo $mostrar[7]; ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
 			</span>
 		</td>
 		<td>
-			<span class="btn btn-danger btn-xs" onclick="eliminarRelator('<?php echo $mostrar[0]; ?>')">
+			<span class="btn btn-danger btn-xs" onclick="eliminarRelator('<?php echo $mostrar[8]; ?>')">
 				<span class="glyphicon glyphicon-remove"></span>
 			</span>
 		</td>
 	</tr>
 
 
-<?php endWhile; ?> -->
-</table>
+<?php //endWhile; ?> 
+</table> -->
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 <caption><label>Total por Relator</label></caption>
 <tr>
@@ -64,11 +64,22 @@ require_once "../../classes/conexao.php";
 	 		<td>Demetrius</td>
 	 		<td>
 			 <?php 
-			$sql6= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Demetrius'";
-			echo $sql6;
+			 $sql6= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Demetrius'";
+			 $buscar = mysqli_query($conexao, $sql6);
+			$Qtd=0;
 
+			while ($array4 = mysqli_fetch_array( $buscar)) {
+				$Qtd = $Qtd + $array4 ['Qtd'];
+				?>
+				
+				<?php } ?>
+		  <?php echo $Qtd?>
+
+			
+			
+			
 					
-?>
+
 
 		
 			 </td>
@@ -94,48 +105,211 @@ require_once "../../classes/conexao.php";
 	<tr>
 			
 	 		<td>Edson</td>
-	 		<td></td>
-	 		<td></td>
+	 		<td>
+			 <?php 
+				$sql7= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Edson'";
+				$buscar = mysqli_query($conexao, $sql7);
+				$Qtd=0;
+
+				while ($array5 = mysqli_fetch_array( $buscar)) {
+					$Qtd = $Qtd + $array5 ['Qtd'];
+					?>
+				
+				<?php } ?>
+		  <?php echo $Qtd?>
+
+			
+			
+			
+
+			 </td>
+	 		<td>
+			 <?php 
+					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Edson'";
+					$buscarrelator = mysqli_query($conexao, $sql5);
+					$valor=0;
+
+					while ($array3 = mysqli_fetch_array( $buscarrelator)) {
+					$valor = $valor + $array3 ['valor'];
+
+					?>
+				
+				<?php } ?>
+		 R$ <?php echo $valor?>
+			 </td>
 			
 			
 	</tr>
 	<tr>
 			
 	 		<td>Filipe</td>
-	 		<td></td>
-	 		<td></td>
+	 		<td>
+			 <?php 
+				$sql9= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Filipe'";
+				$buscar = mysqli_query($conexao, $sql9);
+				$Qtd=0;
+
+				while ($array9 = mysqli_fetch_array( $buscar)) {
+					$Qtd = $Qtd + $array9 ['Qtd'];
+					?>
+				
+				<?php } ?>
+		  <?php echo $Qtd?>
+
+
+
+			 </td>
+	 		<td>
+			 <?php 
+					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Filipe'";
+					$buscarrelator = mysqli_query($conexao, $sql5);
+					$valor=0;
+
+					while ($array3 = mysqli_fetch_array( $buscarrelator)) {
+					$valor = $valor + $array3 ['valor'];
+
+					?>
+				
+				<?php } ?>
+		 R$ <?php echo $valor?>
+			 </td>
 			
 	</tr>
 	<tr>
 			
 	 		
-	 		<td>Meriene</td>
-	 		<td></td>
-	 		<td></td>
+	 		<td>Emannuel</td>
+	 		<td>
+			 <?php 
+				$sql21= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Emannuel'";
+				$buscar = mysqli_query($conexao, $sql21);
+				$Qtd=0;
+
+				while ($array21 = mysqli_fetch_array( $buscar)) {
+					$Qtd = $Qtd + $array21 ['Qtd'];
+					?>
+				
+				<?php } ?>
+		  <?php echo $Qtd?>
+
+		</td>
+	 		<td>
+			 <?php 
+					$sql18="SELECT sum(valor) as valor from fornecedores where relator='Emannuel'";
+					$buscarrelator = mysqli_query($conexao, $sql18);
+					$valor=0;
+
+					while ($array3 = mysqli_fetch_array( $buscarrelator)) {
+					$valor = $valor + $array3 ['valor'];
+
+					?>
+				
+				<?php } ?>
+		 R$ <?php echo $valor?>
+
+			 </td>
 			
 			
 	</tr>
 	<tr>
 			
 	 		<td>Cyro</td>
-	 		<td></td>
-	 		<td></td>
+	 		<td>
+					<?php 
+					$sql10= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Cyro'";
+					$buscar = mysqli_query($conexao, $sql10);
+					$Qtd=0;
+
+					while ($array10 = mysqli_fetch_array( $buscar)) {
+						$Qtd = $Qtd + $array10 ['Qtd'];
+						?>
+						
+						<?php } ?>
+				<?php echo $Qtd?>
+			 </td>
+	 		<td>
+
+					<?php 
+							$sql11="SELECT sum(valor) as valor from fornecedores where relator='Filipe'";
+							$buscarrelator = mysqli_query($conexao, $sql11);
+							$valor=0;
+
+							while ($array11 = mysqli_fetch_array( $buscarrelator)) {
+							$valor = $valor + $array11 ['valor'];
+
+							?>
+						
+						<?php } ?>
+				R$ <?php echo $valor?>
+			 </td>
 			
 			
 	</tr>
 	<tr>
 			
 	 		<td>Juliana</td>
-	 		<td></td>
-	 		<td></td>
+	 		<td>
+			 <?php 
+					$sql12= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Juliana'";
+					$buscar = mysqli_query($conexao, $sql12);
+					$Qtd=0;
+
+					while ($array12 = mysqli_fetch_array( $buscar)) {
+						$Qtd = $Qtd + $array12 ['Qtd'];
+						?>
+						
+						<?php } ?>
+				<?php echo $Qtd?>
+			 </td>
+	 		<td>
+			 <?php 
+							$sql11="SELECT sum(valor) as valor from fornecedores where relator='Juliana'";
+							$buscarrelator = mysqli_query($conexao, $sql11);
+							$valor=0;
+
+							while ($array13 = mysqli_fetch_array( $buscarrelator)) {
+							$valor = $valor + $array13 ['valor'];
+
+							?>
+						
+						<?php } ?>
+				R$ <?php echo $valor?>
+			 </td>
 			
 			
 	</tr>
 	<tr>
 			
 	 		<td>Sérgio</td>
-			 <td></td>
-	 		<td></td>
+			 <td>
+			 <?php 
+					$sql14= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Sérgio'";
+					$buscar = mysqli_query($conexao, $sql14);
+					$Qtd=0;
+
+					while ($array14 = mysqli_fetch_array( $buscar)) {
+						$Qtd = $Qtd + $array14 ['Qtd'];
+						?>
+						
+						<?php } ?>
+				<?php echo $Qtd?>
+			 </td>
+	 		<td>
+			 <?php 
+							$sql16="SELECT sum(valor) as valor from fornecedores where relator='Sérgio'";
+							$buscarrelator = mysqli_query($conexao, $sql16);
+							$valor=0;
+
+							while ($array13 = mysqli_fetch_array( $buscarrelator)) {
+							$valor = $valor + $array13 ['valor'];
+
+							?>
+						
+						<?php } ?>
+				R$ <?php echo $valor?>
+
+
+			 </td>
 			
 			
 	</tr>

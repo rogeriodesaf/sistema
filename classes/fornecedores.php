@@ -41,7 +41,7 @@ class fornecedores{
 				'valor' => $mostrar[6],
 				'data' => $mostrar[7],
 				'ano' => $mostrar[8],
-				'total' => $mostrar[9],
+				// 'total' => $mostrar[9],
 			);
 
 			return $dados;

@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['usuario'])){
 
-	?>
+	?>    <!--verificação para saber se existe usuário logado-->
 
 
 	<!DOCTYPE html>
@@ -36,7 +36,7 @@ if(isset($_SESSION['usuario'])){
 						<option>Demetrius</option>
 						<option>Edson</option>
 						<option>Filipe</option>
-						<option>Meriene</option>
+						<option>Emannuel</option>
 						<option>Cyro</option>
 						<option>Juliana</option>
 						<option>Sérgio</option>
@@ -53,11 +53,13 @@ if(isset($_SESSION['usuario'])){
 						<label>Ano</label>
 						<input type="number" class="form-control input-sm" id="data" name="ano">
 						<p></p>
-						<span class="btn btn-primary" id="btnAdicionarFornecedores">Salvar</span>   <!-- btnAcidionarFornecedores é o botão entrar que ao ser clicado carregará a div tabelaFornecedores na linha 138 -->
+						 <!-- essa span é onde está o botão salvar. Ao ser clicado será acionado o id btnAdicionarFornecedores -->
+						<span class="btn btn-primary" id="btnAdicionarFornecedores">Salvar</span>  
 					</form>
 				</div>
-				<div class="col-sm-8">
-					<div id="tabelaFornecedoresLoad"></div>
+				<!--div que carrega do lado direito da página e recebe os valores digitados do lado esquerdo. Note que uma tem col-sm-4 e a outra col-sm-8, o que soma 12-->
+				<div class="col-sm-6">
+					<div id="tabelaFornecedoresLoad"></div>  
 				</div>
 			</div>
 		</div>
@@ -122,7 +124,7 @@ if(isset($_SESSION['usuario'])){
 					$('#idfornecedorU').val(dado['id_fornecedor']);
 					$('#nrofaU').val(dado['nrofa']);
 					$('#consumidorU').val(dado['consumidor']);
-					$('#forneceodorU').val(dado['fornecedor']);
+					$('#fornecedorU').val(dado['fornecedor']);
 					$('#camaraU').val(dado['camara']);
 					$('#relatorU').val(dado['relator']);
 					$('#valorU').val(dado['valor']);
@@ -195,33 +197,33 @@ if(isset($_SESSION['usuario'])){
 	</script>
 
 	<script type="text/javascript">
-		// $(document).ready(function(){
-		// 	$('#btnAdicionarFornecedorU').click(function(){
-		// 		dados=$('#frmFornecedoresU').serialize();
+		 $(document).ready(function(){
+		 	$('#btnAdicionarFornecedorU').click(function(){
+				dados=$('#frmFornecedoresU').serialize();
 
-		// 		$.ajax({
-		// 			type:"POST",
-		// 			data:dados,
-		// 			url:"../procedimentos/fornecedores/atualizarFornecedores.php",
-		// 			success:function(r){
+				$.ajax({
+					type:"POST",
+					data:dados,
+					url:"../procedimentos/fornecedores/atualizarFornecedores.php",
+					success:function(r){
 
 						
-		// 				if(r==1){
-		// 					$('#frmFornecedores')[0].reset();
-		// 					$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-		// 					alertify.success("Fornecedor atualizado com sucesso!");
-		// 				}else{
-		// 					alertify.error("Não foi possível atualizar fornecedor");
-		// 				}
-		// 			}
-		// 		});
-		// 	})
-		// })
+					if(r==1){
+						$('#frmFornecedores')[0].reset();
+							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+		 					alertify.success("Fornecedor atualizado com sucesso!");
+		 				}else{
+		 					alertify.error("Não foi possível atualizar fornecedor");
+		 				}
+					}
+		 		});
+		 	})
+		 })
 	</script>
 
 
 	<?php 
 }else{
-	header("location:../index.php");
+	header("location:../index.php");  //fim da verificação, se não existir funcionário logado o usuário é redirecionado para a pasta index
 }
 ?>
