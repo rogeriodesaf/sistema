@@ -2,11 +2,11 @@
 
 
 require_once "../../classes/conexao.php";
-require_once "../../classes/fornecedores.php";
+require_once "../../classes/processos.php";
 
 
 
-$obj = new fornecedores();
+$obj = new processos();
 
 
 
@@ -27,3 +27,6 @@ $dados=array(
 echo $obj->atualizar($dados);
 
  ?>
+
+
+ 

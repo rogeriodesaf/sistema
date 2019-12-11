@@ -1,10 +1,10 @@
 <?php 
 
 require_once "../../classes/conexao.php";
-require_once "../../classes/fornecedores.php";
+require_once "../../classes/processos.php";
 
 
-$obj = new fornecedores();
+$obj = new processos();
 
 echo json_encode($obj->obterDados($_POST['idfornecedor']));
 

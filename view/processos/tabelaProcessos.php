@@ -14,7 +14,7 @@ require_once "../../classes/conexao.php";
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
 	<caption><label>Processos</label></caption>
-	<tr>
+	<tr  style="background-color: SlateGrey;">
 			<td>Nro FA</td>
 	 		<td>Consumidor</td>
 	 		<td>Fornecedor</td>
@@ -80,8 +80,9 @@ require_once "../../classes/conexao.php";
 <tr>
 	<td>
 		<?php
+		//código php para somar os valores da primeira sessão se o mês for Janeiro.		
 
-			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1'";
+			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '1'";   //SELECT sum(valor) as valor from fornecedores where camara='1'"
 			$buscarDb = mysqli_query($conexao, $total2Grau);
 			$valor=0;
 
@@ -104,8 +105,10 @@ require_once "../../classes/conexao.php";
 
 <tr>
 	<td>
+	
 		<?php
-			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2'";
+		//código php para somar os valores da segunda sessão se o mês for Janeiro.	
+			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '1'";
 			$buscarDb = mysqli_query($conexao, $total2Grau);
 			$valor=0;
 
@@ -129,6 +132,7 @@ require_once "../../classes/conexao.php";
 <tr>
 <td>
 <?php
+//código php para somar o total dos valores .
 
 $sql2 = "SELECT * FROM fornecedores";
 $buscar2 = mysqli_query($conexao, $sql2);

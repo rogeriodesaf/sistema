@@ -14,9 +14,9 @@ if(isset($_SESSION['usuario'])){
 	<body>
 		<div class="container">
 			<h1>Processos</h1>
-			<div class="row">
-				<div class="col-sm-4">
-					<form id="frmFornecedores">
+			<div class="row" >
+				<div class="col-sm-4" >
+					<form id="frmFornecedores" >
 						<label>N° FA</label>
 						<input type="number" class="form-control input-sm" id="nrofa" name="nrofa">
 						<label>Consumidor</label>
@@ -113,7 +113,7 @@ if(isset($_SESSION['usuario'])){
 			$.ajax({
 				type:"POST",
 				data:"idfornecedor=" + idfornecedor,
-				url:"../procedimentos/fornecedores/obterDadosFornecedores.php",
+				url:"../procedimentos/processos/obterDadosProcessos.php",
 				success:function(r){
 
 
@@ -138,17 +138,17 @@ if(isset($_SESSION['usuario'])){
 		}
 // Eliminar fornecedores
 		function eliminar(idfornecedor){
-			alertify.confirm('Deseja Excluir este fornecedor?', function(){ 
+			alertify.confirm('Deseja Excluir este registro?', function(){ 
 				$.ajax({
 					type:"POST",
 					data:"idfornecedor=" + idfornecedor,
-					url:"../procedimentos/fornecedores/eliminarFornecedores.php",
+					url:"../procedimentos/processos/eliminarProcessos.php",
 					success:function(r){
 
 
 
 						if(r==1){
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+							$('#tabelaFornecedoresLoad').load("processos/tabelaProcessos.php");
 							alertify.success("Excluido com sucesso!!");
 						}else{
 							alertify.error("Não foi possível excluir");
@@ -164,7 +164,7 @@ if(isset($_SESSION['usuario'])){
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+			$('#tabelaFornecedoresLoad').load("processos/tabelaProcessos.php");
 
 			$('#btnAdicionarFornecedores').click(function(){
 
@@ -180,13 +180,13 @@ if(isset($_SESSION['usuario'])){
 				$.ajax({
 					type:"POST",
 					data:dados,
-					url:"../procedimentos/fornecedores/adicionarFornecedores.php",
+					url:"../procedimentos/processos/adicionarProcessos.php",
 					success:function(r){
 
 						if(r==1){
 							$('#frmFornecedores')[0].reset();
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-							alertify.success("Fornecedor Adicionado");
+							$('#tabelaFornecedoresLoad').load("processos/tabelaProcessos.php");   //para adicionar novo registro
+							alertify.success("Registro Adicionado");
 						}else{
 							alertify.error("Não foi possível adicionar");
 						}
@@ -204,14 +204,14 @@ if(isset($_SESSION['usuario'])){
 				$.ajax({
 					type:"POST",
 					data:dados,
-					url:"../procedimentos/fornecedores/atualizarFornecedores.php",
+					url:"../procedimentos/processos/atualizarProcessos.php",
 					success:function(r){
 
 						
 					if(r==1){
 						$('#frmFornecedores')[0].reset();
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-		 					alertify.success("Fornecedor atualizado com sucesso!");
+							$('#tabelaFornecedoresLoad').load("processos/tabelaProcessos.php");
+		 					alertify.success("Registro atualizado com sucesso!");
 		 				}else{
 		 					alertify.error("Não foi possível atualizar fornecedor");
 		 				}

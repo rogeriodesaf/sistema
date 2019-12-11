@@ -8,7 +8,7 @@ if(isset($_SESSION['usuario'])){
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>fornecedores</title>
+		<title>Processos</title>
 		<?php require_once "menu.php"; ?>
 	</head>
 	<body>
@@ -111,7 +111,7 @@ if(isset($_SESSION['usuario'])){
 			$.ajax({
 				type:"POST",
 				data:"idfornecedor=" + idfornecedor,
-				url:"../procedimentos/fornecedores/obterDadosFornecedores.php",
+				url:"../procedimentos/processos/obterDadosFornecedores.php",
 				success:function(r){
 
 
@@ -136,17 +136,17 @@ if(isset($_SESSION['usuario'])){
 		}
 // Eliminar fornecedores
 		function eliminar(idfornecedor){
-			alertify.confirm('Deseja Excluir este fornecedor?', function(){ 
+			alertify.confirm('Deseja Excluir este Registro?', function(){ 
 				$.ajax({
 					type:"POST",
 					data:"idfornecedor=" + idfornecedor,
-					url:"../procedimentos/fornecedores/eliminarFornecedores.php",
+					url:"../procedimentos/processos/eliminarProcessos.php",
 					success:function(r){
 
 
 
 						if(r==1){
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+							$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosMarco.php");
 							alertify.success("Excluido com sucesso!!");
 						}else{
 							alertify.error("Não foi possível excluir");
@@ -162,7 +162,7 @@ if(isset($_SESSION['usuario'])){
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+			$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosMarco.php");
 
 			$('#btnAdicionarFornecedores').click(function(){
 
@@ -178,12 +178,12 @@ if(isset($_SESSION['usuario'])){
 				$.ajax({
 					type:"POST",
 					data:dados,
-					url:"../procedimentos/fornecedores/adicionarFornecedores.php",
+					url:"../procedimentos/processos/adicionarProcessos.php",
 					success:function(r){
 
 						if(r==1){
 							$('#frmFornecedores')[0].reset();
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+							$('#tabelaFornecedoresLoad').load("processos/adicionarProcessos.php");
 							alertify.success("Fornecedor Adicionado");
 						}else{
 							alertify.error("Não foi possível adicionar");

@@ -1,6 +1,6 @@
 <?php 
 
-class fornecedores{
+class processos{                                             //class fornecedores{
 	public function adicionar($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();

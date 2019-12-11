@@ -107,6 +107,19 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Total por Relator <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="clientes.php">Total</a></li>
+              <li><a href="clientes1.php">Janeiro</a></li>
+              <li><a href="clientes2.php">Fevereiro</a></li>
+              <li><a href="clientes3.php">Março</a></li>
+                <li><a href="clientes4.php">Abril</a></li>
+                <li><a href="clientes5.php">Maio</a></li>
+                <li><a href="clientes6.php">Junho</a></li>
+                <li><a href="clientes7.php">Julho</a></li>
+                <li><a href="clientes8.php">Agosto</a></li>
+                <li><a href="clientes9.php">Setembro</a></li>
+                <li><a href="clientes10.php">Outubro</a></li>
+                <li><a href="clientes11.php">Novembro</a></li>
+                <li><a href="clientes12.php">Dezembro</a></li>
+
               
             </ul>
           </li>

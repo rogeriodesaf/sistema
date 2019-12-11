@@ -25,8 +25,8 @@ if(isset($_SESSION['usuario'])){
 						<input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
 						<label>Grau da Sessão</label>
         				<select class="form-control input-sm" id="camara" name="camara">
-						<option >1 sessão </option>
-						<option> 2 sessão </option>
+						<option >1  </option>
+						<option> 2  </option>
         				</select>
 						<label>Relatores</label>
 						<select class="form-control input-sm" id="relator" name="relator">
@@ -111,7 +111,7 @@ if(isset($_SESSION['usuario'])){
 			$.ajax({
 				type:"POST",
 				data:"idfornecedor=" + idfornecedor,
-				url:"../procedimentos/fornecedores/obterDadosFornecedores.php",
+				url:"../procedimentos/processos/obterDadosProcessos.php",
 				success:function(r){
 
 
@@ -140,13 +140,13 @@ if(isset($_SESSION['usuario'])){
 				$.ajax({
 					type:"POST",
 					data:"idfornecedor=" + idfornecedor,
-					url:"../procedimentos/fornecedores/eliminarFornecedores.php",
+					url:"../procedimentos/processos/eliminarProcessos.php",
 					success:function(r){
 
 
 
 						if(r==1){
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+							$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosFevereiro.php");
 							alertify.success("Excluido com sucesso!!");
 						}else{
 							alertify.error("Não foi possível excluir");
@@ -162,7 +162,7 @@ if(isset($_SESSION['usuario'])){
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+			$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosFevereiro.php");
 
 			$('#btnAdicionarFornecedores').click(function(){
 
@@ -178,13 +178,13 @@ if(isset($_SESSION['usuario'])){
 				$.ajax({
 					type:"POST",
 					data:dados,
-					url:"../procedimentos/fornecedores/adicionarFornecedores.php",
+					url:"../procedimentos/processos/adicionarProcessos.php",
 					success:function(r){
 
 						if(r==1){
 							$('#frmFornecedores')[0].reset();
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-							alertify.success("Fornecedor Adicionado");
+							$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosFevereiro.php");
+							alertify.success("Registro Adicionado");
 						}else{
 							alertify.error("Não foi possível adicionar");
 						}
@@ -195,28 +195,28 @@ if(isset($_SESSION['usuario'])){
 	</script>
 
 	<script type="text/javascript">
-		// $(document).ready(function(){
-		// 	$('#btnAdicionarFornecedorU').click(function(){
-		// 		dados=$('#frmFornecedoresU').serialize();
+		 $(document).ready(function(){
+		 	$('#btnAdicionarFornecedorU').click(function(){
+		 		dados=$('#frmFornecedoresU').serialize();
 
-		// 		$.ajax({
-		// 			type:"POST",
-		// 			data:dados,
-		// 			url:"../procedimentos/fornecedores/atualizarFornecedores.php",
-		// 			success:function(r){
+	 		$.ajax({
+		 			type:"POST",
+					data:dados,
+					url:"../procedimentos/processos/atualizarProcessos.php",
+					success:function(r){
 
-						
-		// 				if(r==1){
-		// 					$('#frmFornecedores')[0].reset();
-		// 					$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-		// 					alertify.success("Fornecedor atualizado com sucesso!");
-		// 				}else{
-		// 					alertify.error("Não foi possível atualizar fornecedor");
-		// 				}
-		// 			}
-		// 		});
-		// 	})
-		// })
+			
+					if(r==1){
+		$('#frmFornecedores')[0].reset();
+		 					$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosFevereiro.php");
+							alertify.success("Registro atualizado com sucesso!");
+						}else{
+							alertify.error("Não foi possível atualizar fornecedor");
+				}
+					}
+	 		});
+	 	})
+	 })
 	</script>
 
 
