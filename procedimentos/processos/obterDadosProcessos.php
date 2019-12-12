@@ -6,7 +6,7 @@ require_once "../../classes/processos.php";
 
 $obj = new processos();
 
-echo json_encode($obj->obterDados($_POST['idfornecedor']));
+echo json_encode($obj->obterDados($_POST['idprocesso']));
 
 
  ?>

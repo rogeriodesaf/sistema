@@ -140,13 +140,13 @@ if(isset($_SESSION['usuario'])){
 				$.ajax({
 					type:"POST",
 					data:"idfornecedor=" + idfornecedor,
-					url:"../procedimentos/processos/eliminarFornecedores.php",
+					url:"../procedimentos/processos/eliminarProcessos.php",
 					success:function(r){
 
 
 
 						if(r==1){
-							$('#tabelaFornecedoresLoad').load("processos/tabelaFornecedores.php");
+							$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosAbril.php");
 							alertify.success("Excluido com sucesso!!");
 						}else{
 							alertify.error("Não foi possível excluir");
@@ -162,7 +162,7 @@ if(isset($_SESSION['usuario'])){
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			$('#tabelaFornecedoresLoad').load("processos/tabelaFornecedores.php");
+			$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosAbril.php");
 
 			$('#btnAdicionarFornecedores').click(function(){
 
@@ -178,12 +178,12 @@ if(isset($_SESSION['usuario'])){
 				$.ajax({
 					type:"POST",
 					data:dados,
-					url:"../procedimentos/processos/adicionarFornecedores.php",
+					url:"../procedimentos/processos/adicionarProcessos.php",
 					success:function(r){
 
 						if(r==1){
 							$('#frmFornecedores')[0].reset();
-							$('#tabelaFornecedoresLoad').load("processos/tabelaFornecedores.php");
+							$('#tabelaFornecedoresLoad').load("processos/tabelaProcessosAbril.php");
 							alertify.success("Registro Adicionado");
 						}else{
 							alertify.error("Não foi possível adicionar");

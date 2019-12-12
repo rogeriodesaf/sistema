@@ -6,7 +6,7 @@ require_once "../../classes/conexao.php";
 	$c = new conectar();
 		$conexao=$c->conexao();
 
-	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores";
+	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '1'";
 	$result = mysqli_query($conexao, $sql);
 
 ?>
@@ -49,12 +49,13 @@ require_once "../../classes/conexao.php";
 		<td><?php echo $mostrar[6]; ?></td>
 		<td><?php echo $mostrar[7]; ?></td>
 		<td><?php echo $mostrar[8]; ?></td>
+		
 
 		
 	
 		
 		<td>
-			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalFornecedoresUpdate" onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
+			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate" onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
 			</span>
 		</td>
@@ -92,7 +93,7 @@ require_once "../../classes/conexao.php";
 	
 		<?php } ?>
 	 	R$ <?php echo $valor?>
-
+    </td>
 </tr>
 
 

@@ -11,7 +11,7 @@ $obj = new processos();
 
 
 $dados=array(
-	$_POST['idfornecedorU'],
+	$_POST['idprocessoU'],
 	$_POST['nrofaU'],
 	$_POST['consumidorU'],
 	$_POST['fornecedorU'],
