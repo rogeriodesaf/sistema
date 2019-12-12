@@ -8,7 +8,7 @@ if(isset($_SESSION['usuario'])){
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>fornecedores</title>
+		<title>Processos Fevereiro</title>
 		<?php require_once "menu.php"; ?>
 	</head>
 	<body>
@@ -136,7 +136,7 @@ if(isset($_SESSION['usuario'])){
 		}
 // Eliminar fornecedores
 		function eliminar(idprocesso){
-			alertify.confirm('Deseja Excluir este fornecedor?', function(){ 
+			alertify.confirm('Deseja Excluir este registro?', function(){ 
 				$.ajax({
 					type:"POST",
 					data:"idprocesso=" + idprocesso,

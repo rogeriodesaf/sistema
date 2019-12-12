@@ -6,7 +6,7 @@ require_once "../../classes/conexao.php";
 	$c = new conectar();
 		$conexao=$c->conexao();
 
-	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores";
+	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '3'";
 	$result = mysqli_query($conexao, $sql);
 
 ?>
@@ -18,7 +18,7 @@ require_once "../../classes/conexao.php";
 			<td>Nro FA</td>
 	 		<td>Consumidor</td>
 	 		<td>Fornecedor</td>
-	 		<td>Câmara</td>
+	 		<td>Sessão</td>
 	 		<td>Relator</td>
 	 		<td>Valor</td>
 	 		<td>Data</td>
@@ -54,7 +54,7 @@ require_once "../../classes/conexao.php";
 	
 		
 		<td>
-			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalFornecedoresUpdate" onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
+			<span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate" onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
 				<span class="glyphicon glyphicon-pencil"></span>
 			</span>
 		</td>
@@ -123,14 +123,41 @@ require_once "../../classes/conexao.php";
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
 <tr>
-<td style="background-color: SlateGrey;">Total dos valores.</td>
+<td style="background-color: SlateGrey;">Total dos valores no mês.</td>
 </tr>
 
 <tr>
 <td>
 <?php
 
-$sql2 = "SELECT * FROM fornecedores";
+$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '3'";
+$buscar2 = mysqli_query($conexao, $sql2);
+$valor=0;
+while ($array2 = mysqli_fetch_array($buscar2)) {
+	$id_fornecedor  = $array2['id_fornecedor'];
+	$valor = $valor + $array2 ['valor'];
+	?>
+	
+
+	
+	
+	<?php } ?>
+	 R$ <?php echo $valor?>
+
+</tr>
+
+
+</table>
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
+<tr>
+<td style="background-color: SlateGrey;">Total dos valores anual.</td>
+</tr>
+
+<tr>
+<td>
+<?php
+
+$sql2 = "SELECT * FROM fornecedores ";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor=0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
