@@ -1,10 +1,11 @@
 <?php 
 
 class processos{                                             //class fornecedores{
-	public function adicionar($dados){
+	public function adicionar($dados){  // ver adicionarProcessos.php na linha 31
 		$c = new conectar();
 		$conexao=$c->conexao();
 
+		// insira na tabela de fornecedores... esses dados estão indo para a linha 18 de adicionarProcessos. Note que lá a ordem é a mesma e a quantidade de campos também.
 		
 
 		$sql = "INSERT into fornecedores (id_usuario, nrofa, consumidor, fornecedor, camara, relator, valor,data,ano) VALUES ('$dados[0]', '$dados[1]', 
@@ -18,10 +19,11 @@ class processos{                                             //class fornecedore
 
 
 		return mysqli_query($conexao, $sql);
+		// isso gera por padrão o valor 1. Lá nas páginas dos meses se a função for 1 é porque os dados foram adicionados.
 	}
 
-
-	public function obterDados($id){
+//função que irá atualizar os dados da janela modal.
+	public function obterDados($id){  //esse $id tem que ser igual ao da linha 28.
 		$c = new conectar();
 		$conexao=$c->conexao();
 
@@ -48,12 +50,12 @@ class processos{                                             //class fornecedore
 
 	}
 
-
+//função para atualizar dados no modal.
 	public function atualizar($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
 
-		
+//o comando UPDATE atualiza os dados.		
 
 $sql = "UPDATE fornecedores SET nrofa = '$dados[1]', consumidor = '$dados[2]',fornecedor = '$dados[3]',camara = '$dados[4]',relator = '$dados[5]',valor = '$dados[6]',data= '$dados[7]', ano='$dados[8]' where id_fornecedor = '$dados[0]'";
 

@@ -64,7 +64,7 @@ require_once "../../classes/conexao.php";
 	 		<td>Demetrius</td>
 	 		<td>
 			 <?php 
-			 $sql6= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Demetrius'";
+			 $sql6= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Demetrius' and MONTH(data) = '6'";
 			 $buscar = mysqli_query($conexao, $sql6);
 			$Qtd=0;
 
@@ -85,7 +85,7 @@ require_once "../../classes/conexao.php";
 			 </td>
 	 		<td>
 			 <?php 
-					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Demetrius'";
+					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Demetrius' and MONTH(data) = '6'";
 					$buscarrelator = mysqli_query($conexao, $sql5);
 					$valor=0;
 
@@ -107,7 +107,7 @@ require_once "../../classes/conexao.php";
 	 		<td>Edson</td>
 	 		<td>
 			 <?php 
-				$sql7= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Edson'";
+				$sql7= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Edson' and MONTH(data) = '6'";
 				$buscar = mysqli_query($conexao, $sql7);
 				$Qtd=0;
 
@@ -125,7 +125,7 @@ require_once "../../classes/conexao.php";
 			 </td>
 	 		<td>
 			 <?php 
-					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Edson'";
+					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Edson' and MONTH(data) = '6'";
 					$buscarrelator = mysqli_query($conexao, $sql5);
 					$valor=0;
 
@@ -145,7 +145,7 @@ require_once "../../classes/conexao.php";
 	 		<td>Filipe</td>
 	 		<td>
 			 <?php 
-				$sql9= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Filipe'";
+				$sql9= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Filipe' and MONTH(data) = '6'";
 				$buscar = mysqli_query($conexao, $sql9);
 				$Qtd=0;
 
@@ -161,7 +161,7 @@ require_once "../../classes/conexao.php";
 			 </td>
 	 		<td>
 			 <?php 
-					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Filipe'";
+					$sql5="SELECT sum(valor) as valor from fornecedores where relator='Filipe' and MONTH(data) = '6'";
 					$buscarrelator = mysqli_query($conexao, $sql5);
 					$valor=0;
 
@@ -181,7 +181,7 @@ require_once "../../classes/conexao.php";
 	 		<td>Emannuel</td>
 	 		<td>
 			 <?php 
-				$sql21= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Emannuel'";
+				$sql21= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Emannuel' and MONTH(data) = '6'";
 				$buscar = mysqli_query($conexao, $sql21);
 				$Qtd=0;
 
@@ -195,7 +195,7 @@ require_once "../../classes/conexao.php";
 		</td>
 	 		<td>
 			 <?php 
-					$sql18="SELECT sum(valor) as valor from fornecedores where relator='Emannuel'";
+					$sql18="SELECT sum(valor) as valor from fornecedores where relator='Emannuel' and MONTH(data) = '6'";
 					$buscarrelator = mysqli_query($conexao, $sql18);
 					$valor=0;
 
@@ -216,7 +216,7 @@ require_once "../../classes/conexao.php";
 	 		<td>Cyro</td>
 	 		<td>
 					<?php 
-					$sql10= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Cyro'";
+					$sql10= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Cyro' and MONTH(data) = '6'";
 					$buscar = mysqli_query($conexao, $sql10);
 					$Qtd=0;
 
@@ -230,7 +230,7 @@ require_once "../../classes/conexao.php";
 	 		<td>
 
 					<?php 
-							$sql11="SELECT sum(valor) as valor from fornecedores where relator='Filipe'";
+							$sql11="SELECT sum(valor) as valor from fornecedores where relator='Filipe' and MONTH(data) = '6'";
 							$buscarrelator = mysqli_query($conexao, $sql11);
 							$valor=0;
 
@@ -250,7 +250,7 @@ require_once "../../classes/conexao.php";
 	 		<td>Juliana</td>
 	 		<td>
 			 <?php 
-					$sql12= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Juliana'";
+					$sql12= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Juliana' and MONTH(data) = '6'";
 					$buscar = mysqli_query($conexao, $sql12);
 					$Qtd=0;
 
@@ -263,7 +263,7 @@ require_once "../../classes/conexao.php";
 			 </td>
 	 		<td>
 			 <?php 
-							$sql11="SELECT sum(valor) as valor from fornecedores where relator='Juliana'";
+							$sql11="SELECT sum(valor) as valor from fornecedores where relator='Juliana' and MONTH(data) = '6'";
 							$buscarrelator = mysqli_query($conexao, $sql11);
 							$valor=0;
 
@@ -283,7 +283,7 @@ require_once "../../classes/conexao.php";
 	 		<td>Sérgio</td>
 			 <td>
 			 <?php 
-					$sql14= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Sérgio'";
+					$sql14= "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Sérgio' and MONTH(data) = '6'";
 					$buscar = mysqli_query($conexao, $sql14);
 					$Qtd=0;
 
@@ -296,7 +296,7 @@ require_once "../../classes/conexao.php";
 			 </td>
 	 		<td>
 			 <?php 
-							$sql16="SELECT sum(valor) as valor from fornecedores where relator='Sérgio'";
+							$sql16="SELECT sum(valor) as valor from fornecedores where relator='Sérgio' and MONTH(data) = '6'";
 							$buscarrelator = mysqli_query($conexao, $sql16);
 							$valor=0;
 

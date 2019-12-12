@@ -16,7 +16,7 @@ if(isset($_SESSION['usuario'])){
 			<h1>Processos</h1>
 			<div class="row">
 				<div class="col-sm-4">
-					<form id="frmFornecedores">
+					<form id="frmProcessos">
 						<label>N° FA</label>
 						<input type="number" class="form-control input-sm" id="nrofa" name="nrofa">
 						<label>Consumidor</label>
@@ -25,8 +25,8 @@ if(isset($_SESSION['usuario'])){
 						<input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
 						<label>Grau da Sessão</label>
         				<select class="form-control input-sm" id="camara" name="camara">
-						<option >1 sessão </option>
-						<option> 2 sessão </option>
+						<option >1  </option>
+						<option> 2  </option>
         				</select>
 						<label>Relatores</label>
 						<select class="form-control input-sm" id="relator" name="relator">
@@ -53,11 +53,11 @@ if(isset($_SESSION['usuario'])){
 						<label>Ano</label>
 						<input type="number" class="form-control input-sm" id="data" name="ano">
 						<p></p>
-						<span class="btn btn-primary" id="btnAdicionarFornecedores">Salvar</span>   <!-- btnAcidionarFornecedores é o botão entrar que ao ser clicado carregará a div tabelaFornecedores na linha 138 -->
+						<span class="btn btn-primary" id="btnAdicionarProcessos">Salvar</span>   <!-- btnAcidionarFornecedores é o botão entrar que ao ser clicado carregará a div tabelaFornecedores na linha 138 -->
 					</form>
 				</div>
 				<div class="col-sm-8">
-					<div id="tabelaFornecedoresLoad"></div>
+					<div id="tabelaProcessosLoad"></div>
 				</div>
 			</div>
 		</div>
@@ -66,16 +66,16 @@ if(isset($_SESSION['usuario'])){
 
 
 		<!-- Modal -->
-		<div class="modal fade" id="abremodalFornecedoresUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal fade" id="abremodalProcessosUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog modal-sm" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Atualizar Fornecedor</h4>
+						<h4 class="modal-title" id="myModalLabel">Atualizar Registro</h4>
 					</div>
 					<div class="modal-body">
-						<form id="frmFornecedoresU">
-							<input type="text" hidden="" id="idfornecedorU" name="idfornecedorU">
+						<form id="frmProcessosU">
+							<input type="text" hidden="" id="idprocessoU" name="idprocessoU">
 							<label>nroFA</label>
 							<input type="number" class="form-control input-sm" id="nrofaU" name="nrofaU">
 							<label>Consumidor</label>
@@ -95,7 +95,7 @@ if(isset($_SESSION['usuario'])){
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button id="btnAdicionarFornecedorU" type="button" class="btn btn-primary" data-dismiss="modal">Atualizar</button>
+						<button id="btnAdicionarProcessoU" type="button" class="btn btn-primary" data-dismiss="modal">Atualizar</button>
 
 					</div>
 				</div>
@@ -107,12 +107,12 @@ if(isset($_SESSION['usuario'])){
 	
 <!-- Adicionar dados -->
 	<script type="text/javascript">
-		function adicionarDado(idfornecedor){
+		function adicionarDado(idprocesso){
 
 			$.ajax({
 				type:"POST",
-				data:"idfornecedor=" + idfornecedor,
-				url:"../procedimentos/fornecedores/obterDadosFornecedores.php",
+				data:"idprocesso=" + idprocesso,
+				url:"../procedimentos/processos/obterDadosProcessos.php",
 				success:function(r){
 
 
@@ -120,10 +120,10 @@ if(isset($_SESSION['usuario'])){
 					dado=jQuery.parseJSON(r);
 
 
-					$('#idfornecedorU').val(dado['id_fornecedor']);
+					$('#idprocessoU').val(dado['id_fornecedor']);
 					$('#nrofaU').val(dado['nrofa']);
 					$('#consumidorU').val(dado['consumidor']);
-					$('#forneceodorU').val(dado['fornecedor']);
+					$('#fornecedorU').val(dado['fornecedor']);
 					$('#camaraU').val(dado['camara']);
 					$('#relatorU').val(dado['relator']);
 					$('#valorU').val(dado['valor']);
@@ -136,19 +136,19 @@ if(isset($_SESSION['usuario'])){
 			});
 		}
 // Eliminar fornecedores
-		function eliminar(idfornecedor){
-			alertify.confirm('Deseja Excluir este fornecedor?', function(){ 
+		function eliminar(idprocesso){
+			alertify.confirm('Deseja Excluir este registro?', function(){ 
 				$.ajax({
 					type:"POST",
-					data:"idfornecedor=" + idfornecedor,
-					url:"../procedimentos/fornecedores/eliminarFornecedores.php",
+					data:"idprocesso=" + idprocesso,
+					url:"../procedimentos/processos/eliminarProcessos.php",
 					success:function(r){
 
 
 
 						if(r==1){
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-							alertify.success("Excluido com sucesso!!");
+							$('#tabelaProcessosLoad').load("processos/tabelaProcessosMaio.php");
+							alertify.success("Excluido com sucesso!!");  
 						}else{
 							alertify.error("Não foi possível excluir");
 						}
@@ -163,29 +163,29 @@ if(isset($_SESSION['usuario'])){
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
+			$('#tabelaProcessosLoad').load("processos/tabelaProcessosMaio.php");
 
-			$('#btnAdicionarFornecedores').click(function(){
+			$('#btnAdicionarProcessos').click(function(){
 
-				vazios=validarFormVazio('frmFornecedores');
+				vazios=validarFormVazio('frmProcessos');
 
 				if(vazios > 0){
 					alertify.alert("Preencha os Campos!!");   //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
 					return false;
 				}
 
-				dados=$('#frmFornecedores').serialize();
+				dados=$('#frmProcessos').serialize();
 
 				$.ajax({
 					type:"POST",
 					data:dados,
-					url:"../procedimentos/fornecedores/adicionarFornecedores.php",
+					url:"../procedimentos/processos/adicionarProcessos.php",
 					success:function(r){
 
 						if(r==1){
-							$('#frmFornecedores')[0].reset();
-							$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-							alertify.success("Fornecedor Adicionado");
+							$('#frmProcessos')[0].reset();
+							$('#tabelaProcessosLoad').load("processos/tabelaProcessosMaio.php");
+							alertify.success("Registro Adicionado");
 						}else{
 							alertify.error("Não foi possível adicionar");
 						}
@@ -196,28 +196,28 @@ if(isset($_SESSION['usuario'])){
 	</script>
 
 	<script type="text/javascript">
-		// $(document).ready(function(){
-		// 	$('#btnAdicionarFornecedorU').click(function(){
-		// 		dados=$('#frmFornecedoresU').serialize();
+		 $(document).ready(function(){
+		 	$('#btnAdicionarProcessoU').click(function(){
+		 		dados=$('#frmProcessosU').serialize();
 
-		// 		$.ajax({
-		// 			type:"POST",
-		// 			data:dados,
-		// 			url:"../procedimentos/fornecedores/atualizarFornecedores.php",
-		// 			success:function(r){
+		 		$.ajax({
+		 			type:"POST",
+		 			data:dados,
+		 			url:"../procedimentos/processos/atualizarProcessos.php",
+		 			success:function(r){
 
 						
-		// 				if(r==1){
-		// 					$('#frmFornecedores')[0].reset();
-		// 					$('#tabelaFornecedoresLoad').load("fornecedores/tabelaFornecedores.php");
-		// 					alertify.success("Fornecedor atualizado com sucesso!");
-		// 				}else{
-		// 					alertify.error("Não foi possível atualizar fornecedor");
-		// 				}
-		// 			}
-		// 		});
-		// 	})
-		// })
+						if(r==1){
+		 					$('#frmProcessos')[0].reset();
+		 					$('#tabelaProcessosLoad').load("processos/tabelaProcessosMaio.php");
+		 					alertify.success("Registro atualizado com sucesso!");
+		 				}else{
+							alertify.error("Não foi possível atualizar registro");
+		 				}
+					}
+				});
+		 	})
+		 })
 	</script>
 
 

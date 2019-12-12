@@ -6,8 +6,7 @@ require_once "../../classes/conexao.php";
 	$c = new conectar();
 		$conexao=$c->conexao();
 
-		$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '2'";
-		$result = mysqli_query($conexao, $sql);
+	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '4'";
 	$result = mysqli_query($conexao, $sql);
 
 ?>
@@ -19,7 +18,7 @@ require_once "../../classes/conexao.php";
 			<td>Nro FA</td>
 	 		<td>Consumidor</td>
 	 		<td>Fornecedor</td>
-	 		<td>Câmara</td>
+	 		<td>Sessão</td>
 	 		<td>Relator</td>
 	 		<td>Valor</td>
 	 		<td>Data</td>
@@ -82,7 +81,7 @@ require_once "../../classes/conexao.php";
 	<td>
 		<?php
 
-			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '2'";   //SELECT sum(valor) as valor from fornecedores where camara='1'"
+			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '4'";   //SELECT sum(valor) as valor from fornecedores where camara='1'"
 			$buscarDb = mysqli_query($conexao, $total2Grau);
 			$valor=0;
 
@@ -106,7 +105,7 @@ require_once "../../classes/conexao.php";
 <tr>
 	<td>
 		<?php
-			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '2'";
+			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '4'";
 			$buscarDb = mysqli_query($conexao, $total2Grau);
 			$valor=0;
 
@@ -121,6 +120,7 @@ require_once "../../classes/conexao.php";
 
 
 </table>
+
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
 <tr>
 <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
@@ -130,7 +130,7 @@ require_once "../../classes/conexao.php";
 <td>
 <?php
 
-$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '2'";
+$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '4'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor=0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
@@ -146,16 +146,18 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 </tr>
 
+
+</table>
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
 <tr>
-<td style="background-color: SlateGrey;">Total dos valores Anual.</td>
+<td style="background-color: SlateGrey;">Total dos valores anual.</td>
 </tr>
 
 <tr>
 <td>
 <?php
 
-$sql2 = "SELECT * FROM fornecedores";
+$sql2 = "SELECT * FROM fornecedores ";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor=0;
 while ($array2 = mysqli_fetch_array($buscar2)) {

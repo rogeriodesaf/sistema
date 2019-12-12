@@ -106,17 +106,18 @@ if(isset($_SESSION['usuario'])){
 	</html>
 <!-- Adicionar dados -->
 	<script type="text/javascript">
-		function adicionarDado(idprocesso){
+		function adicionarDado(idprocesso){    //ver linha 9 de obterDadosProcessos.
 
 			$.ajax({
-				type:"POST",
-				data:"idprocesso=" + idprocesso,
+				type:"POST",   // ver a linha 9 de obterDadosProcessos. As informações estão vindo via método POST.
+				data:"idprocesso=" + idprocesso,      // esse idprocesso está referenciando o id que está em obterDadosProcessos.php na linha 9. O CAMPO idprocesso É PASSADO TODA VEZ QUE EU CLICAR NO BOTÃO QUE 
+				//ESTÁ EM tabelaProcessosMarco.php na linha 57 EU PASSO O CAMPO ['0'] QUE É O id_fornecedor na linha 9 de tabelaProcessosMarco.php. O FORMULÁRIO PASSA PARA ObterDadosProcessos
 				url:"../procedimentos/processos/obterDadosProcessos.php",
-				success:function(r){
+				success:function(r){   //FUNÇÃO QUE FAZ UMA CONSULTA NOS DADOS 
 
 
 
-					dado=jQuery.parseJSON(r);
+					dado=jQuery.parseJSON(r); //OS DADOS QUE ESTÃO NOS CAMPOS 'id_fornecedor','nrofa',etc... ESTÃO SENDO PASSADOS VIA JSON
 
 
 					$('#idprocessoU').val(dado['id_fornecedor']);
@@ -135,7 +136,7 @@ if(isset($_SESSION['usuario'])){
 			});
 		}
 // Eliminar fornecedores
-function eliminar(idprocesso){
+function eliminar(idprocesso){   //tabelaProcessosMarco na linha 62 está a função de eliminar 
 			alertify.confirm('Deseja Excluir este registro?', function(){ 
 				$.ajax({
 					type:"POST",
@@ -158,32 +159,32 @@ function eliminar(idprocesso){
 			});
 		}
 	</script>
- <!-- Código que está na div tabelaFornecedores -->
+ <!-- Código que está na div tabelaFornecedores na linha 60-->
 	<script type="text/javascript">
-		$(document).ready(function(){
+		$(document).ready(function(){    //ao ler o documento ...
 
-			$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php");
+			$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php"); //...carregue tabelaProcessosMarco.php
 
-			$('#btnAdicionarProcessos').click(function(){
+			$('#btnAdicionarProcessos').click(function(){   //ao clicar no botão da linha 56 ele vai...
 
-				vazios=validarFormVazio('frmProcessos');
+				vazios=validarFormVazio('frmProcessos'); //verificar se existem campos vazios no formulário da linha 19...
 
-				if(vazios > 0){
-					alertify.alert("Preencha os Campos!!");   //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
+				if(vazios > 0){   // se tiver campo vazio manda uma mensagem
+					alertify.alert("Preencha os Campos!!");   
 					return false;
 				}
 
-				dados=$('#frmProcessos').serialize();
+				dados=$('#frmProcessos').serialize(); // aqui vamos pegar os dados recebidos do formulário da linha 19 e serializar via JSON  e passadas para a url da linha 182
 
 				$.ajax({
 					type:"POST",
 					data:dados,
-					url:"../procedimentos/processos/adicionarProcessos.php",
+					url:"../procedimentos/processos/adicionarProcessos.php", // bem aqui
 					success:function(r){
 
-						if(r==1){
-							$('#frmProcessos')[0].reset();
-							$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php");
+						if(r==1){  // ver classes/processos a função adicionar. Ela gera por padrão o valor de 1. 
+							$('#frmProcessos')[0].reset(); // após adicionar vai dar um reset nos campos limpando eles dentro do formulário. 
+							$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php"); // isso faz com que a tabela seja carregada e mostrada ao lado direito da tela.
 							alertify.success("Registro Adicionado");
 						}else{
 							alertify.error("Não foi possível adicionar");
@@ -193,7 +194,7 @@ function eliminar(idprocesso){
 			});
 		});
 	</script>
-
+<!--/modal-->
 	<script type="text/javascript">
 		 $(document).ready(function(){
 		 	$('#btnAdicionarProcessoU').click(function(){
@@ -211,7 +212,7 @@ function eliminar(idprocesso){
 		 					$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php");
 							alertify.success("Registro atualizado com sucesso!");
 						}else{
-							alertify.error("Não foi possível atualizar fornecedor");
+							alertify.error("Não foi possível atualizar registro");
 				}
 					}
 	 		});

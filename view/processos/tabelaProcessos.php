@@ -122,6 +122,30 @@ require_once "../../classes/conexao.php";
 	</td>
 </tr>
 
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;" >
+<tr>
+<td style="background-color: SlateGrey;">Total dos valores no mês.</td>
+</tr>
+
+<tr>
+<td>
+<?php
+
+$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '1'";
+$buscar2 = mysqli_query($conexao, $sql2);
+$valor=0;
+while ($array2 = mysqli_fetch_array($buscar2)) {
+	$id_fornecedor  = $array2['id_fornecedor'];
+	$valor = $valor + $array2 ['valor'];
+	?>
+	
+
+	
+	
+	<?php } ?>
+	 R$ <?php echo $valor?>
+
+</tr>
 
 </table>
 
