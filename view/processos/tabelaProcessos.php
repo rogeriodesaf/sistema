@@ -6,7 +6,7 @@ require_once "../../classes/conexao.php";
 	$c = new conectar();
 		$conexao=$c->conexao();
 
-	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '1'";
+	$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '1' and Year(data) = '2020'";
 	$result = mysqli_query($conexao, $sql);
 
 ?>
@@ -83,7 +83,7 @@ require_once "../../classes/conexao.php";
 		<?php
 		//código php para somar os valores da primeira sessão se o mês for Janeiro.		
 
-			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '1'";   //SELECT sum(valor) as valor from fornecedores where camara='1'"
+			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '1' and Year(data) = '2020'";   //SELECT sum(valor) as valor from fornecedores where camara='1'"
 			$buscarDb = mysqli_query($conexao, $total2Grau);
 			$valor=0;
 
@@ -109,7 +109,7 @@ require_once "../../classes/conexao.php";
 	
 		<?php
 		//código php para somar os valores da segunda sessão se o mês for Janeiro.	
-			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '1'";
+			$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '1 ' and Year(data) = '2020'";
 			$buscarDb = mysqli_query($conexao, $total2Grau);
 			$valor=0;
 
@@ -131,7 +131,7 @@ require_once "../../classes/conexao.php";
 <td>
 <?php
 
-$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '1'";
+$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '1' and Year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor=0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
