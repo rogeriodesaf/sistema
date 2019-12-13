@@ -39,9 +39,9 @@
 		$(document).ready(function(){
 
 				
-				$('#vendasFeitas').load('vendas/vendasRelatorios.php');
+				$('#tabelaProcessosLoad').load('processos/tabelaProcessos.php');
 				
-				$('#vendasFeitas').show();
+				$('#tabelaProcessosLoad').show();
 				
 		});
 
