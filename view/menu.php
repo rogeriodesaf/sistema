@@ -37,85 +37,95 @@
 
                         <li class="active"><a href="inicio.php"><span class="glyphicon glyphicon-home"></span>
                                 Inicio</a>
-                        </li> <!-- a classe active deixa a parte inicio destacada -->
+                        </li>
 
 
-
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false"><span
+                                    class="glyphicon glyphicon-list-alt"></span> Gestão Produtos <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="categorias.php">Categorias</a></li>
+                                <li><a href="produtos.php">Produtos</a></li>
+                            </ul>
+                        </li> -->
                         <li class="dropdown">
                             <a href="#" class=" dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false">Registros por ano<span
                                     class="caret"></span></a>
+                            <!-- o data-toggle="dropdown que permite que o dropdown funcione -->
                             <ul class="dropdown-menu row">
                                 <li class="col-sm-4" style="min-width:460px;">
                                     <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2020</span>
                                         <div class="" id="content">
-                                            <div>
-                                                <a style=" text-decoration:none; color:#FFF; "
-                                                    href="janeiro.php">Janeiro |</a>
-                                                <a style=" text-decoration:none; color:#FFF; "
-                                                    href="fevereiro.php">Fevereiro |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="março.php">Março
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="abril.php">Abril
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="maio.php">Maio
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="junho.php">Junho
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="julho.php">Julho
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="agosto.php">Agosto
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; "
-                                                    href="setembro.php">Setembro |</a>
-                                                <a style=" text-decoration:none; color:#FFF; "
-                                                    href="outubro.php">Outubro |</a>
-                                                <a style=" text-decoration:none; color:#FFF;"
-                                                    href="novembro.php">Novembro |</a>
-                                                <a style=" text-decoration:none; color:#FFF;"
-                                                    href="dezembro.php">Dezembro |</a>
-                                            </div>
+
+                                            <a style=" text-decoration:none; color:#FFF; " href="janeiro.php">Janeiro
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; "
+                                                href="fevereiro.php">Fevereiro |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="março.php">Março
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="abril.php">Abril
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="maio.php">Maio
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="junho.php">Junho
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="julho.php">Julho
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="agosto.php">Agosto
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="setembro.php">Setembro
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="outubro.php">Outubro
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF;" href="novembro.php">Novembro
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF;" href="dezembro.php">Dezembro
+                                                |</a>
+
                                         </div>
                                 </li>
 
                                 <li class="col-sm-4" style="min-width:460px;">
-                                    <h4 span class="btn btn-primary" data-toggle="" data-target="#content">2021</span>
+                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2021</span>
                                         <div class="" id="content">
-                                            <div>
-                                                <a style=" text-decoration:none; color:#FFF;" href="janeiro.php">Janeiro
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; "
-                                                    href="fevereiro.php">Fevereiro |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="março.php">Março
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="abril.php">Abril
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="maio.php">Maio
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="junho.php">Junho
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="julho.php">Julho
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; " href="agosto.php">Agosto
-                                                    |</a>
-                                                <a style="text-decoration:none; color:#FFF; "
-                                                    href="setembro.php">Setembro |</a>
-                                                <a style=" text-decoration:none; color:#FFF;" href="outubro.php">Outubro
-                                                    |</a>
-                                                <a style=" text-decoration:none; color:#FFF; "
-                                                    href="novembro.php">Novembro |</a>
-                                                <a style=" text-decoration:none; color:#FFF; "
-                                                    href="dezembro.php">Dezembro |</a>
-                                            </div>
+
+                                            <a style=" text-decoration:none; color:#FFF; " href="janeiro.php">Janeiro
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; "
+                                                href="fevereiro.php">Fevereiro |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="março.php">Março
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="abril.php">Abril
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="maio.php">Maio
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="junho.php">Junho
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="julho.php">Julho
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="agosto.php">Agosto
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="setembro.php">Setembro
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF; " href="outubro.php">Outubro
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF;" href="novembro.php">Novembro
+                                                |</a>
+                                            <a style=" text-decoration:none; color:#FFF;" href="dezembro.php">Dezembro
+                                                |</a>
+
                                         </div>
                                 </li>
-
                                 <li class="col-sm-4" style="min-width:460px;">
-                                    <h4 span class="btn  btn-primary" data-toggle="" data-target="#content">2022</span>
+                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2022</span>
                                         <div class="" id="content">
                                             <div>
                                                 <a style=" text-decoration:none; color:#FFF; "
-                                                    href="janeiro.php">Janeiro |</a>
+                                                    href="janeiro.php">Janeiro
+                                                    |</a>
                                                 <a style=" text-decoration:none; color:#FFF; "
                                                     href="fevereiro.php">Fevereiro |</a>
                                                 <a style=" text-decoration:none; color:#FFF; " href="março.php">Março
@@ -131,62 +141,33 @@
                                                 <a style=" text-decoration:none; color:#FFF; " href="agosto.php">Agosto
                                                     |</a>
                                                 <a style=" text-decoration:none; color:#FFF; "
-                                                    href="setembro.php">Setembro |</a>
+                                                    href="setembro.php">Setembro
+                                                    |</a>
                                                 <a style=" text-decoration:none; color:#FFF; "
-                                                    href="outubro.php">Outubro |</a>
-                                                <a style=" text-decoration:none; color:#FFF; "
-                                                    href="novembro.php">Novembro |</a>
-                                                <a style="text-decoration:none; color:#FFF; "
-                                                    href="dezembro.php">Dezembro |</a>
+                                                    href="outubro.php">Outubro
+                                                    |</a>
+                                                <a style=" text-decoration:none; color:#FFF;"
+                                                    href="novembro.php">Novembro
+                                                    |</a>
+                                                <a style=" text-decoration:none; color:#FFF;"
+                                                    href="dezembro.php">Dezembro
+                                                    |</a>
                                             </div>
                                         </div>
-                                </li>
-                            </ul>
-
-                        <li class="dropdown">
-                            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Processos de 1ª e 2ª Câmara <span class="caret"></span></a> -->
-
-                            <ul class="dropdown-menu">
-                                <!-- <li><a href="clientes.php">Dados dos Relatores</a></li> -->
-
-
-
-
-                                <li><a href="fevereiro.php">Janeiro</a></li>
-                                <li><a href="fevereiro.php">Fevereiro</a></li>
-                                <li><a href="março.php">Março</a></li>
-                                <li><a href="abril.php">Abril</a></li>
-                                <li><a href="maio.php">Maio</a></li>
-                                <li><a href="junho.php">Junho</a></li>
-                                <li><a href="julho.php">Julho</a></li>
-                                <li><a href="agosto.php">Agosto</a></li>
-                                <li><a href="setembro.php">Setembro</a></li>
-                                <li><a href="outubro.php">Outubro</a></li>
-                                <li><a href="novembro.php">Novembro</a></li>
-                                <li><a href="dezembro.php">Dezembro</a></li>
-
                             </ul>
                         </li>
 
                         <li class="dropdown">
-                            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> 2019 <span class="caret"></span></a> -->
+                            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-haspopup="true" aria-expanded="false"><span
+                                            class="glyphicon glyphicon-user"></span> Pessoas <span
+                                            class="caret"></span></a> -->
                             <ul class="dropdown-menu">
-                                <!-- <li><a href="clientes.php">Dados dos Relatores</a></li> -->
-
-
-                                <li><a href="janeiro.php">Janeiro</a></li>
-                                <li><a href="fevereiro.php">Fevereiro</a></li>
-                                <li><a href="março.php">Março</a></li>
-                                <li><a href="abril.php">Abril</a></li>
-                                <li><a href="maio.php">Maio</a></li>
-                                <li><a href="junho.php">Junho</a></li>
-                                <li><a href="julho.php">Julho</a></li>
-                                <li><a href="agosto.php">Agosto</a></li>
-                                <li><a href="setembro.php">Setembro</a></li>
-                                <li><a href="outubro.php">Outubro</a></li>
-                                <li><a href="novembro.php">Novembro</a></li>
-                                <li><a href="dezembro.php">Dezembro</a></li>
+                                <li><a href="clientes.php">Clientes</a></li>
+                                <li><a href="fornecedores.php">Fornecedores</a></li>
                             </ul>
+                        </li>
+
 
 
                         </li>
@@ -295,15 +276,12 @@
                                                     href="clientes12.php">Dezembro</a>
                                             </div>
                                         </div>
-                                </li>
+
 
                             </ul>
 
-
-
-
-
-
+                            <!-- <li><a href="vendas.php"><span class="glyphicon glyphicon-usd"></span> Vendas</a>
+                                </li> -->
 
                         <li class="dropdown">
                             <a href="#" style="color: red" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -323,6 +301,7 @@
                             </ul>
                         </li>
                     </ul>
+
                 </div>
                 <!--/.nav-collapse -->
             </div>
