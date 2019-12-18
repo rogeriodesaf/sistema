@@ -9,7 +9,10 @@ $result = mysqli_query($conexao, $sql);
 
 ?>
 
+<link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.css">
 
+<img src="../../img/logo procon.png" width="200" height="120">
+<br>
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
     <tr>
@@ -23,15 +26,9 @@ $result = mysqli_query($conexao, $sql);
         <td>Ano</td>
 
 
-        <td>Adicionar</td>
-        <td>Excluir</td>
+
 
     </tr>
-
-    <?php
-
-$total = 0;
-?>
 
     <?php while ($mostrar = mysqli_fetch_row($result)): ?>
 
@@ -51,17 +48,7 @@ $total = 0;
 
 
 
-        <td>
-            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate"
-                onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
-                <span class="glyphicon glyphicon-pencil"></span>
-            </span>
-        </td>
-        <td>
-            <span class="btn btn-danger btn-xs" onclick="eliminar('<?php echo $mostrar[0]; ?>')">
-                <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </td>
+
 
     </tr>
 
@@ -89,7 +76,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     ?>
 
             <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            R$ <?php echo $valor ?>
 
     </tr>
 
@@ -106,14 +93,14 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
             <?php
 $total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '3' and year(data) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
-$valor = 0.00;
+$valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor'];
     ?>
 
             <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            R$ <?php echo $valor ?>
         </td>
     </tr>
 
@@ -141,7 +128,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
             <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            R$ <?php echo $valor ?>
 
     </tr>
 
@@ -168,22 +155,9 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
             <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            R$ <?php echo $valor ?>
 
     </tr>
 
 
 </table>
-
-
-
-
-<td style="align:center;">
-    <a href="../procedimentos/processos/criarRelatorioPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
-        Imprimir <span class="glyphicon glyphicon-print"></span>
-    </a>
-</td>
-
-
-
-</div>
