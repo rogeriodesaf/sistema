@@ -28,19 +28,19 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `camara`
 --
 
-CREATE TABLE `camara` (
-  `id_camara` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `nome_camara` varchar(100) NOT NULL,
-  `dataCaptura` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `camara` (
+--   `id_camara` int(11) NOT NULL,
+--   `id_usuario` int(11) NOT NULL,
+--   `nome_camara` varchar(100) NOT NULL,
+--   `dataCaptura` date NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `camara`
---
+-- --
+-- -- Extraindo dados da tabela `camara`
+-- --
 
-INSERT INTO `camara` (`id_camara`, `id_usuario`, `nome_camara`, `dataCaptura`) VALUES
-(16, 7, '1 Sessão', '2019-09-27');
+-- INSERT INTO `camara` (`id_camara`, `id_usuario`, `nome_camara`, `dataCaptura`) VALUES
+-- (16, 7, '1 Sessão', '2019-09-27');
 
 -- --------------------------------------------------------
 
@@ -82,27 +82,27 @@ INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nrofa`, `consumidor`
 -- Estrutura da tabela `imagens`
 --
 
-CREATE TABLE `imagens` (
-  `id_imagem` int(11) NOT NULL,
-  `id_categoria` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `url` varchar(100) NOT NULL,
-  `dataUpload` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `imagens` (
+--   `id_imagem` int(11) NOT NULL,
+--   `id_categoria` int(11) NOT NULL,
+--   `nome` varchar(100) NOT NULL,
+--   `url` varchar(100) NOT NULL,
+--   `dataUpload` date NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `imagens`
 --
 
-INSERT INTO `imagens` (`id_imagem`, `id_categoria`, `nome`, `url`, `dataUpload`) VALUES
-(4, 7, 'camisa social.jpg', '../../arquivos/camisa social.jpg', '2018-05-22'),
-(5, 7, 'camisa.jpg', '../../arquivos/camisa.jpg', '2018-05-22'),
-(6, 3, 'calca.jpg', '../../arquivos/calca.jpg', '2018-05-22'),
-(7, 5, 'tenis feminino.jpg', '../../arquivos/tenis feminino.jpg', '2018-05-22'),
-(8, 5, 'tenis.jpg', '../../arquivos/tenis.jpg', '2018-05-22'),
-(11, 9, 'Untitled-1.html.txt', '../../arquivos/Untitled-1.html.txt', '2019-09-26'),
-(13, 10, 'Untitled-1.txt', '../../arquivos/Untitled-1.txt', '2019-09-26'),
-(15, 11, 'select.txt', '../../arquivos/select.txt', '2019-09-26');
+-- INSERT INTO `imagens` (`id_imagem`, `id_categoria`, `nome`, `url`, `dataUpload`) VALUES
+-- (4, 7, 'camisa social.jpg', '../../arquivos/camisa social.jpg', '2018-05-22'),
+-- (5, 7, 'camisa.jpg', '../../arquivos/camisa.jpg', '2018-05-22'),
+-- (6, 3, 'calca.jpg', '../../arquivos/calca.jpg', '2018-05-22'),
+-- (7, 5, 'tenis feminino.jpg', '../../arquivos/tenis feminino.jpg', '2018-05-22'),
+-- (8, 5, 'tenis.jpg', '../../arquivos/tenis.jpg', '2018-05-22'),
+-- (11, 9, 'Untitled-1.html.txt', '../../arquivos/Untitled-1.html.txt', '2019-09-26'),
+-- (13, 10, 'Untitled-1.txt', '../../arquivos/Untitled-1.txt', '2019-09-26'),
+-- (15, 11, 'select.txt', '../../arquivos/select.txt', '2019-09-26');
 
 -- --------------------------------------------------------
 
@@ -110,25 +110,25 @@ INSERT INTO `imagens` (`id_imagem`, `id_categoria`, `nome`, `url`, `dataUpload`)
 -- Estrutura da tabela `produtos`
 --
 
-CREATE TABLE `produtos` (
-  `id_produto` int(11) NOT NULL,
-  `id_categoria` int(11) NOT NULL,
-  `id_imagem` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `descricao` varchar(200) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `preco` float NOT NULL,
-  `dataCaptura` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `produtos` (
+--   `id_produto` int(11) NOT NULL,
+--   `id_categoria` int(11) NOT NULL,
+--   `id_imagem` int(11) NOT NULL,
+--   `id_usuario` int(11) NOT NULL,
+--   `nome` varchar(100) NOT NULL,
+--   `descricao` varchar(200) NOT NULL,
+--   `quantidade` int(11) NOT NULL,
+--   `preco` float NOT NULL,
+--   `dataCaptura` date NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id_produto`, `id_categoria`, `id_imagem`, `id_usuario`, `nome`, `descricao`, `quantidade`, `preco`, `dataCaptura`) VALUES
-(13, 10, 13, 7, '1 Grau', '...', -20, 1, '2019-09-26'),
-(15, 11, 15, 7, '2 Grau', '..', -50, 1, '2019-09-26');
+-- INSERT INTO `produtos` (`id_produto`, `id_categoria`, `id_imagem`, `id_usuario`, `nome`, `descricao`, `quantidade`, `preco`, `dataCaptura`) VALUES
+-- (13, 10, 13, 7, '1 Grau', '...', -20, 1, '2019-09-26'),
+-- (15, 11, 15, 7, '2 Grau', '..', -50, 1, '2019-09-26');
 
 -- --------------------------------------------------------
 
@@ -176,56 +176,56 @@ INSERT INTO `usuarios` (`id`, `nome`, `user`, `email`, `senha`, `dataCaptura`) V
 -- Estrutura da tabela `vendas`
 --
 
-CREATE TABLE `vendas` (
-  `id_venda` int(11) NOT NULL,
-  `id_cliente` int(11) NOT NULL,
-  `id_produto` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `preco` float NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `total_venda` float NOT NULL,
-  `dataCompra` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE `vendas` (
+--   `id_venda` int(11) NOT NULL,
+--   `id_cliente` int(11) NOT NULL,
+--   `id_produto` int(11) NOT NULL,
+--   `id_usuario` int(11) NOT NULL,
+--   `preco` float NOT NULL,
+--   `quantidade` int(11) NOT NULL,
+--   `total_venda` float NOT NULL,
+--   `dataCompra` date NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `vendas`
---
+-- --
+-- -- Extraindo dados da tabela `vendas`
+-- --
 
-INSERT INTO `vendas` (`id_venda`, `id_cliente`, `id_produto`, `id_usuario`, `preco`, `quantidade`, `total_venda`, `dataCompra`) VALUES
-(1, 0, 0, 7, 0, 0, 0, '2019-09-26'),
-(1, 0, 0, 7, 0, 0, 0, '2019-09-26'),
-(1, 0, 0, 7, 0, 2, 0, '2019-09-26'),
-(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
-(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
-(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
-(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
-(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
-(1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
-(1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
-(1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
-(1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
-(2, 0, 13, 7, 1, 20000, 20000, '2019-09-26'),
-(3, 8, 13, 7, 1, 20000, 20000, '2019-09-26'),
-(4, 0, 13, 7, 1, 10, 10, '2019-09-26'),
-(5, 11, 15, 7, 1, 5000, 5000, '2019-09-26'),
-(6, 11, 13, 7, 1, 50000, 50000, '2019-09-26'),
-(7, 0, 15, 7, 1, 1, 1, '2019-09-26'),
-(8, 11, 15, 7, 1, 2, 2, '2019-09-26'),
-(9, 9, 15, 7, 1, 50000, 50000, '2019-09-26'),
-(10, 9, 15, 7, 1, 50, 50, '2019-09-26'),
-(10, 8, 13, 7, 1, 20, 20, '2019-09-26'),
-(11, 8, 13, 7, 1, 1, 1, '2019-09-26'),
-(11, 8, 15, 7, 1, 1, 1, '2019-09-26'),
-(12, 8, 13, 7, 0, 42, 0, '2019-09-26'),
-(13, 8, 13, 7, 0, 20, 0, '2019-09-26'),
-(14, 8, 15, 7, 0, 20, 0, '2019-09-26'),
-(14, 8, 15, 7, 0, 20, 0, '2019-09-26'),
-(15, 8, 13, 7, 0, 20, 0, '2019-09-26'),
-(15, 8, 15, 7, 1, 25, 25, '2019-09-26'),
-(16, 8, 13, 7, 0, 20, 0, '2019-09-26'),
-(17, 8, 15, 7, 0, 50, 0, '2019-09-26'),
-(18, 8, 13, 7, 0, 20, 0, '2019-09-27'),
-(18, 8, 13, 7, 0, 20, 0, '2019-09-27');
+-- INSERT INTO `vendas` (`id_venda`, `id_cliente`, `id_produto`, `id_usuario`, `preco`, `quantidade`, `total_venda`, `dataCompra`) VALUES
+-- (1, 0, 0, 7, 0, 0, 0, '2019-09-26'),
+-- (1, 0, 0, 7, 0, 0, 0, '2019-09-26'),
+-- (1, 0, 0, 7, 0, 2, 0, '2019-09-26'),
+-- (1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+-- (1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+-- (1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+-- (1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+-- (1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+-- (1, 0, 0, 7, 0, -1, 0, '2019-09-26'),
+-- (1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
+-- (1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
+-- (1, 0, 4, 7, 90, 20, 1800, '2019-09-26'),
+-- (2, 0, 13, 7, 1, 20000, 20000, '2019-09-26'),
+-- (3, 8, 13, 7, 1, 20000, 20000, '2019-09-26'),
+-- (4, 0, 13, 7, 1, 10, 10, '2019-09-26'),
+-- (5, 11, 15, 7, 1, 5000, 5000, '2019-09-26'),
+-- (6, 11, 13, 7, 1, 50000, 50000, '2019-09-26'),
+-- (7, 0, 15, 7, 1, 1, 1, '2019-09-26'),
+-- (8, 11, 15, 7, 1, 2, 2, '2019-09-26'),
+-- (9, 9, 15, 7, 1, 50000, 50000, '2019-09-26'),
+-- (10, 9, 15, 7, 1, 50, 50, '2019-09-26'),
+-- (10, 8, 13, 7, 1, 20, 20, '2019-09-26'),
+-- (11, 8, 13, 7, 1, 1, 1, '2019-09-26'),
+-- (11, 8, 15, 7, 1, 1, 1, '2019-09-26'),
+-- (12, 8, 13, 7, 0, 42, 0, '2019-09-26'),
+-- (13, 8, 13, 7, 0, 20, 0, '2019-09-26'),
+-- (14, 8, 15, 7, 0, 20, 0, '2019-09-26'),
+-- (14, 8, 15, 7, 0, 20, 0, '2019-09-26'),
+-- (15, 8, 13, 7, 0, 20, 0, '2019-09-26'),
+-- (15, 8, 15, 7, 1, 25, 25, '2019-09-26'),
+-- (16, 8, 13, 7, 0, 20, 0, '2019-09-26'),
+-- (17, 8, 15, 7, 0, 50, 0, '2019-09-26'),
+-- (18, 8, 13, 7, 0, 20, 0, '2019-09-27'),
+-- (18, 8, 13, 7, 0, 20, 0, '2019-09-27');
 
 --
 -- Índices para tabelas despejadas
@@ -234,8 +234,8 @@ INSERT INTO `vendas` (`id_venda`, `id_cliente`, `id_produto`, `id_usuario`, `pre
 --
 -- Índices para tabela `camara`
 --
-ALTER TABLE `camara`
-  ADD PRIMARY KEY (`id_camara`);
+-- ALTER TABLE `camara`
+--   ADD PRIMARY KEY (`id_camara`);
 
 --
 -- Índices para tabela `fornecedores`
@@ -246,14 +246,14 @@ ALTER TABLE `fornecedores`
 --
 -- Índices para tabela `imagens`
 --
-ALTER TABLE `imagens`
-  ADD PRIMARY KEY (`id_imagem`);
+-- ALTER TABLE `imagens`
+--   ADD PRIMARY KEY (`id_imagem`);
 
 --
 -- Índices para tabela `produtos`
 --
-ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`id_produto`);
+-- ALTER TABLE `produtos`
+--   ADD PRIMARY KEY (`id_produto`);
 
 --
 -- Índices para tabela `relatores`
@@ -274,8 +274,8 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de tabela `camara`
 --
-ALTER TABLE `camara`
-  MODIFY `id_camara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+-- ALTER TABLE `camara`
+--   MODIFY `id_camara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `fornecedores`
@@ -286,14 +286,14 @@ ALTER TABLE `fornecedores`
 --
 -- AUTO_INCREMENT de tabela `imagens`
 --
-ALTER TABLE `imagens`
-  MODIFY `id_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+-- ALTER TABLE `imagens`
+--   MODIFY `id_imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
---
--- AUTO_INCREMENT de tabela `produtos`
---
-ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+-- --
+-- -- AUTO_INCREMENT de tabela `produtos`
+-- --
+-- ALTER TABLE `produtos`
+--   MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `relatores`
