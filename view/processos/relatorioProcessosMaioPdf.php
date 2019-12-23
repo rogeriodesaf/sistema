@@ -4,35 +4,31 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '6'  and Year(data) = '2020'";
-$result = mysqli_query($conexao, $sql);
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '5' and year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
 ?>
 
+<link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.css">
 
+<img src="../../img/logo procon.png" width="200" height="120">
+<br>
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
     <tr>
         <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
-        <td>Câmara</td>
+        <td>Sessão</td>
         <td>Relator</td>
         <td>Valor</td>
         <td>Data</td>
         <td>Ano</td>
 
 
-        <td>Adicionar</td>
-        <td>Excluir</td>
+
 
     </tr>
-
-    <?php
-
-$total = 0;
-?>
 
     <?php while ($mostrar = mysqli_fetch_row($result)): ?>
 
@@ -46,23 +42,13 @@ $total = 0;
         <td><?php echo $mostrar[4]; ?></td>
         <td><?php echo $mostrar[5]; ?></td>
         <td><?php echo $mostrar[6]; ?></td>
-        <td><?php echo $mostrar[7]; ?></td>
+        <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
 
 
 
 
-        <td>
-            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate"
-                onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
-                <span class="glyphicon glyphicon-pencil"></span>
-            </span>
-        </td>
-        <td>
-            <span class="btn btn-danger btn-xs" onclick="eliminar('<?php echo $mostrar[0]; ?>')">
-                <span class="glyphicon glyphicon-remove"></span>
-            </span>
-        </td>
+
 
     </tr>
 
@@ -81,7 +67,7 @@ $total = 0;
         <td>
             <?php
 
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '6' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '5' and year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
@@ -105,7 +91,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     <tr>
         <td>
             <?php
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '6' and Year(data) = '2020'";
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '5' and year(data) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
@@ -120,6 +106,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
 
 </table>
+
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
@@ -129,7 +116,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
         <td>
             <?php
 
-$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '6' and Year(data) = '2020'";
+$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '5' and year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
@@ -145,16 +132,18 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
     </tr>
 
-    <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-        <tr>
-            <td style="background-color: SlateGrey;">Total dos valores Anual.</td>
-        </tr>
 
-        <tr>
-            <td>
-                <?php
+</table>
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+    <tr>
+        <td style="background-color: SlateGrey;">Total dos valores anual.</td>
+    </tr>
 
-$sql2 = "SELECT * FROM fornecedores  WHERE YEAR(data) = '2020' ";
+    <tr>
+        <td>
+            <?php
+
+$sql2 = "SELECT * FROM fornecedores WHERE YEAR(data) = '2020' ";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
@@ -165,18 +154,10 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-                <?php }?>
-                R$ <?php echo $valor ?>
+            <?php }?>
+            R$ <?php echo $valor ?>
 
-        </tr>
-
-
-    </table>
+    </tr>
 
 
-    <td style="align:center;">
-        <a href="../procedimentos/processos/criarRelatorioJunhoPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
-            Imprimir <span class="glyphicon glyphicon-print"></span>
-        </a>
-    </td>
-    </div>
+</table>
