@@ -10,7 +10,7 @@ if (isset($_SESSION['usuario'])) {
 <html>
 
 <head>
-    <title>fornecedores</title>
+    <title>Processos Janeiro</title>
     <?php require_once "menu.php";?>
 </head>
 

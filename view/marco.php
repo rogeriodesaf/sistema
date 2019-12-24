@@ -8,12 +8,12 @@ if(isset($_SESSION['usuario'])){
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>Processos do mês de Agosto</title>
+		<title>Processos Março</title>
 		<?php require_once "menu.php"; ?>
 	</head>
 	<body>
 		<div class="container">
-			<h1>Processos do mês de Agosto</h1>
+			<h1>Processos</h1>
 			<div class="row">
 				<div class="col-sm-4">
 					<form id="frmProcessos">
@@ -25,7 +25,7 @@ if(isset($_SESSION['usuario'])){
 						<input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
 						<label>Grau da Sessão</label>
         				<select class="form-control input-sm" id="camara" name="camara">
-						<option >1 </option>
+						<option >1  </option>
 						<option> 2  </option>
         				</select>
 						<label>Relatores</label>
@@ -71,7 +71,7 @@ if(isset($_SESSION['usuario'])){
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Atualizar Registro</h4>
+						<h4 class="modal-title" id="myModalLabel">Atualizar Processo</h4>
 					</div>
 					<div class="modal-body">
 						<form id="frmProcessosU">
@@ -146,7 +146,7 @@ if(isset($_SESSION['usuario'])){
 
 
 						if(r==1){
-							$('#tabelaProcessosLoad').load("processos/tabelaProcessosAgosto.php");
+							$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php");
 							alertify.success("Excluido com sucesso!!");
 						}else{
 							alertify.error("Não foi possível excluir");
@@ -162,7 +162,7 @@ if(isset($_SESSION['usuario'])){
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			$('#tabelaProcessosLoad').load("processos/tabelaProcessosAgosto.php");
+			$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php");
 
 			$('#btnAdicionarProcessos').click(function(){
 
@@ -183,7 +183,7 @@ if(isset($_SESSION['usuario'])){
 
 						if(r==1){
 							$('#frmProcessos')[0].reset();
-							$('#tabelaProcessosLoad').load("processos/tabelaProcessosAgosto.php");
+							$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php");
 							alertify.success("Registro Adicionado");
 						}else{
 							alertify.error("Não foi possível adicionar");
@@ -196,27 +196,27 @@ if(isset($_SESSION['usuario'])){
 
 	<script type="text/javascript">
 		 $(document).ready(function(){
-			$('#btnAdicionarProcessoU').click(function(){
-				dados=$('#frmProcessosU').serialize();
+		 	$('#btnAdicionarProcessoU').click(function(){
+		 		dados=$('#frmProcessosU').serialize();
 
-				$.ajax({
-					type:"POST",
+	 		$.ajax({
+		 			type:"POST",
 					data:dados,
-				url:"../procedimentos/processos/atualizarProcessos.php",
+					url:"../procedimentos/processos/atualizarProcessos.php",
 					success:function(r){
 
-						
-						if(r==1){
-							$('#frmProcessos')[0].reset();
-							$('#tabelaProcessosLoad').load("processos/tabelaProcessosAgosto.php");
+			
+					if(r==1){
+		$('#frmProcessos')[0].reset();
+		 					$('#tabelaProcessosLoad').load("processos/tabelaProcessosMarco.php");
 							alertify.success("Registro atualizado com sucesso!");
 						}else{
 							alertify.error("Não foi possível atualizar registro");
-						}
-		 			}
-				});
-			})s
-		 })
+				}
+					}
+	 		});
+	 	})
+	 })
 	</script>
 
 

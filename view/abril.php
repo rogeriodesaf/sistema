@@ -122,7 +122,7 @@ if(isset($_SESSION['usuario'])){
 					$('#idprocessoU').val(dado['id_fornecedor']);
 					$('#nrofaU').val(dado['nrofa']);
 					$('#consumidorU').val(dado['consumidor']);
-					$('#forneceodorU').val(dado['fornecedor']);
+					$('#fornecedorU').val(dado['fornecedor']);
 					$('#camaraU').val(dado['camara']);
 					$('#relatorU').val(dado['relator']);
 					$('#valorU').val(dado['valor']);

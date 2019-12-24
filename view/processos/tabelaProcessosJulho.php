@@ -155,7 +155,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 <td>
 <?php
 
-$sql2 = "SELECT * FROM fornecedores";
+$sql2 = "SELECT * FROM fornecedores where year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor=0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
