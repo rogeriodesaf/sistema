@@ -179,3 +179,17 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
     </td>
 
     </div>
+
+    <table style="text-align: center;
+     height: 100px ;">
+
+        <tr>
+            <td style=" text-decoration:none color:#FFF;"><a href="clientes8.php" target="_blank">Total
+                    de
+                    valores por relator no mês de Agosto.</a></td>
+        </tr>
+
+
+
+
+    </table>

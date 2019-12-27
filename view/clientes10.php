@@ -148,7 +148,7 @@ if (isset($_SESSION['usuario'])) {
     <script type="text/javascript">
     $(document).ready(function() {
 
-        $('#tabelaClientesLoad').load("clientes/tabelaClientes6.php");
+        $('#tabelaClientesLoad').load("clientes/tabelaClientes10.php");
 
         $('#btnAdicionarCliente').click(function() {
 
@@ -169,7 +169,7 @@ if (isset($_SESSION['usuario'])) {
 
                     if (r == 1) {
                         $('#frmClientes')[0].reset();
-                        $('#tabelaClientesLoad').load("clientes/tabelaClientes6.php");
+                        $('#tabelaClientesLoad').load("clientes/tabelaClientes10.php");
                         alertify.success("Cliente Adicionado");
                     } else {
                         alertify.error("Não foi possível adicionar");
@@ -195,7 +195,7 @@ if (isset($_SESSION['usuario'])) {
 
                     if (r == 1) {
                         $('#frmClientes')[0].reset();
-                        $('#tabelaClientesLoad').load("clientes/tabelaClientes6.php");
+                        $('#tabelaClientesLoad').load("clientes/tabelaClientes10.php");
                         alertify.success("Cliente atualizado com sucesso!");
                     } else {
                         alertify.error("Não foi possível atualizar cliente");

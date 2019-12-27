@@ -15,6 +15,130 @@
 
 <body>
 
+
+    <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+            aria-expanded="false" aria-controls="multiCollapseExample1">2020</a>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
+            aria-expanded="false" aria-controls="multiCollapseExample2">2021</button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse"
+            aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">2022</button>
+    </p>
+    <div class="row">
+        <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                    <li class="col-sm-4" style="min-width:460px;">
+                        <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                            </span>
+                            <div class="" id="content">
+
+                                <a style=" text-decoration:none; color:#FFF; " href="janeiro.php">Janeiro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="fevereiro.php">Fevereiro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="marco.php">Março
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="abril.php">Abril
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="maio.php">Maio
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="junho.php">Junho
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="julho.php">Julho
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="agosto.php">Agosto
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="setembro.php">Setembro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="outubro.php">Outubro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF;" href="novembro.php">Novembro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF;" href="dezembro.php">Dezembro
+                                    |</a>
+
+                            </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <li class="col-sm-4" style="min-width:460px;">
+                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                        2022</span>
+                        <div class="" id="content">
+                            <div>
+                                <a style=" text-decoration:none; color:#FFF; " href="janeiro.php">Janeiro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="fevereiro.php">Fevereiro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="março.php">Março
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="abril.php">Abril
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="maio.php">Maio
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="junho.php">Junho
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="julho.php">Julho
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="agosto.php">Agosto
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="setembro.php">Setembro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF; " href="outubro.php">Outubro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF;" href="novembro.php">Novembro
+                                    |</a>
+                                <a style=" text-decoration:none; color:#FFF;" href="dezembro.php">Dezembro
+                                    |</a>
+                            </div>
+                        </div>
+                        </ul>
+                </li> -->
+    </div>
+    </div>
+    </div>
+    <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body">
+                <li class="col-sm-4" style="min-width:460px;">
+                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                        </span>
+                        <div class="" id="content">
+
+                            <a style=" text-decoration:none; color:#FFF; " href="janeiro.php">Janeiro
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="fevereiro.php">Fevereiro
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="marco.php">Março
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="abril.php">Abril
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="maio.php">Maio
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="junho.php">Junho
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="julho.php">Julho
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="agosto.php">Agosto
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="setembro.php">Setembro
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF; " href="outubro.php">Outubro
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF;" href="novembro.php">Novembro
+                                |</a>
+                            <a style=" text-decoration:none; color:#FFF;" href="dezembro.php">Dezembro
+                                |</a>
+
+                        </div>
+                </li>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Begin Navbar  Menu fixo em toddas as páginas-->
     <div id="nav">
         <div class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="100">
@@ -49,15 +173,16 @@
                                 <li><a href="categorias.php">Categorias</a></li>
                                 <li><a href="produtos.php">Produtos</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li class="dropdown">
                             <a href="#" class=" dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false">Registros por ano<span
                                     class="caret"></span></a>
-                             o data-toggle="dropdown que permite que o dropdown funcione
+                            <!-- o data-toggle="dropdown que permite que o dropdown funcione -->
                             <ul class="dropdown-menu row">
                                 <li class="col-sm-4" style="min-width:460px;">
-                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2020</span>
+                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                                        2020</span>
                                         <div class="" id="content">
 
                                             <a style=" text-decoration:none; color:#FFF; " href="janeiro.php">Janeiro
@@ -90,7 +215,8 @@
                                 </li>
 
                                 <li class="col-sm-4" style="min-width:460px;">
-                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2021</span>
+                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                                        2021</span>
                                         <div class="" id="content">
 
                                             <a style=" text-decoration:none; color:#FFF; " href="janeiro.php">Janeiro
@@ -122,7 +248,8 @@
                                         </div>
                                 </li>
                                 <li class="col-sm-4" style="min-width:460px;">
-                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2022</span>
+                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                                        2022</span>
                                         <div class="" id="content">
                                             <div>
                                                 <a style=" text-decoration:none; color:#FFF; "
@@ -157,24 +284,20 @@
                                             </div>
                                         </div>
                             </ul>
-                        </li> -->
+                        </li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-haspopup="true" aria-expanded="false"><span
-                                    class="glyphicon glyphicon-user"></span> Consulta as decisões e pautas das Câmaras
-                                Recursais <span class="caret"></span></a> -->
+                            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-haspopup="true" aria-expanded="false"><span
+                                            class="glyphicon glyphicon-user"></span> Pessoas <span
+                                            class="caret"></span></a> -->
                             <ul class="dropdown-menu">
-                                <li><a href="http://procon.pb.gov.br/camararecursal/decisoes">Decisões Proferidas</a>
-                                </li>
-                                <li><a href="http://procon.pb.gov.br/camararecursal/pautas">Pautas das Câmaras
-                                        Recursais</a></li>
+                                <li><a href="clientes.php">Clientes</a></li>
+                                <li><a href="fornecedores.php">Fornecedores</a></li>
                             </ul>
                         </li>
 
-                        <li class="active"><a href="menu3.php"><span class="glyphicon glyphicon-home"></span>
-                                Câmaras recursais</a>
-                        </li>
+
 
                         </li>
 
@@ -184,7 +307,8 @@
                                     class="caret"></span></a>
                             <ul class="dropdown-menu row">
                                 <li class="col-sm-4" style="min-width:460px;">
-                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2020</span>
+                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                                        2020</span>
                                         <div class="" id="content">
                                             <div>
 
@@ -217,7 +341,8 @@
                                 </li>
 
                                 <li class="col-sm-4" style="min-width:460px;">
-                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2021</span>
+                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                                        2021</span>
                                         <div class="" id="content">
                                             <div>
 
@@ -251,7 +376,8 @@
                                 </li>
 
                                 <li class="col-sm-4" style="min-width:460px;">
-                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">2022</span>
+                                    <h4 span class="btn btn-primary " data-toggle="" data-target="#content">
+                                        2022</span>
                                         <div class="" id="content">
                                             <div>
 

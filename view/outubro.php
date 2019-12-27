@@ -18,7 +18,7 @@ if (isset($_SESSION['usuario'])) {
         <h1>Processos</h1>
         <div class="row">
             <div class="col-sm-4">
-                <form id="frmFornecedores">
+                <form id="frmProcessos">
                     <label>N° FA</label>
                     <input type="number" class="form-control input-sm" id="nrofa" name="nrofa">
                     <label>Consumidor</label>
@@ -78,7 +78,7 @@ if (isset($_SESSION['usuario'])) {
                     <h4 class="modal-title" id="myModalLabel">Atualizar Registro</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="frmFornecedoresU">
+                    <form id="frmProcessosU">
                         <input type="text" hidden="" id="idfornecedorU" name="idfornecedorU">
                         <label>nroFA</label>
                         <input type="number" class="form-control input-sm" id="nrofaU" name="nrofaU">
@@ -178,7 +178,7 @@ $(document).ready(function() {
         if (vazios > 0) {
             alertify.alert(
                 "Preencha os Campos!!"
-                ); //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
+            ); //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
             return false;
         }
 

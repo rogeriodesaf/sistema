@@ -178,7 +178,8 @@ $(document).ready(function() {
 
         if (vazios > 0) {
             alertify.alert(
-            "Preencha os Campos!!"); //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
+                "Preencha os Campos!!"
+            ); //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
             return false;
         }
 
@@ -193,7 +194,7 @@ $(document).ready(function() {
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
                     $('#tabelaProcessosLoad').load(
-                    "processos/tabelaProcessos.php"); //para adicionar novo registro
+                        "processos/tabelaProcessos.php"); //para adicionar novo registro
                     alertify.success("Registro Adicionado");
                 } else {
                     alertify.error("Não foi possível adicionar");

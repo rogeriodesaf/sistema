@@ -185,6 +185,21 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
             Imprimir <span class="glyphicon glyphicon-print"></span>
         </a>
     </td>
-
-
+    <br>
+    <br>
     </div>
+
+
+    <table style="text-align: center;
+     height: 100px ;">
+
+        <tr>
+            <td style=" text-decoration:none color:#FFF;"><a href="clientes1.php" target="_blank">Total
+                    de
+                    valores por relator no mês de janeiro.</a></td>
+        </tr>
+
+
+
+
+    </table>

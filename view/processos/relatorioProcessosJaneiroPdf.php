@@ -161,3 +161,15 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 </table>
+
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+
+    <tr>
+        <td style="background-color: SlateGrey;" a class="internal-link" href="cliente1.php" target="_blank">Total de
+            valores por relator no mês de janeiro.</td>
+    </tr>
+
+
+
+
+</table>

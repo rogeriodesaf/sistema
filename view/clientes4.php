@@ -1,21 +1,23 @@
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['usuario'])){
+if (isset($_SESSION['usuario'])) {
 
-	?>
+    ?>
 
 
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<title>clientes</title>
-		<?php require_once "menu.php"; ?>
-	</head>
-	<body>
-		<div class="container">
-			<h1>Relatores</h1>
-			<div class="row">
-				<!-- <div class="col-sm-4">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>clientes</title>
+    <?php require_once "menu.php";?>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Relatores</h1>
+        <div class="row">
+            <!-- <div class="col-sm-4">
 					<form id="frmClientes">
 						<label>Nome</label>
 						<input type="text" class="form-control input-sm" id="nome" name="nome">
@@ -33,17 +35,17 @@ if(isset($_SESSION['usuario'])){
 						<span class="btn btn-primary" id="btnAdicionarCliente">Salvar</span>
 					</form>
 				</div> -->
-				<div class="col-sm-10">
-					<div id="tabelaClientesLoad"></div>
-				</div>
-			</div>
-		</div>
+            <div class="col-sm-10">
+                <div id="tabelaClientesLoad"></div>
+            </div>
+        </div>
+    </div>
 
-		<!-- Button trigger modal -->
+    <!-- Button trigger modal -->
 
 
-		<!-- Modal -->
-		<!-- <div class="modal fade" id="abremodalClientesUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="abremodalClientesUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog modal-sm" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -82,8 +84,8 @@ if(isset($_SESSION['usuario'])){
 			<td>Fernando</td>
 			<td>Rogério</td>
 			<td>Cláudio</td>
-			
-			
+
+
 	</tr>
 </table>
 					</div>
@@ -121,7 +123,7 @@ if(isset($_SESSION['usuario'])){
 		}
 
 		function eliminarCliente(idcliente){
-			alertify.confirm('Deseja Excluir este cliente?', function(){ 
+			alertify.confirm('Deseja Excluir este cliente?', function(){
 				$.ajax({
 					type:"POST",
 					data:"idcliente=" + idcliente,
@@ -137,77 +139,76 @@ if(isset($_SESSION['usuario'])){
 						}
 					}
 				});
-			}, function(){ 
+			}, function(){
 				alertify.error('Cancelado !')
 			});
 		}
 	</script> -->
 
-	<script type="text/javascript">
-		$(document).ready(function(){
+    <script type="text/javascript">
+    $(document).ready(function() {
 
-			$('#tabelaClientesLoad').load("clientes/tabelaClientes4.php");
+        $('#tabelaClientesLoad').load("clientes/tabelaClientes4.php");
 
-			$('#btnAdicionarCliente').click(function(){
+        $('#btnAdicionarCliente').click(function() {
 
-				vazios=validarFormVazio('frmClientes');
+            vazios = validarFormVazio('frmClientes');
 
-				if(vazios > 0){
-					alertify.alert("Preencha os Campos!!");
-					return false;
-				}
+            if (vazios > 0) {
+                alertify.alert("Preencha os Campos!!");
+                return false;
+            }
 
-				dados=$('#frmClientes').serialize();
+            dados = $('#frmClientes').serialize();
 
-				$.ajax({
-					type:"POST",
-					data:dados,
-					url:"../procedimentos/clientes/adicionarClientes.php",
-					success:function(r){
+            $.ajax({
+                type: "POST",
+                data: dados,
+                url: "../procedimentos/clientes/adicionarClientes.php",
+                success: function(r) {
 
-						if(r==1){
-							$('#frmClientes')[0].reset();
-							$('#tabelaClientesLoad').load("clientes/tabelaClientes3.php");
-							alertify.success("Cliente Adicionado");
-						}else{
-							alertify.error("Não foi possível adicionar");
-						}
-					}
-				});
-			});
-		});
-	</script>
+                    if (r == 1) {
+                        $('#frmClientes')[0].reset();
+                        $('#tabelaClientesLoad').load("clientes/tabelaClientes4.php");
+                        alertify.success("Cliente Adicionado");
+                    } else {
+                        alertify.error("Não foi possível adicionar");
+                    }
+                }
+            });
+        });
+    });
+    </script>
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#btnAdicionarClienteU').click(function(){
-				dados=$('#frmClientesU').serialize();
+    <!--<script type="text/javascript">
+    $(document).ready(function() {
+        $('#btnAdicionarClienteU').click(function() {
+            dados = $('#frmClientesU').serialize();
 
-				$.ajax({
-					type:"POST",
-					data:dados,
-					url:"../procedimentos/clientes/atualizarClientes.php",
-					success:function(r){
-
-
-
-						if(r==1){
-							$('#frmClientes')[0].reset();
-							$('#tabelaClientesLoad').load("clientes/tabelaClientes2.php");
-							alertify.success("Cliente atualizado com sucesso!");
-						}else{
-							alertify.error("Não foi possível atualizar cliente");
-						}
-					}
-				});
-			})
-		})
-	</script>
+            $.ajax({
+                type: "POST",
+                data: dados,
+                url: "../procedimentos/clientes/atualizarClientes.php",
+                success: function(r) {
 
 
-	<?php 
-}else{
-	header("location:../index.php");
+
+                    if (r == 1) {
+                        $('#frmClientes')[0].reset();
+                        $('#tabelaClientesLoad').load("clientes/tabelaClientes4.php");
+                        alertify.success("Cliente atualizado com sucesso!");
+                    } else {
+                        alertify.error("Não foi possível atualizar cliente");
+                    }
+                }
+            });
+        })
+    })
+    </script> -->
+
+
+    <?php
+} else {
+    header("location:../index.php");
 }
 ?>
-
