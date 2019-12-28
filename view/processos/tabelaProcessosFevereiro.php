@@ -46,7 +46,7 @@ $total = 0;
         <td><?php echo $mostrar[4]; ?></td>
         <td><?php echo $mostrar[5]; ?></td>
         <td><?php echo $mostrar[6]; ?></td>
-        <td><?php echo $mostrar[7]; ?></td>
+        <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
 
 
@@ -173,7 +173,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
     </table>
     <td style="align:center;">
-        <a href="../procedimentos/processos/criarRelatorioFevereiroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+        <a href="../procedimentos/pdf/criarRelatorioFevereiroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
             Imprimir <span class="glyphicon glyphicon-print"></span>
         </a>
     </td>
@@ -188,8 +188,3 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
                     de
                     valores por relator no mês de Fevereiro.</a></td>
         </tr>
-
-
-
-
-    </table>
