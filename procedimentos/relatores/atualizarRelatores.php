@@ -2,16 +2,16 @@
 
 
 require_once "../../classes/conexao.php";
-require_once "../../classes/clientes.php";
+require_once "../../classes/relatores.php";
 
 
 
-$obj = new clientes();
+$obj = new relatores();
 
 
 
 $dados=array(
-	$_POST['idclienteU'],
+	$_POST['idrelatorU'],
 	$_POST['nomeU'],
 	$_POST['sobrenomeU'],
 	$_POST['enderecoU'],
@@ -22,6 +22,6 @@ $dados=array(
 
 );
 
-echo $obj->atualizarCliente($dados);
+echo $obj->atualizarRelator($dados);
 
  ?>

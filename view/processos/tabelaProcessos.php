@@ -45,7 +45,7 @@ $total = 0;
         <td><?php echo $mostrar[4]; ?></td>
         <td><?php echo $mostrar[5]; ?></td>
         <td><?php echo $mostrar[6]; ?></td>
-        <td><?php echo $mostrar[7]; ?></td>
+        <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
 
 
@@ -90,10 +90,11 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor'];
     ?>
 
-            <?php }?>
-            R$ <?php echo $valor ?>
-        </td>
+<?php }?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+</td>
     </tr>
+   
 
 
 </table>
@@ -116,9 +117,10 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor'];
     ?>
 
-            <?php }?>
-            R$ <?php echo $valor ?>
-        </td>
+<?php }?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+
+    </td>
     </tr>
 
     <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
@@ -141,8 +143,10 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-                <?php }?>
-                R$ <?php echo $valor ?>
+<?php }?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+
+    </td>
 
         </tr>
 
@@ -169,10 +173,10 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-                <?php }?>
-                R$ <?php echo $valor ?>
-
-        </tr>
+<?php }?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+</td>
+    </tr>
 
 
 
@@ -181,7 +185,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
     </table>
     <td style="align:center;">
-        <a href="../procedimentos/processos/criarRelatorioJaneiroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+        <a href="../procedimentos/pdf/criarRelatorioJaneiroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
             Imprimir <span class="glyphicon glyphicon-print"></span>
         </a>
     </td>
@@ -194,7 +198,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
      height: 100px ;">
 
         <tr>
-            <td style=" text-decoration:none color:#FFF;"><a href="clientes1.php" target="_blank">Total
+            <td style=" text-decoration:none color:#FFF;"><a href="relatores1.php" target="_blank">Total
                     de
                     valores por relator no mês de janeiro.</a></td>
         </tr>

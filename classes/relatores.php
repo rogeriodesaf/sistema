@@ -1,7 +1,7 @@
 <?php 
 
-class clientes{
-	public function adicionarCliente($dados){
+class relatores{
+	public function adicionarRelator($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
 
@@ -23,7 +23,7 @@ class clientes{
 
 
 
-	public function obterDadosCliente($idcliente){
+	public function obterDadosRelator($idrelator){
 		$c = new conectar();
 		$conexao=$c->conexao();
 
@@ -48,25 +48,25 @@ class clientes{
 	}
 
 
-	public function atualizarCliente($dados){
+	public function atualizarRelator($dados){
 		$c = new conectar();
 		$conexao=$c->conexao();
 
 		
 
-		$sql = "UPDATE clientes SET nome = '$dados[1]', sobrenome = '$dados[2]',endereco = '$dados[3]',email = '$dados[4]',telefone = '$dados[5]',cpf = '$dados[6]' where id_cliente = '$dados[0]'";
+		$sql = "UPDATE relatores SET nome = '$dados[1]', sobrenome = '$dados[2]',endereco = '$dados[3]',email = '$dados[4]',telefone = '$dados[5]',cpf = '$dados[6]' where id_cliente = '$dados[0]'";
 
 
 		echo mysqli_query($conexao, $sql);
 	}
 
 
-	public function excluirCliente($id){
+	public function excluirRelator($id){
 		$c = new conectar();
 		$conexao=$c->conexao();
 		
 
-		$sql = "DELETE from clientes where id_cliente = '$id' ";
+		$sql = "DELETE from relatores where id_relator = '$id' ";
 
 		return mysqli_query($conexao, $sql);
 	}
