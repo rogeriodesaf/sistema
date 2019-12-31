@@ -8,7 +8,7 @@ if(isset($_SESSION['usuario'])){
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>Processos Fevereiro</title>
+		<title>Processos Junho</title>
 		<?php require_once "menu.php"; ?>
 	</head>
 	<body>

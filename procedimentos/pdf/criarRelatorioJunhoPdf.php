@@ -35,4 +35,4 @@ $pdf->load_html(utf8_decode($html));
 $pdf->render();
 
 // Enviamos pdf para navegador.
-$pdf->stream('relatorio.pdf');
+$pdf->stream('relatorio_junho.pdf');

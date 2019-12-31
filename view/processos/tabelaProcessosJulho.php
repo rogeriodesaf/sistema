@@ -4,9 +4,9 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '7'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '7'  and Year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
-$result = mysqli_query($conexao, $sql);
+
 
 ?>
 
@@ -46,7 +46,7 @@ $total = 0;
         <td><?php echo $mostrar[4]; ?></td>
         <td><?php echo $mostrar[5]; ?></td>
         <td><?php echo $mostrar[6]; ?></td>
-        <td><?php echo $mostrar[7]; ?></td>
+        <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
 
 
@@ -81,7 +81,7 @@ $total = 0;
         <td>
             <?php
 
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '7'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '7' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
@@ -90,8 +90,9 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
-
+            R$ <?php echo number_format($valor, 2, ',' , '.');  ?>
+</td>
+            
     </tr>
 
 
@@ -105,7 +106,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     <tr>
         <td>
             <?php
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '7'";
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '7' and Year(data) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
@@ -113,9 +114,10 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor'];
     ?>
 
-            <?php }?>
-            R$ <?php echo $valor ?>
-        </td>
+<?php }?>
+            R$ <?php echo number_format($valor, 2, ',' , '.');  ?>
+</td>
+            
     </tr>
 
 
@@ -129,7 +131,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
         <td>
             <?php
 
-$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '7'";
+$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '7' and Year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
@@ -140,9 +142,10 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-            <?php }?>
-            R$ <?php echo $valor ?>
-
+<?php }?>
+            R$ <?php echo number_format($valor, 2, ',' , '.');  ?>
+</td>
+            
     </tr>
 
     <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
@@ -154,7 +157,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
             <td>
                 <?php
 
-$sql2 = "SELECT * FROM fornecedores where year(data) = '2020'";
+$sql2 = "SELECT * FROM fornecedores  WHERE YEAR(data) = '2020' ";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
@@ -165,16 +168,18 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-                <?php }?>
-                R$ <?php echo $valor ?>
-
-        </tr>
+<?php }?>
+            R$ <?php echo number_format($valor, 2, ',' , '.');  ?>
+</td>
+            
+    </tr>
 
 
     </table>
-    </div>
+
+
     <td style="align:center;">
-        <a href="../procedimentos/processos/criarRelatorioJulhoPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+        <a href="../procedimentos/pdf/criarRelatorioJulhoPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
             Imprimir <span class="glyphicon glyphicon-print"></span>
         </a>
     </td>
@@ -184,7 +189,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
      height: 100px ;">
 
         <tr>
-            <td style=" text-decoration:none color:#FFF;"><a href="clientes6.php" target="_blank">Total
+            <td style=" text-decoration:none color:#FFF;"><a href="relatores7.php" target="_blank">Total
                     de
                     valores por relator no mês de Julho.</a></td>
         </tr>
@@ -193,3 +198,6 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
     </table>
+    
+    <p>Núcleo de Tecnologia da Informação PROCON/PB</p>
+    
