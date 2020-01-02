@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '1' and year(data) = '2020'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '1' and year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -25,6 +25,8 @@ $result = mysqli_query($conexao, $sql);
         <td>Valor</td>
         <td>Data</td>
         <td>Ano</td>
+        <td>Recurso</td>
+
 
 
 
@@ -45,6 +47,7 @@ $result = mysqli_query($conexao, $sql);
         <td><?php echo $mostrar[6]; ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
+        <td><?php echo $mostrar[9]; ?></td>
 
 
 
@@ -76,9 +79,9 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor'];
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
@@ -100,9 +103,9 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor'];
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
@@ -128,9 +131,9 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
@@ -155,9 +158,9 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
@@ -213,9 +216,9 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
 
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
@@ -253,9 +256,9 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
 
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
     </tr>
@@ -289,9 +292,9 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
 
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
     </tr>
@@ -324,9 +327,9 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
 
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
@@ -359,9 +362,9 @@ while ($array11 = mysqli_fetch_array($buscarrelator)) {
 
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
@@ -393,9 +396,9 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
 
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
@@ -427,14 +430,12 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
 
     ?>
 
-<?php }?>
+            <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-</td>
+        </td>
     </tr>
 
 
     </tr>
 
 </table>
-
- 

@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '10' and year(data) = '2020'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '10' and year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -21,6 +21,7 @@ $result = mysqli_query($conexao, $sql);
         <td>Valor</td>
         <td>Data</td>
         <td>Ano</td>
+        <td>Recurso</td>
 
 
         <td>Adicionar</td>
@@ -47,6 +48,7 @@ $total = 0;
         <td><?php echo $mostrar[6]; ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
+        <td><?php echo $mostrar[9]; ?></td>
 
 
 
@@ -192,7 +194,8 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
      height: 100px ;">
 
     <tr>
-        <td style=" text-decoration:none color:#FFF;"><a href="relatores10.php" target="_blank">Total
+        <td style=" text-decoration:none color:#FFF;"><a href="relatores10.php">Total
+                <!--target=" _blank-->
                 de
                 valores por relator no mês de Outubro.</a></td>
     </tr>

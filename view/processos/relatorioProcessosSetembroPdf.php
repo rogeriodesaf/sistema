@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '9' and year(data) = '2020'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '9' and year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -24,6 +24,7 @@ $result = mysqli_query($conexao, $sql);
         <td>Valor</td>
         <td>Data</td>
         <td>Ano</td>
+        <td>Recurso</td>
 
 
 
@@ -44,6 +45,7 @@ $result = mysqli_query($conexao, $sql);
         <td><?php echo $mostrar[6]; ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
+        <td><?php echo $mostrar[9]; ?></td>
 
 
 

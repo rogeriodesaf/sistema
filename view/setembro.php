@@ -30,6 +30,11 @@ if (isset($_SESSION['usuario'])) {
                         <option>1 sessão </option>
                         <option> 2 sessão </option>
                     </select>
+                    <label>Recurso</label>
+                    <select class="form-control input-sm" id="recurso" name="recurso">
+                        <option>Tempestivo </option>
+                        <option> Intempestivo </option>
+                    </select>
                     <label>Relatores</label>
                     <select class="form-control input-sm" id="relator" name="relator">
 
@@ -90,6 +95,11 @@ if (isset($_SESSION['usuario'])) {
                         <input type="text" class="form-control input-sm" id="camaraU" name="camaraU">
                         <label>Relator</label>
                         <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
+                        <label>Recurso</label>
+                        <select class="form-control input-sm" id="recursoU" name="recursoU">
+                            <option>Tempestivo </option>
+                            <option> Intempestivo </option>
+                        </select>
                         <label>Valor</label>
                         <input type="number" class="form-control input-sm" id="valorU" name="valorU">
                         <label>Data De julgamento</label>
@@ -136,6 +146,7 @@ function adicionarDado(idprocesso) {
             $('#valorU').val(dado['valor']);
             $('#dataU').val(dado['data']);
             $('#anoU').val(dado['ano']);
+            $('#recursoU').val(dado['recurso']);
 
 
 

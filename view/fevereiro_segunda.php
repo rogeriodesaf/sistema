@@ -9,7 +9,7 @@ if (isset($_SESSION['usuario'])) {
 <html>
 
 <head>
-    <title>Processos Julho</title>
+    <title>Processos Fevereiro</title>
     <?php require_once "menu.php";?>
 </head>
 
@@ -18,25 +18,25 @@ if (isset($_SESSION['usuario'])) {
         <h1>Processos</h1>
         <div class="row">
             <div class="col-sm-4">
-                <form id="frmProcessos">
+                <form id="frmProcessos2">
                     <label>N° FA</label>
-                    <input type="number" class="form-control input-sm" id="nrofa" name="nrofa">
+                    <input type="number" class="form-control input-sm" id="nrofa2" name="nrofa">
                     <label>Consumidor</label>
-                    <input type="text" class="form-control input-sm" id="consumidor" name="consumidor">
+                    <input type="text" class="form-control input-sm" id="consumidor2" name="consumidor">
                     <label>Fornecedor</label>
-                    <input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
+                    <input type="text" class="form-control input-sm" id="fornecedor2" name="fornecedor">
                     <label>Grau da Sessão</label>
-                    <select class="form-control input-sm" id="camara" name="camara">
+                    <select class="form-control input-sm" id="camara2" name="camara">
                         <option>1 </option>
                         <option> 2 </option>
                     </select>
                     <label>Recurso</label>
-                    <select class="form-control input-sm" id="recurso" name="recurso">
+                    <select class="form-control input-sm" id="recurso2" name="recurso">
                         <option>Tempestivo </option>
                         <option> Intempestivo </option>
                     </select>
                     <label>Relatores</label>
-                    <select class="form-control input-sm" id="relator" name="relator">
+                    <select class="form-control input-sm" id="relator2" name="relator">
 
 
                         <option>-----</option>
@@ -54,18 +54,18 @@ if (isset($_SESSION['usuario'])) {
 
 
                     <label>Valor</label>
-                    <input type="number" class="form-control input-sm" id="valor" name="valor">
+                    <input type="number" class="form-control input-sm" id="valor2" name="valor">
                     <label>Data De Julgamento</label>
-                    <input type="date" class="form-control input-sm" id="data" name="data">
+                    <input type="date" class="form-control input-sm" id="data2" name="data">
                     <label>Ano</label>
-                    <input type="number" class="form-control input-sm" id="data" name="ano">
+                    <input type="number" class="form-control input-sm" id="data2" name="ano">
                     <p></p>
-                    <span class="btn btn-primary" id="btnAdicionarProcessos">Salvar</span>
+                    <span class="btn btn-primary" id="btnAdicionarProcessos2">Salvar</span>
                     <!-- btnAcidionarFornecedores é o botão entrar que ao ser clicado carregará a div tabelaFornecedores na linha 138 -->
                 </form>
             </div>
             <div class="col-sm-8">
-                <div id="tabelaProcessosLoad"></div>
+                <div id="tabelaProcessosLoad2"></div>
             </div>
         </div>
     </div>
@@ -93,13 +93,13 @@ if (isset($_SESSION['usuario'])) {
                         <input type="text" class="form-control input-sm" id="fornecedorU" name="fornecedorU">
                         <label>Câmara</label>
                         <input type="text" class="form-control input-sm" id="camaraU" name="camaraU">
+                        <label>Relator</label>
+                        <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
                         <label>Recurso</label>
                         <select class="form-control input-sm" id="recursoU" name="recursoU">
                             <option>Tempestivo </option>
                             <option> Intempestivo </option>
                         </select>
-                        <label>Relator</label>
-                        <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
                         <label>Valor</label>
                         <input type="number" class="form-control input-sm" id="valorU" name="valorU">
                         <label>Data De julgamento</label>
@@ -122,12 +122,12 @@ if (isset($_SESSION['usuario'])) {
 </html>
 <!-- Adicionar dados -->
 <script type="text/javascript">
-function adicionarDado(idprocesso) {
+function adicionarDado(idprocesso2) {
 
     $.ajax({
         type: "POST",
-        data: "idprocesso=" + idprocesso,
-        url: "../procedimentos/processos/obterDadosProcessos.php",
+        data: "idprocesso2=" + idprocesso2,
+        url: "../procedimentos/processos/obterDadosProcessos2.php",
         success: function(r) {
 
 
@@ -147,11 +147,12 @@ function adicionarDado(idprocesso) {
             $('#recursoU').val(dado['recurso']);
 
 
+
         }
     });
 }
 // Eliminar fornecedores
-function eliminar(idprocesso) {
+function eliminar(idprocesso2) {
     alertify.confirm('Deseja Excluir este registro?', function() {
         $.ajax({
             type: "POST",
@@ -162,7 +163,8 @@ function eliminar(idprocesso) {
 
 
                 if (r == 1) {
-                    $('#tabelaProcessosLoad').load("processos/tabelaProcessosJulho.php");
+                    $('#tabelaProcessosLoad2').load(
+                        "processos/tabelaProcessosFevereiro_segunda.php");
                     alertify.success("Excluido com sucesso!!");
                 } else {
                     alertify.error("Não foi possível excluir");
@@ -178,16 +180,16 @@ function eliminar(idprocesso) {
 <script type="text/javascript">
 $(document).ready(function() {
 
-    $('#tabelaProcessosLoad').load("processos/tabelaProcessosJulho.php");
+    $('#tabelaProcessosLoad2').load("processos/tabelaProcessosFevereiro_segunda.php");
 
-    $('#btnAdicionarProcessos').click(function() {
+    $('#btnAdicionarProcessos2').click(function() {
 
-        vazios = validarFormVazio('frmProcessos');
+        vazios = validarFormVazio('frmProcessos2');
 
         if (vazios > 0) {
             alertify.alert(
                 "Preencha os Campos!!"
-                ); //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
+            ); //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
             return false;
         }
 
@@ -196,12 +198,13 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             data: dados,
-            url: "../procedimentos/processos/adicionarProcessos.php",
+            url: "../procedimentos/processos/adicionarProcessos2.php",
             success: function(r) {
 
                 if (r == 1) {
-                    $('#frmProcessos')[0].reset();
-                    $('#tabelaProcessosLoad').load("processos/tabelaProcessosJulho.php");
+                    $('#frmProcessos2')[0].reset();
+                    $('#tabelaProcessosLoad2').load(
+                        "processos/tabelaProcessosFevereiro_segunda.php");
                     alertify.success("Registro Adicionado");
                 } else {
                     alertify.error("Não foi possível adicionar");
@@ -220,13 +223,14 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             data: dados,
-            url: "../procedimentos/processos/atualizarProcessos.php",
+            url: "../procedimentos/processos/atualizarProcessos2.php",
             success: function(r) {
 
 
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
-                    $('#tabelaProcessosLoad').load("processos/tabelaProcessosJulho.php");
+                    $('#tabelaProcessosLoad2').load(
+                        "processos/tabelaProcessosFevereiro_segunda.php");
                     alertify.success("Registro atualizado com sucesso!");
                 } else {
                     alertify.error("Não foi possível atualizar registro");

@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano FROM fornecedores  WHERE MONTH(data) = '6'  and Year(data) = '2020'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '6'  and Year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
 $result = mysqli_query($conexao, $sql);
 
@@ -22,6 +22,7 @@ $result = mysqli_query($conexao, $sql);
         <td>Valor</td>
         <td>Data</td>
         <td>Ano</td>
+        <td>Recurso</td>
 
 
         <td>Adicionar</td>
@@ -48,6 +49,7 @@ $total = 0;
         <td><?php echo $mostrar[6]; ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
+        <td><?php echo $mostrar[9]; ?></td>
 
 
 
@@ -90,9 +92,9 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     ?>
 
             <?php }?>
-            R$ <?php echo number_format($valor, 2, ',' , '.');  ?>
-</td>
-            
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+        </td>
+
     </tr>
 
 
@@ -114,10 +116,10 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor'];
     ?>
 
-<?php }?>
-            R$ <?php echo number_format($valor, 2, ',' , '.');  ?>
-</td>
-            
+            <?php }?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+        </td>
+
     </tr>
 
 
@@ -142,10 +144,10 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-<?php }?>
-            R$ <?php echo number_format($valor, 2, ',' , '.');  ?>
-</td>
-            
+            <?php }?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+        </td>
+
     </tr>
 
     <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
@@ -168,11 +170,11 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-<?php }?>
-            R$ <?php echo number_format($valor, 2, ',' , '.');  ?>
-</td>
-            
-    </tr>
+                <?php }?>
+                R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            </td>
+
+        </tr>
 
 
     </table>
@@ -189,7 +191,8 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
      height: 100px ;">
 
         <tr>
-            <td style=" text-decoration:none color:#FFF;"><a href="relatores6.php" target="_blank">Total
+            <!-- target="_blank  -->
+            <td style=" text-decoration:none color:#FFF;"><a href="relatores6.php">Total
                     de
                     valores por relator no mês de Junho.</a></td>
         </tr>

@@ -630,14 +630,11 @@ if (isset($_SESSION['usuario'])) {
                                             <tbody>
                                                 <tr>
                                                     <td><span class="internal-link"><a class="internal-link"
-                                                                href="resolveuid/077da5c5c0d54126b43c5642f41e4e95"
-                                                                target="_blank"
-                                                                title="Link publicações 2ª Câmara / Fevereiro de 2019">JAN</a></span>
+                                                                href="janeiro_segunda.php" target="_blank"
+                                                                title="Registro dos Processos de Janeiro de 2020">JAN</a></span>
                                                     </td>
-                                                    <td><a class="internal-link"
-                                                            href="resolveuid/a024b6a1e66146d282647c5f2a77edcc"
-                                                            target="_blank"
-                                                            title="Link publicações 2ª Câmara / Fevereiro de 2019">FEV</a>
+                                                    <td><a class="internal-link" href="fevereiro_segunda.php"
+                                                            target="_blank" title=" Fevereiro de 2020">FEV</a>
                                                     </td>
                                                     <td><a class="internal-link"
                                                             href="resolveuid/981ff98c812844508662faeee8316d03"
