@@ -90,7 +90,7 @@ while ($array10 = mysqli_fetch_array($buscarDb)) {
 
             <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-
+        </td>
     </tr>
 
 

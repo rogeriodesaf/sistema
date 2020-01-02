@@ -11,7 +11,7 @@ $result = mysqli_query($conexao, $sql);
 
 <link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.css">
 
-<img src="../../img/logo procon.png" width="200" height="120">
+<img src="../../img/marca_procon.jpg" width="200" height="120">
 <br>
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>

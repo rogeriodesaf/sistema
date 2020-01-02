@@ -323,7 +323,7 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
 </table>
 
 <td style="align:higth;">
-    <a href="outubro.php" class="btn btn-danger btn-sm">
+    <a href="dezembro.php" class="btn btn-danger btn-sm">
         Voltar <span class="glyphicon glyphicon glyphicon-share-alt"></span>
     </a>
 </td>

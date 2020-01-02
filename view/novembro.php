@@ -27,8 +27,8 @@ if (isset($_SESSION['usuario'])) {
                     <input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
                     <label>Grau da Sessão</label>
                     <select class="form-control input-sm" id="camara" name="camara">
-                        <option>1 sessão </option>
-                        <option> 2 sessão </option>
+                        <option>1 </option>
+                        <option> 2 </option>
                     </select>
                     <label>Relatores</label>
                     <select class="form-control input-sm" id="relator" name="relator">
