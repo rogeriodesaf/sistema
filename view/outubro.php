@@ -27,8 +27,8 @@ if (isset($_SESSION['usuario'])) {
                     <input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
                     <label>Grau da Sessão</label>
                     <select class="form-control input-sm" id="camara" name="camara">
-                        <option>1 sessão </option>
-                        <option> 2 sessão </option>
+                        <option>1 </option>
+                        <option> 2 </option>
                     </select>
                     <label>Relatores</label>
                     <select class="form-control input-sm" id="relator" name="relator">
@@ -79,7 +79,7 @@ if (isset($_SESSION['usuario'])) {
                 </div>
                 <div class="modal-body">
                     <form id="frmProcessosU">
-                        <input type="text" hidden="" id="idfornecedorU" name="idfornecedorU">
+                        <input type="text" hidden="" id="idprocessoU" name="idprocessoU">
                         <label>nroFA</label>
                         <input type="number" class="form-control input-sm" id="nrofaU" name="nrofaU">
                         <label>Consumidor</label>

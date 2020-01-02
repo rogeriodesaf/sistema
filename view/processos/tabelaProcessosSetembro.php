@@ -90,8 +90,8 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
-
+            R$ <?php echo number_format($valor, 2, ',', '!'); ?>
+        </td>
     </tr>
 
 
@@ -114,7 +114,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
     </tr>
 
@@ -141,8 +141,8 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
             <?php }?>
-            R$ <?php echo $valor ?>
-
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+        </td>
     </tr>
 
     <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
@@ -166,8 +166,8 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
                 <?php }?>
-                R$ <?php echo $valor ?>
-
+                R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            </td>
         </tr>
 
 
@@ -175,7 +175,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
     <td style="align:center;">
-        <a href="../procedimentos/processos/criarRelatorioSetembroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+        <a href="../procedimentos/pdf/criarRelatorioSetembroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
             Imprimir <span class="glyphicon glyphicon-print"></span>
         </a>
     </td>
@@ -185,7 +185,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
      height: 100px ;">
 
         <tr>
-            <td style=" text-decoration:none color:#FFF;"><a href="clientes9.php" target="_blank">Total
+            <td style=" text-decoration:none color:#FFF;"><a href="relatores9.php" target="_blank">Total
                     de
                     valores por relator no mês de Setembro.</a></td>
         </tr>

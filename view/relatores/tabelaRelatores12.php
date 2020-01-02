@@ -38,7 +38,7 @@ $result = mysqli_query($conexao, $sql);
 			</span>
 		</td>
 		<td>
-			<span class="btn btn-danger btn-xs" onclick="eliminarRelator('<?php echo $mostrar[8]; ?>')">
+			<span class="btn btn-danger btn-xs" onclick="eliminarRelator('<?php echo $mostrar[12]; ?>')">
 				<span class="glyphicon glyphicon-remove"></span>
 			</span>
 		</td>
@@ -93,13 +93,14 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
-
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
 
-
-
     </tr>
+
+
+
+
     <tr>
 
         <td>Edson</td>
@@ -133,8 +134,10 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
+
+
 
 
     </tr>
@@ -143,12 +146,12 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
         <td>Filipe</td>
         <td>
             <?php
-$sql9 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Filipe' and MONTH(data) = '12' and year(data) = '2020'";
-$buscar = mysqli_query($conexao, $sql9);
+$sql12 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Filipe' and MONTH(data) = '12' and year(data) = '2020'";
+$buscar = mysqli_query($conexao, $sql12);
 $Qtd = 0;
 
-while ($array9 = mysqli_fetch_array($buscar)) {
-    $Qtd = $Qtd + $array9['Qtd'];
+while ($array12 = mysqli_fetch_array($buscar)) {
+    $Qtd = $Qtd + $array12['Qtd'];
     ?>
 
             <?php }?>
@@ -169,7 +172,7 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
 
     </tr>
@@ -193,8 +196,8 @@ while ($array21 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql18 = "SELECT sum(valor) as valor from fornecedores where relator='Emannuel' and MONTH(data) = '12' and year(data) = '2020'";
-$buscarrelator = mysqli_query($conexao, $sql18);
+$sql121 = "SELECT sum(valor) as valor from fornecedores where relator='Emannuel' and MONTH(data) = '12' and year(data) = '2020'";
+$buscarrelator = mysqli_query($conexao, $sql121);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarrelator)) {
@@ -203,9 +206,10 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
-
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
+
+
 
 
     </tr>
@@ -214,12 +218,12 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
         <td>Cyro</td>
         <td>
             <?php
-$sql10 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Cyro' and MONTH(data) = '12' and year(data) = '2020'";
-$buscar = mysqli_query($conexao, $sql10);
+$sql12 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Cyro' and MONTH(data) = '12' and year(data) = '2020'";
+$buscar = mysqli_query($conexao, $sql12);
 $Qtd = 0;
 
-while ($array10 = mysqli_fetch_array($buscar)) {
-    $Qtd = $Qtd + $array10['Qtd'];
+while ($array12 = mysqli_fetch_array($buscar)) {
+    $Qtd = $Qtd + $array12['Qtd'];
     ?>
 
             <?php }?>
@@ -228,21 +232,23 @@ while ($array10 = mysqli_fetch_array($buscar)) {
         <td>
 
             <?php
-$sql11 = "SELECT sum(valor) as valor from fornecedores where relator='Filipe' and MONTH(data) = '12' and year(data) = '2020'";
-$buscarrelator = mysqli_query($conexao, $sql11);
+$sql12 = "SELECT sum(valor) as valor from fornecedores where relator='Cyro' and MONTH(data) = '12' and year(data) = '2020'";
+$buscarrelator = mysqli_query($conexao, $sql12);
 $valor = 0;
 
-while ($array11 = mysqli_fetch_array($buscarrelator)) {
-    $valor = $valor + $array11['valor'];
+while ($array12 = mysqli_fetch_array($buscarrelator)) {
+    $valor = $valor + $array12['valor'];
 
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
 
-
     </tr>
+
+
+
     <tr>
 
         <td>Juliana</td>
@@ -261,8 +267,8 @@ while ($array12 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql11 = "SELECT sum(valor) as valor from fornecedores where relator='Juliana' and MONTH(data) = '12' and year(data) = '2020'";
-$buscarrelator = mysqli_query($conexao, $sql11);
+$sql12 = "SELECT sum(valor) as valor from fornecedores where relator='Juliana' and MONTH(data) = '12' and year(data) = '2020'";
+$buscarrelator = mysqli_query($conexao, $sql12);
 $valor = 0;
 
 while ($array13 = mysqli_fetch_array($buscarrelator)) {
@@ -271,8 +277,10 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
+
+
 
 
     </tr>
@@ -304,15 +312,16 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
-
-
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
-
 
     </tr>
 
+
+
+
 </table>
+
 <td style="align:higth;">
     <a href="dezembro.php" class="btn btn-danger btn-sm">
         Voltar <span class="glyphicon glyphicon glyphicon-share-alt"></span>
