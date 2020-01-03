@@ -20,23 +20,23 @@ if (isset($_SESSION['usuario'])) {
             <div class="col-sm-4">
                 <form id="frmProcessos2">
                     <label>N° FA</label>
-                    <input type="number" class="form-control input-sm" id="nrofa2" name="nrofa">
+                    <input type="number" class="form-control input-sm" id="nrofa2" name="nrofa2">
                     <label>Consumidor</label>
-                    <input type="text" class="form-control input-sm" id="consumidor2" name="consumidor">
+                    <input type="text" class="form-control input-sm" id="consumidor2" name="consumidor2">
                     <label>Fornecedor</label>
-                    <input type="text" class="form-control input-sm" id="fornecedor2" name="fornecedor">
+                    <input type="text" class="form-control input-sm" id="fornecedor2" name="fornecedor2">
                     <label>Grau da Sessão</label>
-                    <select class="form-control input-sm" id="camara2" name="camara">
+                    <select class="form-control input-sm" id="camara2" name="camara2">
                         <option>1 </option>
                         <option> 2 </option>
                     </select>
                     <label>Recurso</label>
-                    <select class="form-control input-sm" id="recurso2" name="recurso">
+                    <select class="form-control input-sm" id="recurso2" name="recurso2">
                         <option>Tempestivo </option>
                         <option> Intempestivo </option>
                     </select>
                     <label>Relatores</label>
-                    <select class="form-control input-sm" id="relator2" name="relator">
+                    <select class="form-control input-sm" id="relator2" name="relator2">
 
 
                         <option>-----</option>
@@ -54,11 +54,11 @@ if (isset($_SESSION['usuario'])) {
 
 
                     <label>Valor</label>
-                    <input type="number" class="form-control input-sm" id="valor2" name="valor">
+                    <input type="number" class="form-control input-sm" id="valor2" name="valor2">
                     <label>Data De Julgamento</label>
-                    <input type="date" class="form-control input-sm" id="data2" name="data">
+                    <input type="date" class="form-control input-sm" id="data2" name="data2">
                     <label>Ano</label>
-                    <input type="number" class="form-control input-sm" id="data2" name="ano">
+                    <input type="number" class="form-control input-sm" id="data2" name="ano2">
                     <p></p>
                     <span class="btn btn-primary" id="btnAdicionarProcessos2">Salvar</span>
                     <!-- btnAcidionarFornecedores é o botão entrar que ao ser clicado carregará a div tabelaFornecedores na linha 138 -->
@@ -74,7 +74,7 @@ if (isset($_SESSION['usuario'])) {
 
 
     <!-- Modal -->
-    <div class="modal fade" id="abremodalProcessosUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="abremodalProcessosUpdate2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -83,33 +83,33 @@ if (isset($_SESSION['usuario'])) {
                     <h4 class="modal-title" id="myModalLabel">Atualizar Processo</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="frmProcessosU">
-                        <input type="text" hidden="" id="idprocessoU" name="idprocessoU">
+                    <form id="frmProcessos2U">
+                        <input type="text" hidden="" id="idprocesso2U" name="idprocesso2U">
                         <label>nroFA</label>
-                        <input type="number" class="form-control input-sm" id="nrofaU" name="nrofaU">
+                        <input type="number" class="form-control input-sm" id="nrofa2U" name="nrofa2U">
                         <label>Consumidor</label>
-                        <input type="text" class="form-control input-sm" id="consumidorU" name="consumidorU">
+                        <input type="text" class="form-control input-sm" id="consumidor2U" name="consumidor2U">
                         <label>Fornecedor</label>
-                        <input type="text" class="form-control input-sm" id="fornecedorU" name="fornecedorU">
+                        <input type="text" class="form-control input-sm" id="fornecedor2U" name="fornecedor2U">
                         <label>Câmara</label>
-                        <input type="text" class="form-control input-sm" id="camaraU" name="camaraU">
+                        <input type="text" class="form-control input-sm" id="camara2U" name="camara2U">
                         <label>Relator</label>
-                        <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
+                        <input type="text" class="form-control input-sm" id="relator2U" name="relator2U">
                         <label>Recurso</label>
-                        <select class="form-control input-sm" id="recursoU" name="recursoU">
+                        <select class="form-control input-sm" id="recurso2U" name="recurso2U">
                             <option>Tempestivo </option>
                             <option> Intempestivo </option>
                         </select>
                         <label>Valor</label>
-                        <input type="number" class="form-control input-sm" id="valorU" name="valorU">
+                        <input type="number" class="form-control input-sm" id="valor2U" name="valor2U">
                         <label>Data De julgamento</label>
-                        <input type="date" class="form-control input-sm" id="dataU" name="dataU">
+                        <input type="date" class="form-control input-sm" id="data2U" name="data2U">
                         <label>Ano</label>
-                        <input type="number" class="form-control input-sm" id="anoU" name="anoU">
+                        <input type="number" class="form-control input-sm" id="ano2U" name="ano2U">
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button id="btnAdicionarProcessoU" type="button" class="btn btn-primary"
+                    <button id="btnAdicionarProcesso2U" type="button" class="btn btn-primary"
                         data-dismiss="modal">Atualizar</button>
 
                 </div>
@@ -135,16 +135,16 @@ function adicionarDado(idprocesso2) {
             dado = jQuery.parseJSON(r);
 
 
-            $('#idprocessoU').val(dado['id_fornecedor']);
-            $('#nrofaU').val(dado['nrofa']);
-            $('#consumidorU').val(dado['consumidor']);
-            $('#fornecedorU').val(dado['fornecedor']);
-            $('#camaraU').val(dado['camara']);
-            $('#relatorU').val(dado['relator']);
-            $('#valorU').val(dado['valor']);
-            $('#dataU').val(dado['data']);
-            $('#anoU').val(dado['ano']);
-            $('#recursoU').val(dado['recurso']);
+            $('#idprocesso2U').val(dado['id_fornecedor2']);
+            $('#nrofa2U').val(dado['nrofa2']);
+            $('#consumidor2U').val(dado['consumidor2']);
+            $('#fornecedor2U').val(dado['fornecedor2']);
+            $('#camara2U').val(dado['camara2']);
+            $('#relator2U').val(dado['relator2']);
+            $('#valor2U').val(dado['valor2']);
+            $('#data2U').val(dado['data2']);
+            $('#ano2U').val(dado['ano2']);
+            $('#recurso2U').val(dado['recurso2']);
 
 
 
@@ -156,8 +156,8 @@ function eliminar(idprocesso2) {
     alertify.confirm('Deseja Excluir este registro?', function() {
         $.ajax({
             type: "POST",
-            data: "idprocesso=" + idprocesso,
-            url: "../procedimentos/processos/eliminarProcessos.php",
+            data: "idprocesso2=" + idprocesso2,
+            url: "../procedimentos/processos/eliminarProcessos2.php",
             success: function(r) {
 
 
@@ -193,7 +193,7 @@ $(document).ready(function() {
             return false;
         }
 
-        dados = $('#frmProcessos').serialize();
+        dados = $('#frmProcessos2').serialize();
 
         $.ajax({
             type: "POST",
@@ -217,8 +217,8 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#btnAdicionarProcessoU').click(function() {
-        dados = $('#frmProcessosU').serialize();
+    $('#btnAdicionarProcesso2U').click(function() {
+        dados = $('#frmProcessos2U').serialize();
 
         $.ajax({
             type: "POST",
@@ -228,7 +228,7 @@ $(document).ready(function() {
 
 
                 if (r == 1) {
-                    $('#frmProcessos')[0].reset();
+                    $('#frmProcessos2')[0].reset();
                     $('#tabelaProcessosLoad2').load(
                         "processos/tabelaProcessosFevereiro_segunda.php");
                     alertify.success("Registro atualizado com sucesso!");

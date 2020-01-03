@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano, recurso FROM fornecedores2  WHERE MONTH(data) = '2' and Year(data) = '2020'";
+$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, camara2, relator2, valor2, data2, ano2, recurso2 FROM fornecedores2  WHERE MONTH(data2) = '2' and Year(data2) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -84,12 +84,12 @@ $total = 0;
             <?php
 //código php para somar os valores da primeira sessão se o mês for Janeiro.
 
-$total2Grau = "SELECT sum(valor) as valor from fornecedores2 where camara='1' and MONTH(data) = '2' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
+$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where camara2='1' and MONTH(data2) = '2' and Year(data2) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
-    $valor = $valor + $array3['valor'];
+    $valor = $valor + $array3['valor2'];
     ?>
 
             <?php }?>
@@ -111,12 +111,12 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
             <?php
 //código php para somar os valores da segunda sessão se o mês for Janeiro.
-$total2Grau = "SELECT sum(valor) as valor from fornecedores2 where camara='2' and MONTH(data) = '2 ' and Year(data) = '2020'";
+$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where camara2='2' and MONTH(data2) = '2 ' and Year(data2) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
-    $valor = $valor + $array3['valor'];
+    $valor = $valor + $array3['valor2'];
     ?>
 
             <?php }?>
@@ -134,12 +134,12 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
             <td>
                 <?php
 
-$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data) = '2' and Year(data) = '2020'";
+$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '2' and Year(data2) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor'];
-    $valor = $valor + $array2['valor'];
+    $id_fornecedor = $array2['id_fornecedor2'];
+    $valor = $valor + $array2['valor2'];
     ?>
 
 
@@ -164,12 +164,12 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
                 <?php
 //código php para somar o total dos valores .
 
-$sql2 = "SELECT * FROM fornecedores2 WHERE  Year(data) = '2020'";
+$sql2 = "SELECT * FROM fornecedores2 WHERE  Year(data2) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor'];
-    $valor = $valor + $array2['valor'];
+    $id_fornecedor = $array2['id_fornecedor2'];
+    $valor = $valor + $array2['valor2'];
     ?>
 
 
@@ -187,7 +187,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
     </table>
     <td style="align:center;">
-        <a href="../procedimentos/pdf/criarRelatorioFevereiroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+        <a href="../procedimentos/pdf/criarRelatorioFevereiro_segundaPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
             Imprimir <span class="glyphicon glyphicon-print"></span>
         </a>
     </td>

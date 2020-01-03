@@ -9,7 +9,7 @@ class processos2
 
         // insira na tabela de fornecedores... esses dados estão indo para a linha 18 de adicionarProcessos. Note que lá a ordem é a mesma e a quantidade de campos também.
 
-        $sql = "INSERT into fornecedores2 (id_usuario, nrofa, consumidor, fornecedor, camara, relator, valor,data,ano,recurso) VALUES ('$dados[0]', '$dados[1]',
+        $sql = "INSERT into fornecedores2 (id_usuario, nrofa2, consumidor2, fornecedor2, camara2, relator2, valor2,data2,ano2,recurso2) VALUES ('$dados[0]', '$dados[1]',
 		   '$dados[2]',
 		   '$dados[3]',
 			'$dados[4]',
@@ -29,22 +29,22 @@ class processos2
         $c = new conectar();
         $conexao = $c->conexao();
 
-        $sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor,data,ano,recurso from fornecedores2 where id_fornecedor='$id' ";
+        $sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, camara2, relator2, valor2,data2,ano2,recurso2 from fornecedores2 where id_fornecedor2='$id' ";
 
         $result = mysqli_query($conexao, $sql);
         $mostrar = mysqli_fetch_row($result);
 
         $dados = array(
-            'id_fornecedor' => $mostrar[0],
-            'nrofa' => $mostrar[1],
-            'consumidor' => $mostrar[2],
-            'fornecedor' => $mostrar[3],
-            'camara' => $mostrar[4],
-            'relator' => $mostrar[5],
-            'valor' => $mostrar[6],
-            'data' => $mostrar[7],
-            'ano' => $mostrar[8],
-            'recurso' => $mostrar[9],
+            'id_fornecedor2' => $mostrar[0],
+            'nrofa2' => $mostrar[1],
+            'consumidor2' => $mostrar[2],
+            'fornecedor2' => $mostrar[3],
+            'camara2' => $mostrar[4],
+            'relator2' => $mostrar[5],
+            'valor2' => $mostrar[6],
+            'data2' => $mostrar[7],
+            'ano2' => $mostrar[8],
+            'recurso2' => $mostrar[9],
         );
 
         return $dados;
@@ -59,7 +59,7 @@ class processos2
 
 //o comando UPDATE atualiza os dados.
 
-        $sql = "UPDATE fornecedores2 SET nrofa = '$dados[1]', consumidor = '$dados[2]',fornecedor = '$dados[3]',camara = '$dados[4]',relator = '$dados[5]',valor = '$dados[6]',data= '$dados[7]', ano='$dados[8]' , recurso='$dados[9]'where id_fornecedor = '$dados[0]'";
+        $sql = "UPDATE fornecedores2 SET nrofa2 = '$dados[1]', consumidor2 = '$dados[2]',fornecedor2 = '$dados[3]',camara2 = '$dados[4]',relator2 = '$dados[5]',valor2 = '$dados[6]',data2= '$dados[7]', ano2='$dados[8]' , recurso2='$dados[9]'where id_fornecedor2 = '$dados[0]'";
 
         echo mysqli_query($conexao, $sql);
     }
@@ -69,7 +69,7 @@ class processos2
         $c = new conectar();
         $conexao = $c->conexao();
 
-        $sql = "DELETE from fornecedores2 where id_fornecedor = '$id' ";
+        $sql = "DELETE from fornecedores2 where id_fornecedor2 = '$id' ";
 
         return mysqli_query($conexao, $sql);
     }
