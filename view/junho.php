@@ -117,6 +117,10 @@ if (isset($_SESSION['usuario'])) {
         </div>
     </div>
 
+    <?php
+require_once 'footer.php';
+    ?>
+
 </body>
 
 </html>
@@ -188,7 +192,7 @@ $(document).ready(function() {
         if (vazios > 0) {
             alertify.alert(
                 "Preencha os Campos!!"
-                ); //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
+            ); //Se todos os campos da div class container não forem preenchidos chama a função alerta "Preeencha os campos
             return false;
         }
 

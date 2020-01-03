@@ -4,7 +4,8 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, camara2, relator2, valor2, data2, ano2, recurso2 FROM fornecedores2  WHERE MONTH(data2) = '2' and Year(data2) = '2020'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '9'  and Year(data) = '2020'";
+$result = mysqli_query($conexao, $sql);
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -12,7 +13,7 @@ $result = mysqli_query($conexao, $sql);
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
-    <tr style="background-color: SlateGrey;">
+    <tr>
         <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
@@ -46,16 +47,15 @@ $total = 0;
         <td><?php echo $mostrar[4]; ?></td>
         <td><?php echo $mostrar[5]; ?></td>
         <td><?php echo $mostrar[6]; ?></td>
-        <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
+        <td><?php echo date('d/m/Y', strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
         <td><?php echo $mostrar[9]; ?></td>
 
 
 
 
-
         <td>
-            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate2"
+            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate"
                 onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
                 <span class="glyphicon glyphicon-pencil"></span>
             </span>
@@ -82,21 +82,19 @@ $total = 0;
     <tr>
         <td>
             <?php
-//código php para somar os valores da primeira sessão se o mês for Janeiro.
 
-$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where camara2='1' and MONTH(data2) = '2' and Year(data2) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '9' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
-    $valor = $valor + $array3['valor2'];
+    $valor = $valor + $array3['valor'];
     ?>
 
             <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            R$ <?php echo number_format($valor, 2, ',', '!'); ?>
         </td>
     </tr>
-
 
 
 </table>
@@ -108,68 +106,62 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
     <tr>
         <td>
-
             <?php
-//código php para somar os valores da segunda sessão se o mês for Janeiro.
-$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where camara2='2' and MONTH(data2) = '2 ' and Year(data2) = '2020'";
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '9' and Year(data) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
-    $valor = $valor + $array3['valor2'];
+    $valor = $valor + $array3['valor'];
     ?>
 
             <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+        </td>
+    </tr>
 
+
+</table>
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+    <tr>
+        <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
+    </tr>
+
+    <tr>
+        <td>
+            <?php
+
+$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '9' and Year(data) = '2020'";
+$buscar2 = mysqli_query($conexao, $sql2);
+$valor = 0;
+while ($array2 = mysqli_fetch_array($buscar2)) {
+    $id_fornecedor = $array2['id_fornecedor'];
+    $valor = $valor + $array2['valor'];
+    ?>
+
+
+
+
+            <?php }?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
     </tr>
 
     <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
         <tr>
-            <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
+            <td style="background-color: SlateGrey;">Total dos valores Anual.</td>
         </tr>
 
         <tr>
             <td>
                 <?php
 
-$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '2' and Year(data2) = '2020'";
+$sql2 = "SELECT * FROM fornecedores  WHERE YEAR(data) = '2020' ";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor2'];
-    $valor = $valor + $array2['valor2'];
-    ?>
-
-
-
-
-                <?php }?>
-                R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-
-            </td>
-
-        </tr>
-
-    </table>
-
-    <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-        <tr>
-            <td style="background-color: SlateGrey;">Total dos valores.</td>
-        </tr>
-
-        <tr>
-            <td>
-                <?php
-//código php para somar o total dos valores .
-
-$sql2 = "SELECT * FROM fornecedores2 WHERE  Year(data2) = '2020'";
-$buscar2 = mysqli_query($conexao, $sql2);
-$valor = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor2'];
-    $valor = $valor + $array2['valor2'];
+    $id_fornecedor = $array2['id_fornecedor'];
+    $valor = $valor + $array2['valor'];
     ?>
 
 
@@ -181,30 +173,24 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
         </tr>
 
 
-
-
-        </div>
-
     </table>
+
+
     <td style="align:center;">
-        <a href="../procedimentos/pdf/criarRelatorioFevereiro_segundaPdf.php?idprocesso=<"
-            class="btn btn-danger btn-sm">
+        <a href="../procedimentos/pdf/criarRelatorioSetembroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
             Imprimir <span class="glyphicon glyphicon-print"></span>
         </a>
     </td>
-    <br>
-    <br>
     </div>
-
 
     <table style="text-align: center;
      height: 100px ;">
 
         <tr>
-            <!-- target="_blank" -->
-            <td style=" text-decoration:none color:#FFF;"><a href="relatores2.php">Total
+            <td style=" text-decoration:none color:#FFF;"><a href="relatores9.php ">Total
+                    <!-- target="_blank -->
                     de
-                    valores por relator no mês de fevereiro.</a></td>
+                    valores por relator no mês de Setembro.</a></td>
         </tr>
 
 

@@ -429,4 +429,3 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
 </table>
 
 <br><br>
-<p>Núcleo de Tecnologia da Informação PROCON/PB</p>

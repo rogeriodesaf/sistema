@@ -1,7 +1,7 @@
 <?php
 
 require_once "../../classes/conexao.php";
-require_once "../../classes/processos.php";
+require_once "../../classes/processos2.php";
 
 $obj = new processos2();
 
