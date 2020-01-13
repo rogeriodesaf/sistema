@@ -3,7 +3,7 @@
 require_once '../../lib/dompdf/autoload.inc.php';
 use Dompdf\Dompdf;
 
-$id = $_GET['idprocesso2'];
+$id = $_GET['idprocesso'];
 
 function file_get_contents_curl($url)
 {
@@ -36,4 +36,4 @@ $pdf->load_html($html);
 $pdf->render();
 
 // Enviamos pdf para navegador.
-$pdf->stream('relatorio_janeiro_segunda_camara.pdf');
+$pdf->stream('relatorio_janeiro_segunda.pdf');

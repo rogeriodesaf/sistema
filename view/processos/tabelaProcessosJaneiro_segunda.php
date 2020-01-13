@@ -187,7 +187,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
     </table>
     <td style="align:center;">
-        <a href="../procedimentos/pdf/criarRelatorioJaneiro_segundaPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+        <a href="../procedimentos/pdf/criarRelatorioJaneiroPdf_segunda.php?idprocesso=<" class="btn btn-danger btn-sm">
             Imprimir <span class="glyphicon glyphicon-print"></span>
         </a>
     </td>
@@ -201,9 +201,9 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
         <tr>
             <!-- target="_blank" -->
-            <td style=" text-decoration:none color:#FFF;"><a href="relatores2.php">Total
+            <td style=" text-decoration:none color:#FFF;"><a href="relatores1_segunda.php">Total
                     de
-                    valores por relator no mês de fevereiro.</a></td>
+                    valores por relator no mês de Janeiro.</a></td>
         </tr>
 
 
