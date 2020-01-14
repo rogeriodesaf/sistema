@@ -70,8 +70,9 @@ $result = mysqli_query($conexao, $sql);
     <tr>
         <td>
             <?php
+//código php para somar os valores da primeira sessão se o mês for Janeiro.
 
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '3' and year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where  MONTH(data) = '1' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
@@ -83,6 +84,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
     </tr>
+
 
 
 </table>
@@ -94,82 +96,86 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
     <tr>
         <td>
+
             <?php
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '3' and year(data) = '2020'";
+//código php para somar os valores da segunda sessão se o mês for Janeiro.
+$total2Grau = "SELECT sum(valor_2) as valor_2 from fornecedores where  MONTH(data) = '1 ' and Year(data) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
-    $valor = $valor + $array3['valor'];
+    $valor = $valor + $array3['valor_2'];
     ?>
 
             <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+
         </td>
     </tr>
 
+    <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+        <tr>
+            <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
+        </tr>
 
-</table>
+        <tr>
+            <td>
+                <?php
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-    <tr>
-        <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
-    </tr>
+$sql2 = "SELECT SUM(valor + valor_2 ) as soma FROM fornecedores WHERE MONTH(data) = '1' and Year(data) = '2020'";
+$busca = mysqli_query($conexao, $sql2);
+$valor = 0;
 
-    <tr>
-        <td>
-            <?php
+while ($array4 = mysqli_fetch_array($busca)) {
+    $valor = $valor + $array4['soma'];
 
-$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '3' and year(data) = '2020'";
+    ?>
+                <?php }?>
+                R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+
+
+
+
+
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+        <tr>
+            <td style="background-color: SlateGrey;">Total dos valores no ano de 2020.</td>
+        </tr>
+
+        <tr>
+            <td>
+                <?php
+//código php para somar o total dos valores .
+
+$sql2 = "SELECT SUM(valor + valor_2 ) as soma FROM fornecedores WHERE  Year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor'];
-    $valor = $valor + $array2['valor'];
+
+    $valor = $valor + $array2['soma'];
     ?>
 
 
 
 
-            <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-        </td>
-    </tr>
-
-
-</table>
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-    <tr>
-        <td style="background-color: SlateGrey;">Total dos valores anual.</td>
-    </tr>
-
-    <tr>
-        <td>
-            <?php
-
-$sql2 = "SELECT * FROM fornecedores WHERE YEAR(data) = '2020' ";
-$buscar2 = mysqli_query($conexao, $sql2);
-$valor = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor'];
-    $valor = $valor + $array2['valor'];
-    ?>
+                <?php }?>
+                R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            </td>
+        </tr>
 
 
 
 
-            <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-        </td>
-    </tr>
+        </div>
 
-
-</table>
-
-
-
-
-</table>
+    </table>
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Total por Relator</label></caption>

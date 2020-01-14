@@ -10,9 +10,10 @@ $dados = array(
     $_POST['nrofaU'],
     $_POST['consumidorU'],
     $_POST['fornecedorU'],
-    $_POST['camaraU'],
+
     $_POST['relatorU'],
     $_POST['valorU'],
+    $_POST['valor_2U'],
     $_POST['dataU'],
     $_POST['anoU'],
     $_POST['recursoU'],

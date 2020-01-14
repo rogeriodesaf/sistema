@@ -13,9 +13,10 @@ $dados = array(
     $_POST['nrofa'],
     $_POST['consumidor'],
     $_POST['fornecedor'],
-    $_POST['camara'],
+
     $_POST['relator'],
     $_POST['valor'],
+    $_POST['valor_2'],
     $_POST['data'],
     $_POST['ano'],
     $_POST['recurso'],
