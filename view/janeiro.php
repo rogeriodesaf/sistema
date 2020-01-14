@@ -17,6 +17,7 @@ if (isset($_SESSION['usuario'])) {
 </head>
 
 <body>
+
     <div class="container">
         <h1>Processos</h1>
         <div class="row">
@@ -30,7 +31,7 @@ if (isset($_SESSION['usuario'])) {
                     <input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
 
                     <label> Valor do 1º Grau</label>
-                    <input type="number" class="form-control input-sm" id="valor" name="valor">
+                    <input type="text" class="form-control input-sm" id="valor" name="valor">
 
                     <label> Valor do 2º Grau</label>
                     <input type="number" class="form-control input-sm" id="valor_2" name="valor_2">
@@ -252,7 +253,16 @@ $(document).ready(function() {
     })
 })
 </script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="jquery.mask.js"></script>
+<script>
+$(document).ready(function() {
+    $('#valor').mask('000.000.000.000.000.000,00', {
+        reverse: true
+    });
 
+})
+</script>
 
 <?php
 } else {
