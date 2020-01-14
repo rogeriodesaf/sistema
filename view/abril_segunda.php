@@ -204,7 +204,7 @@ $(document).ready(function() {
                 if (r == 1) {
                     $('#frmProcessos2')[0].reset();
                     $('#tabelaProcessosLoad2').load(
-                        "processos/tabelaProcessosMarco_segunda.php");
+                        "processos/tabelaProcessosAbril_segunda.php");
                     alertify.success("Registro Adicionado");
                 } else {
                     alertify.error("Não foi possível adicionar");
