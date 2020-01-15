@@ -40,7 +40,6 @@ class processos
             'nrofa' => $mostrar[1],
             'consumidor' => $mostrar[2],
             'fornecedor' => $mostrar[3],
-
             'relator' => $mostrar[4],
             'valor' => $mostrar[5],
             'valor_2' => $mostrar[6],

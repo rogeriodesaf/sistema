@@ -13,8 +13,9 @@ if (isset($_SESSION['usuario'])) {
     <title>Processos Janeiro</title>
     <?php require_once "menu.php";?>
 
-
 </head>
+
+
 
 <body>
 
@@ -30,8 +31,10 @@ if (isset($_SESSION['usuario'])) {
                     <label>Fornecedor</label>
                     <input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
 
-                    <label> Valor do 1º Grau</label>
-                    <input type="text" class="form-control input-sm" id="valor" name="valor">
+
+                    <label>Valor do 1 º Grau</label>
+                    <input type=" text " class="form-control input-sm" id=" valor " name="valor">
+
 
                     <label> Valor do 2º Grau</label>
                     <input type="number" class="form-control input-sm" id="valor_2" name="valor_2">
@@ -99,24 +102,25 @@ if (isset($_SESSION['usuario'])) {
                         <input type="text" class="form-control input-sm" id="fornecedorU" name="fornecedorU">
 
 
-                        <label> Valor do 1º Grau</label>
-                        <input type="number" class="form-control input-sm" id="valorU" name="valorU">
+                        <div class="form-row">
+                            <label>Valor do 1ª Grau</label>
+                            <input type="number" class="form-control input-sm" id="valorU" name="valorU">
 
-                        <label> Valor do 2º Grau</label>
-                        <input type="number" class="form-control input-sm" id="valor_2U" name="valor_2U">
-                        <label>Recurso</label>
-                        <select class="form-control input-sm" id="recursoU" name="recursoU">
-                            <option>Tempestivo </option>
-                            <option> Intempestivo </option>
-                        </select>
-                        <label>Relator</label>
-                        <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
+                            <label> Valor do 2º Grau</label>
+                            <input type="number" class="form-control input-sm" id="valor_2U" name="valor_2U">
+                            <label>Recurso</label>
+                            <select class="form-control input-sm" id="recursoU" name="recursoU">
+                                <option>Tempestivo </option>
+                                <option> Intempestivo </option>
+                            </select>
+                            <label>Relator</label>
+                            <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
 
 
-                        <label>Data De julgamento</label>
-                        <input type="date" class="form-control input-sm" id="dataU" name="dataU">
-                        <label>Ano</label>
-                        <input type="number" class="form-control input-sm" id="anoU" name="anoU">
+                            <label>Data De julgamento</label>
+                            <input type="date" class="form-control input-sm" id="dataU" name="dataU">
+                            <label>Ano</label>
+                            <input type="number" class="form-control input-sm" id="anoU" name="anoU">
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -131,7 +135,10 @@ if (isset($_SESSION['usuario'])) {
 </body>
 
 </html>
+
+
 <!-- Adicionar dados -->
+
 <script type="text/javascript">
 function adicionarDado(idprocesso) {
 
@@ -150,15 +157,15 @@ function adicionarDado(idprocesso) {
             $('#nrofaU').val(dado['nrofa']);
             $('#consumidorU').val(dado['consumidor']);
             $('#fornecedorU').val(dado['fornecedor']);
-
+            $('#relatorU').val(dado['relator']);
 
             $('#valorU').val(dado['valor']);
             $('#valor_2U').val(dado['valor_2']);
-            $('#recursoU').val(dado['recurso']);
-            $('#relatorU').val(dado['relator']);
+
+
             $('#dataU').val(dado['data']);
             $('#anoU').val(dado['ano']);
-
+            $('#recursoU').val(dado['recurso']);
 
 
 
@@ -166,6 +173,8 @@ function adicionarDado(idprocesso) {
         }
     });
 }
+
+
 // Eliminar fornecedores
 function eliminar(idprocesso) {
     alertify.confirm('Deseja Excluir este registro?', function() {
@@ -190,6 +199,8 @@ function eliminar(idprocesso) {
     });
 }
 </script>
+
+
 <!-- Código que está na div tabelaFornecedores -->
 <script type="text/javascript">
 $(document).ready(function() {
@@ -253,19 +264,20 @@ $(document).ready(function() {
     })
 })
 </script>
-<script src="jquery-3.3.1.min.js"></script>
-<script src="jquery.mask.js"></script>
-<script>
-$(document).ready(function() {
-    $('#valor').mask('000.000.000.000.000.000,00', {
-        reverse: true
-    });
-
-})
-</script>
 
 <?php
 } else {
-    header("location:../index.php"); //fim da verificação, se não existir funcionário logado o usuário é redirecionado para a pasta index
+    header("location:../index.php");
 }
 ?>
+
+
+
+
+<!-- <script type="text/javascript">
+    $(document).ready(function() {
+        $("#valor1").mask("999.999.999,00", {
+            reverse: true
+        })
+    })
+    </script> -->
