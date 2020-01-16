@@ -1,21 +1,23 @@
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['usuario'])){
+if (isset($_SESSION['usuario'])) {
 
-	?>
+    ?>
 
 
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<title>relatores</title>
-		<?php require_once "menu.php"; ?>
-	</head>
-	<body>
-		<div class="container">
-			<h1>Relatores</h1>
-			<div class="row">
-				<!-- <div class="col-sm-4">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>relatores</title>
+    <?php require_once "menu.php";?>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Relatores</h1>
+        <div class="row">
+            <!-- <div class="col-sm-4">
 					<form id="frmClientes">
 						<label>Nome</label>
 						<input type="text" class="form-control input-sm" id="nome" name="nome">
@@ -33,17 +35,17 @@ if(isset($_SESSION['usuario'])){
 						<span class="btn btn-primary" id="btnAdicionarCliente">Salvar</span>
 					</form>
 				</div> -->
-				<div class="col-sm-10">
-					 <div id="tabelaRelatoresLoad"></div>
-				</div>
-			</div>
-		</div>
+            <div class="col-sm-10">
+                <div id="tabelaRelatoresLoad"></div>
+            </div>
+        </div>
+    </div>
 
-		<!-- Button trigger modal -->
+    <!-- Button trigger modal -->
 
 
-		<!-- Modal -->
-		<div class="modal fade" id="abremodalRelatoresUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="abremodalRelatoresUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog modal-sm" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -69,8 +71,8 @@ if(isset($_SESSION['usuario'])){
 					</div>
 					<div class="modal-footer">
 						<button id="btnAdicionarRelatorU" type="button" class="btn btn-primary" data-dismiss="modal">Atualizar</button>
-						<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-<caption><label>Total por Relator</label></caption>
+						<table class="table table-hover table-condensed table-bordered" style="text-align: center;"> -->
+    <!-- <caption><label>Total por Relator</label></caption>
 <tr>
 			<td>Demetrius</td>
 	 		<td>Edson</td>
@@ -82,8 +84,8 @@ if(isset($_SESSION['usuario'])){
 			<td>Fernando</td>
 			<td>Rogério</td>
 			<td>Cláudio</td>
-			
-			
+
+
 	</tr>
 </table>
 					</div>
@@ -118,10 +120,10 @@ if(isset($_SESSION['usuario'])){
 
 				}
 			});
-		}
-
+		} -->
+    <!--
 	// 	function eliminarCliente(idrelator){
-	// 		alertify.confirm('Deseja Excluir este cliente?', function(){ 
+	// 		alertify.confirm('Deseja Excluir este cliente?', function(){
 	// 			$.ajax({
 	// 				type:"POST",
 	// 				data:"idrelator=" + idrelator,
@@ -137,48 +139,48 @@ if(isset($_SESSION['usuario'])){
 	// 					}
 	// 				}
 	// 			});
-	// 		}, function(){ 
+	// 		}, function(){
 	// 			alertify.error('Cancelado !')
 	// 		});
-	// 	}
-	// </script>
+	// 	} -->
+    <!-- // </script> -->
 
-	<script type="text/javascript">
-		$(document).ready(function(){
+    <script type="text/javascript">
+    $(document).ready(function() {
 
-			$('#tabelaRelatoresLoad').load("relatores/tabelaRelatores7.php");
+        $('#tabelaRelatoresLoad').load("relatores/tabelaRelatores7.php");
 
-			// $('#btnAdicionarRelator').click(function(){
+        // $('#btnAdicionarRelator').click(function(){
 
-			// 	vazios=validarFormVazio('frmRelatores');
+        // 	vazios=validarFormVazio('frmRelatores');
 
-			// 	if(vazios > 0){
-			// 		alertify.alert("Preencha os Campos!!");
-			// 		return false;
-			// 	}
+        // 	if(vazios > 0){
+        // 		alertify.alert("Preencha os Campos!!");
+        // 		return false;
+        // 	}
 
-			// 	dados=$('#frmRelatores').serialize();
+        // 	dados=$('#frmRelatores').serialize();
 
-			// 	$.ajax({
-			// 		type:"POST",
-			// 		data:dados,
-			// 		url:"../procedimentos/relatores/adicionarRelatores.php",
-			// 		success:function(r){
+        // 	$.ajax({
+        // 		type:"POST",
+        // 		data:dados,
+        // 		url:"../procedimentos/relatores/adicionarRelatores.php",
+        // 		success:function(r){
 
-			// 			if(r==1){
-			// 				$('#frmRelatores')[0].reset();
-			// 				$('#tabelaRelatoresLoad').load("relatores/tabelaRelatores2.php");
-			// 				alertify.success("Cliente Adicionado");
-			// 			}else{
-			// 				alertify.error("Não foi possível adicionar");
-			// 			}
-			// 		}
-			// 	});
-			// });
-		});
-	</script>
+        // 			if(r==1){
+        // 				$('#frmRelatores')[0].reset();
+        // 				$('#tabelaRelatoresLoad').load("relatores/tabelaRelatores2.php");
+        // 				alertify.success("Cliente Adicionado");
+        // 			}else{
+        // 				alertify.error("Não foi possível adicionar");
+        // 			}
+        // 		}
+        // 	});
+        // });
+    });
+    </script>
 
-	<!-- <script type="text/javascript">
+    <!-- <script type="text/javascript">
 		$(document).ready(function(){
 			$('#btnAdicionarRelatorU').click(function(){
 				dados=$('#frmRelatoresU').serialize();
@@ -205,9 +207,8 @@ if(isset($_SESSION['usuario'])){
 	</script> -->
 
 
-	<?php 
-}else{
-	header("location:../index.php");
+    <?php
+} else {
+    header("location:../index.php");
 }
 ?>
-

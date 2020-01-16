@@ -19,7 +19,7 @@ function file_get_contents_curl($url)
     return $dados;
 }
 
-$html = file_get_contents("http://localhost/sistema/view/processos/relatorioProcessosPdf.php?idprocesso=" . $id);
+$html = file_get_contents("http://localhost/sistema/view/processos/relatorioProcessosMarcoPdf.php?idprocesso=" . $id);
 
 // Instanciamos um objeto da classe DOMPDF.
 $pdf = new DOMPDF();

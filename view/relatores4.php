@@ -43,7 +43,7 @@ if(isset($_SESSION['usuario'])){
 
 
 		<!-- Modal -->
-		<div class="modal fade" id="abremodalRelatoresUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<!-- <div class="modal fade" id="abremodalRelatoresUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog modal-sm" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -115,33 +115,7 @@ if(isset($_SESSION['usuario'])){
 					$('#cpfU').val(dado['cpf']);
 
 
-
-				}
-			});
-		}
-
-	// 	function eliminarCliente(idrelator){
-	// 		alertify.confirm('Deseja Excluir este cliente?', function(){ 
-	// 			$.ajax({
-	// 				type:"POST",
-	// 				data:"idrelator=" + idrelator,
-	// 				url:"../procedimentos/relatores/eliminarRelatores.php",
-	// 				success:function(r){
-
-
-	// 					if(r==1){
-	// 						$('#tabelaRelatoresLoad').load("relatores/tabelaRelatores2.php");
-	// 						alertify.success("Excluido com sucesso!!");
-	// 					}else{
-	// 						alertify.error("Não foi possível excluir");
-	// 					}
-	// 				}
-	// 			});
-	// 		}, function(){ 
-	// 			alertify.error('Cancelado !')
-	// 		});
-	// 	}
-	// </script>
+ -->
 
 	<script type="text/javascript">
 		$(document).ready(function(){
