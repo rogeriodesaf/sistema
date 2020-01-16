@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor,  relator, valor,valor_2, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '9' and Year(data) = '2020'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor,  relator, valor,valor_2, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '10' and Year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
 ?>

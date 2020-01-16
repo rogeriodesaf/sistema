@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, camara, relator, valor, data, ano , recurso FROM fornecedores  WHERE MONTH(data) = '11' and year(data) = '2020'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor,  relator, valor,valor_2, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '11' and Year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -12,14 +12,13 @@ $result = mysqli_query($conexao, $sql);
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
-    <tr style="background-color: SlateGrey;">
-
+    <tr>
         <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
-        <td>Sessão</td>
         <td>Relator</td>
-        <td>Valor</td>
+        <td>Valor do 1º Grau</td>
+        <td>Valor do 2º Grau</td>
         <td>Data</td>
         <td>Ano</td>
         <td>Recurso</td>
@@ -45,8 +44,8 @@ $total = 0;
         <td><?php echo $mostrar[2]; ?></td>
         <td><?php echo $mostrar[3]; ?></td>
         <td><?php echo $mostrar[4]; ?></td>
-        <td><?php echo $mostrar[5]; ?></td>
-        <td><?php echo $mostrar[6]; ?></td>
+        <td><?php echo number_format($mostrar[5], 2, ',', '.'); ?></td>
+        <td><?php echo number_format($mostrar[6], 2, ',', '.'); ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
         <td><?php echo $mostrar[9]; ?></td>
@@ -83,7 +82,7 @@ $total = 0;
         <td>
             <?php
 
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='1' and MONTH(data) = '11' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where  MONTH(data) = '11' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
@@ -107,12 +106,12 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     <tr>
         <td>
             <?php
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where camara='2' and MONTH(data) = '11' and year(data) = '2020'";
+$total2Grau = "SELECT sum(valor_2) as valor_2 from fornecedores where  MONTH(data) = '11' and Year(data) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
-$valor = 0.00;
+$valor = 0;
 
-while ($array11 = mysqli_fetch_array($buscarDb)) {
-    $valor = $valor + $array11['valor'];
+while ($array3 = mysqli_fetch_array($buscarDb)) {
+    $valor = $valor + $array3['valor_2'];
     ?>
 
             <?php }?>
@@ -132,12 +131,12 @@ while ($array11 = mysqli_fetch_array($buscarDb)) {
         <td>
             <?php
 
-$sql2 = "SELECT * FROM fornecedores WHERE MONTH(data) = '11' and year(data) = '2020'";
+$sql2 = "SELECT sum(valor + valor_2) as soma FROM fornecedores WHERE MONTH(data) = '11' and Year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor'];
-    $valor = $valor + $array2['valor'];
+
+    $valor = $valor + $array2['soma'];
     ?>
 
 
@@ -145,7 +144,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
             <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-
+        </td>
     </tr>
 
 
@@ -159,11 +158,11 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
         <td>
             <?php
 
-$sql2 = "SELECT * FROM fornecedores WHERE YEAR(data) = '2020' ";
+$sql2 = "SELECT * FROM fornecedores WHERE Year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor'];
+
     $valor = $valor + $array2['valor'];
     ?>
 
@@ -172,31 +171,26 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
             <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+        </td>
 
     </tr>
 
 
 </table>
-
-
-
-
 <td style="align:center;">
     <a href="../procedimentos/pdf/criarRelatorioNovembroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
         Imprimir <span class="glyphicon glyphicon-print"></span>
     </a>
 </td>
 
-
-
 </div>
 
 <table style="text-align: center;
-     height: 110px ;">
+     height: 100px ;">
 
     <tr>
-        <td style=" text-decoration:none color:#FFF;"><a href="relatores11.php ">Total
-                <!-- target="_blank-->
+        <!-- target="_blank" -->
+        <td style=" text-decoration:none color:#FFF;"><a href="relatores11.php">Total
                 de
                 valores por relator no mês de Novembro.</a></td>
     </tr>
