@@ -33,7 +33,7 @@ if (isset($_SESSION['usuario'])) {
 
 
                     <label>Valor do 1 º Grau</label>
-                    <input type=" text " class="form-control input-sm" id=" valor " name="valor">
+                    <input type=" number " class="form-control input-sm" id="valor" name="valor">
 
 
                     <label> Valor do 2º Grau</label>
@@ -138,6 +138,12 @@ if (isset($_SESSION['usuario'])) {
 
 
 <!-- Adicionar dados -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
 
 <script type="text/javascript">
 function adicionarDado(idprocesso) {
