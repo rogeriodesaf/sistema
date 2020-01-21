@@ -29,7 +29,7 @@ if (isset($_SESSION['usuario'])) {
     <script type="text/javascript">
     $(document).ready(function() {
 
-        $('#tabelaRelatoresLoad').load("relatores/tabelaRelatores1_segunda.php");
+        $('#tabelaRelatoresLoad').load("relatores/tabelaRelatoresFevereiro_segunda.php");
 
 
     });

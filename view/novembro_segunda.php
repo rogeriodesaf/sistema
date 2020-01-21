@@ -10,16 +10,11 @@ if (isset($_SESSION['usuario'])) {
 <html>
 
 <head>
-    <title>Processos Fevereiro</title>
+    <title>Processos Novembro</title>
     <?php require_once "menu.php";?>
-
 </head>
 
-
-
-<body>
-
-    <div class="container">
+<div class="container">
         <h1>Processos</h1>
         <div class="row">
             <div class="col-sm-4">
@@ -77,11 +72,11 @@ if (isset($_SESSION['usuario'])) {
         </div>
     </div>
 
-    <!-- Button trigger modal -->
+<!-- Button trigger modal -->
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="abremodalProcessosUpdate2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- Modal -->
+<div class="modal fade" id="abremodalProcessosUpdate2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -134,9 +129,7 @@ if (isset($_SESSION['usuario'])) {
 
 </html>
 
-
 <!-- Adicionar dados -->
-
 <script type="text/javascript">
 function adicionarDado(idprocesso2) {
 
@@ -186,7 +179,7 @@ function eliminar(idprocesso2) {
 
                 if (r == 1) {
                     $('#tabelaProcessosLoad').load(
-                        "processos/tabelaProcessosFevereiro_segunda.php");
+                        "processos/tabelaProcessosNovembro_segunda.php");
                     alertify.success("Excluido com sucesso!!");
                 } else {
                     alertify.error("Não foi possível excluir");
@@ -204,7 +197,7 @@ function eliminar(idprocesso2) {
 <script type="text/javascript">
 $(document).ready(function() {
 
-    $('#tabelaProcessosLoad').load("processos/tabelaProcessosFevereiro_segunda.php");
+    $('#tabelaProcessosLoad').load("processos/tabelaProcessosNovembro_segunda.php");
 
     $('#btnAdicionarProcessos').click(function() {
 
@@ -228,7 +221,7 @@ $(document).ready(function() {
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
                     $('#tabelaProcessosLoad').load(
-                        "processos/tabelaProcessosFevereiro_segunda.php"
+                        "processos/tabelaProcessosNovembro_segunda.php"
                     ); //para adicionar novo registro
                     alertify.success("Registro Adicionado");
                 } else {
@@ -255,7 +248,7 @@ $(document).ready(function() {
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
                     $('#tabelaProcessosLoad').load(
-                        "processos/tabelaProcessosFevereiro_segunda.php");
+                        "processos/tabelaProcessosNovembro_segunda.php");
                     alertify.success("Registro atualizado com sucesso!");
                 } else {
                     alertify.error("Não foi possível atualizar registro");

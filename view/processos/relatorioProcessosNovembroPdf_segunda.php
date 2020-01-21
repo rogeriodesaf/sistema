@@ -16,12 +16,12 @@ $result = mysqli_query($conexao, $sql);
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
     <tr>
-        <td>Nro FA</td>
+    <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
-        <td>Sessão</td>
         <td>Relator</td>
-        <td>Valor</td>
+        <td>Valor do 1º Grau</td>
+        <td>Valor do 2º Grau</td>
         <td>Data</td>
         <td>Ano</td>
         <td>Recurso</td>

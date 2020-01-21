@@ -36,4 +36,4 @@ $pdf->load_html($html);
 $pdf->render();
 
 // Enviamos pdf para navegador.
-$pdf->stream('relatorio_janeiro_segunda.pdf');
+$pdf->stream('relatorio_janeiro_segunda_camara.pdf');

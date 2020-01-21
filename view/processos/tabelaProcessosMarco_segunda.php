@@ -3,8 +3,7 @@
 require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
-
-$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, camara2, relator2, valor2, data2, ano2, recurso2 FROM fornecedores2  WHERE MONTH(data2) = '3' and year(data2) = '2020'";
+$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '3' and Year(data2) = '2020' ";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -37,19 +36,15 @@ $total = 0;
     <?php while ($mostrar = mysqli_fetch_row($result)): ?>
 
     <tr>
-
-
-
         <td><?php echo $mostrar[1]; ?></td>
         <td><?php echo $mostrar[2]; ?></td>
         <td><?php echo $mostrar[3]; ?></td>
         <td><?php echo $mostrar[4]; ?></td>
-        <td><?php echo $mostrar[5]; ?></td>
-        <td><?php echo $mostrar[6]; ?></td>
+        <td> R$<?php echo number_format($mostrar[5], 2, ',', '.'); ?></td>
+        <td>R$<?php echo number_format($mostrar[6], 2, ',', '.'); ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
         <td><?php echo $mostrar[9]; ?></td>
-
 
 
 
@@ -82,16 +77,16 @@ $total = 0;
         <td>
             <?php
 
-$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where camara2='1' and MONTH(data2) = '3' and year(data2) = '2020'"; //SELECT sum(valor2) as valor2 from fornecedores2 where camara2='1'"
+$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where  MONTH(data2) = '3' and year(data2) = '2020'"; //SELECT sum(valor2) as valor2 from fornecedores2 where camara2='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
-$valor2 = 0;
+$valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
-    $valor2 = $valor2 + $array3['valor2'];
+    $valor = $valor + $array3['valor2'];
     ?>
 
             <?php }?>
-            R$ <?php echo number_format($valor2, 2, ',', '.'); ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
     </tr>
 
@@ -106,7 +101,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     <tr>
         <td>
             <?php
-$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where camara2='2' and MONTH(data2) = '3' and year(data2) = '2020'";
+$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where  MONTH(data2) = '3' and year(data2) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor2 = 0.00;
 

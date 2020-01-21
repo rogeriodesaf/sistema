@@ -17,27 +17,33 @@ if (isset($_SESSION['usuario'])) {
     <div class="container">
         <h1>Relatores</h1>
         <div class="row">
-
+           
             <div class="col-sm-10">
                 <div id="tabelaRelatoresLoad"></div>
             </div>
         </div>
     </div>
 
+    
 
+</body>
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-
-        $('#tabelaRelatoresLoad').load("relatores/tabelaRelatores1_segunda.php");
-
-
-    });
-    </script>
+</html>
 
 
 
-    <?php
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('#tabelaRelatoresLoad').load("relatores/tabelaRelatoresMaio_segunda.php");
+
+    
+});
+</script>
+
+
+
+<?php
 } else {
     header("location:../index.php");
 }

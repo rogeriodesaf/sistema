@@ -49,16 +49,14 @@ if (isset($_SESSION['usuario'])) {
 
 
                         <option>-----</option>
-                        <option>Demetrius</option>
-                        <option>Edson</option>
-                        <option>Filipe</option>
+                        <option>Kaio</option>
+
                         <option>Emannuel</option>
-                        <option>Cyro</option>
+
                         <option>Juliana</option>
                         <option>Sérgio</option>
                         <option>Fernando</option>
-                        <option>Rogério</option>
-                        <option>Cláudio</option>
+
                     </select>
 
 
@@ -83,7 +81,7 @@ if (isset($_SESSION['usuario'])) {
 
 
     <!-- Modal -->
-    <div class="modal fade" id="abremodalProcessosUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="abremodalProcessosUpdate2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -140,12 +138,12 @@ if (isset($_SESSION['usuario'])) {
 <!-- Adicionar dados -->
 
 <script type="text/javascript">
-function adicionarDado(idprocesso) {
+function adicionarDado(idprocesso2) {
 
     $.ajax({
         type: "POST",
-        data: "idprocesso=" + idprocesso,
-        url: "../procedimentos/processos/obterDadosProcessos.php",
+        data: "idprocesso2=" + idprocesso2,
+        url: "../procedimentos/processos/obterDadosProcessos2.php",
         success: function(r) {
 
 
@@ -176,12 +174,12 @@ function adicionarDado(idprocesso) {
 
 
 // Eliminar fornecedores
-function eliminar(idprocesso) {
+function eliminar(idprocesso2) {
     alertify.confirm('Deseja Excluir este registro?', function() {
         $.ajax({
             type: "POST",
-            data: "idprocesso=" + idprocesso,
-            url: "../procedimentos/processos/eliminarProcessos.php",
+            data: "idprocesso2=" + idprocesso2,
+            url: "../procedimentos/processos/eliminarProcessos2.php",
             success: function(r) {
 
 
@@ -223,14 +221,14 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             data: dados,
-            url: "../procedimentos/processos/adicionarProcessos.php",
+            url: "../procedimentos/processos/adicionarProcessos2.php",
             success: function(r) {
 
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
                     $('#tabelaProcessosLoad').load(
                         "processos/tabelaProcessosJaneiro_segunda.php"
-                        ); //para adicionar novo registro
+                    ); //para adicionar novo registro
                     alertify.success("Registro Adicionado");
                 } else {
                     alertify.error("Não foi possível adicionar");
@@ -249,14 +247,14 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             data: dados,
-            url: "../procedimentos/processos/atualizarProcessos.php",
+            url: "../procedimentos/processos/atualizarProcessos2.php",
             success: function(r) {
 
 
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
                     $('#tabelaProcessosLoad').load(
-                        "processos/tabelaProcessosJaneiro_segundaaProcessos.php");
+                        "processos/tabelaProcessosJaneiro_segunda.php");
                     alertify.success("Registro atualizado com sucesso!");
                 } else {
                     alertify.error("Não foi possível atualizar registro");
