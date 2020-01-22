@@ -1,11 +1,9 @@
-
 <?php
 
 require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
-
-$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '3' and Year(data2) = '2020' ";
+$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '4' and Year(data2) = '2020' ";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -54,8 +52,9 @@ $total = 0;
 
 
 
+
         <td>
-            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate2"
+            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate"
                 onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
                 <span class="glyphicon glyphicon-pencil"></span>
             </span>

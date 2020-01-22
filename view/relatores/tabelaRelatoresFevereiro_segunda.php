@@ -65,7 +65,7 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
         </td>
 
@@ -107,7 +107,7 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
         <?php }?>
-        R$ <?php echo $valor ?>
+        R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
     </td>
 
@@ -172,7 +172,7 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
 
 
@@ -205,7 +205,7 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
 
         </td>
@@ -239,7 +239,7 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
         <?php }?>
-        R$ <?php echo $valor ?>
+        R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
     </td>
 

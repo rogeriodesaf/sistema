@@ -5,7 +5,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '3' and Year(data2) = '2020' ";
+$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '9' and Year(data2) = '2020' ";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -83,7 +83,7 @@ $total = 0;
         <td>
             <?php
 
-$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where  MONTH(data2) = '4' and year(data2) = '2020'"; //SELECT sum(valor2) as valor2 from fornecedores2 where camara2='1'"
+$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where  MONTH(data2) = '9' and year(data2) = '2020'"; //SELECT sum(valor2) as valor2 from fornecedores2 where camara2='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
@@ -107,7 +107,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     <tr>
         <td>
             <?php
-$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where  MONTH(data2) = '4' and year(data2) = '2020'";
+$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where  MONTH(data2) = '9' and year(data2) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor2 = 0.00;
 
@@ -132,7 +132,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
         <td>
             <?php
 
-$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '4' and year(data2) = '2020'";
+$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '9' and year(data2) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor2 = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {

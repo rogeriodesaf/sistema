@@ -195,7 +195,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
      height: 100px ;">
 
     <tr>
-        <td style=" text-decoration:none color:#FFF;"><a href="relatores_abril_segunda.php">Total
+        <td style=" text-decoration:none color:#FFF;"><a href="relatores_julho_segunda.php">Total
                 <!--target="_blank" -->
                 de
                 valores por relator no mês de Julho.</a></td>

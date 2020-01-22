@@ -18,7 +18,7 @@ $conexao = $c->conexao();
 
 
 
-
+</table> -->
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Total por Relator</label></caption>
     <tr>
@@ -34,7 +34,7 @@ $conexao = $c->conexao();
         <td>Kaio</td>
         <td>
             <?php
-$sql6 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Kaio' and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql6 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Kaio' and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscar = mysqli_query($conexao, $sql6);
 $Qtd = 0;
 
@@ -55,17 +55,17 @@ while ($array4 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql5 = "SELECT sum(valor) as valor from fornecedores where relator='Kaio' and MONTH(data) = '3' and year(data) = '2020'";
+$sql5 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Kaio' and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql5);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarrelator)) {
-    $valor = $valor + $array3['valor'];
+    $valor = $valor + $array3['valor2'];
 
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
         </td>
 
@@ -83,7 +83,7 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     <td>Emannuel</td>
     <td>
         <?php
-$sql21 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Emannuel' and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql21 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Emannuel' and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscar = mysqli_query($conexao, $sql21);
 $Qtd = 0;
 
@@ -97,7 +97,7 @@ while ($array21 = mysqli_fetch_array($buscar)) {
     </td>
     <td>
         <?php
-$sql18 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Emannuel' and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql18 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Emannuel' and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql18);
 $valor = 0;
 
@@ -107,7 +107,7 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
         <?php }?>
-        R$ <?php echo $valor ?>
+        R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
     </td>
 
@@ -150,7 +150,7 @@ while ($array11 = mysqli_fetch_array($buscarrelator)) {
         <td>Juliana</td>
         <td>
             <?php
-$sql12 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Juliana' and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql12 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Juliana' and MONTH(data2) = '11' and year(data2) = '2020'";
 $Qtd = 0;
 
 while ($array12 = mysqli_fetch_array($buscar)) {
@@ -162,7 +162,7 @@ while ($array12 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql11 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Juliana' and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql11 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Juliana' and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql11);
 $valor = 0;
 
@@ -172,7 +172,7 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
 
 
@@ -182,7 +182,7 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
         <td>Sérgio</td>
         <td>
             <?php
-$sql14 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Sérgio'and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql14 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Sérgio'and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscar = mysqli_query($conexao, $sql14);
 $Qtd = 0;
 
@@ -195,7 +195,7 @@ while ($array14 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql16 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Sérgio'and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql16 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Sérgio'and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql16);
 $valor = 0;
 
@@ -205,7 +205,7 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
 
         </td>
@@ -215,7 +215,7 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
     <td>Fernando</td>
     <td>
         <?php
-$sql21 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Fernando' and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql21 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where relator2='Fernando' and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscar = mysqli_query($conexao, $sql21);
 $Qtd = 0;
 
@@ -229,7 +229,7 @@ while ($array21 = mysqli_fetch_array($buscar)) {
     </td>
     <td>
         <?php
-$sql18 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Fernando' and MONTH(data2) = '3' and year(data2) = '2020'";
+$sql18 = "SELECT sum(valor2) as valor2 from fornecedores2 where relator2='Fernando' and MONTH(data2) = '11' and year(data2) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql18);
 $valor = 0;
 
@@ -239,7 +239,7 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     ?>
 
         <?php }?>
-        R$ <?php echo $valor ?>
+        R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
     </td>
 
@@ -249,7 +249,7 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
 </table>
 
 <td style="align:higth;">
-    <a href="marco_segunda.php" class="btn btn-danger btn-sm">
+    <a href="novembro_segunda.php" class="btn btn-danger btn-sm">
         Voltar <span class="glyphicon glyphicon glyphicon-share-alt"></span>
     </a>
 </td>

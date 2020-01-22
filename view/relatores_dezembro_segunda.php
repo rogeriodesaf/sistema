@@ -34,7 +34,7 @@ if (isset($_SESSION['usuario'])) {
 
 <script type="text/javascript">
 $(document).ready(function() {
-Ago
+
     $('#tabelaRelatoresLoad').load("relatores/tabelaRelatoresDezembro_segunda.php");
 
     

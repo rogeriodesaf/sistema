@@ -198,7 +198,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
         <td style=" text-decoration:none color:#FFF;"><a href="relatores_dezembro_segunda.php">Total
                 <!--target="_blank" -->
                 de
-                valores por relator no mês de Maio.</a></td>
+                valores por relator no mês de Dezembro.</a></td>
     </tr>
 
 
