@@ -42,7 +42,9 @@ $total = 0;
         <td><?php echo $mostrar[2]; ?></td>
         <td><?php echo $mostrar[3]; ?></td>
         <td><?php echo $mostrar[4]; ?></td>
-        <td> R$<?php echo number_format($mostrar[5], 2, ',', '.'); ?></td>
+        <td> R$<?php echo $mostrar[5];
+
+?></td>
         <td>R$<?php echo number_format($mostrar[6], 2, ',', '.'); ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
@@ -88,10 +90,11 @@ $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor'];
+
     ?>
 
             <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            R$ <?php echo $valor ?>
         </td>
     </tr>
 

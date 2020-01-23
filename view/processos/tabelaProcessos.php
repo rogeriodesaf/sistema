@@ -117,9 +117,8 @@ $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor = $valor + $array3['valor_2'];
+
     $valorFormatado = str_replace(',', '.', str_replace('.', '', $valor));
-    $valorFloat = floatval($valorFormatado);
-  
 
     ?>
 

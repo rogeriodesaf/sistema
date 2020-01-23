@@ -34,7 +34,12 @@ if (isset($_SESSION['usuario'])) {
 
 
                     <label>Valor do 1 º Grau</label>
-                    <input type=" number" class="form-control input-sm" id=" valor" name="valor">
+
+
+
+                    <input type="text" id="valor" name="valor" onKeyPress="FormataValor(this.id, 10, event)" size="10"
+                        maxlength="10" />
+
 
 
                     <label> Valor do 2º Grau</label>
@@ -136,7 +141,73 @@ if (isset($_SESSION['usuario'])) {
 
 
 <!-- Adicionar dados -->
+<script>
+function FormataValor(id, tammax, teclapres) {
 
+    if (window.event) { // Internet Explorer
+        var tecla = teclapres.keyCode;
+    } else if (teclapres.which) { // Nestcape / firefox
+        var tecla = teclapres.which;
+    }
+
+
+    vr = document.getElementById(id).value;
+    vr = vr.toString().replace("/", "");
+    vr = vr.toString().replace("/", "");
+    vr = vr.toString().replace(",", "");
+    vr = vr.toString().replace(".", "");
+    vr = vr.toString().replace(".", "");
+    vr = vr.toString().replace(".", "");
+    vr = vr.toString().replace(".", "");
+    tam = vr.length;
+
+    if (tam < tammax && tecla != 8) {
+        tam = vr.length + 1;
+    }
+
+    if (tecla == 8) {
+        tam = tam - 1;
+    }
+
+    if (tecla == 8 || tecla >= 48 && tecla <= 57 || tecla >= 96 && tecla <= 105) {
+        if (tam <= 2) {
+            document.getElementById(id).value = vr;
+        }
+        if ((tam > 2) && (tam <= 5)) {
+            document.getElementById(id).value = vr.substr(0, tam - 2) + ',' + vr.substr(tam - 2, tam);
+        }
+        if ((tam >= 6) && (tam <= 8)) {
+            document.getElementById(id).value = vr.substr(0, tam - 5) + '.' + vr.substr(tam - 5, 3) + ',' + vr.substr(
+                tam - 2, tam);
+        }
+        if ((tam >= 9) && (tam <= 11)) {
+            document.getElementById(id).value = vr.substr(0, tam - 8) + '.' + vr.substr(tam - 8, 3) + '.' + vr.substr(
+                tam - 5, 3) + ',' + vr.substr(tam - 2, tam);
+        }
+        if ((tam >= 12) && (tam <= 14)) {
+            document.getElementById(id).value = vr.substr(0, tam - 11) + '.' + vr.substr(tam - 11, 3) + '.' + vr.substr(
+                tam - 8, 3) + '.' + vr.substr(tam - 5, 3) + ',' + vr.substr(tam - 2, tam);
+        }
+        if ((tam >= 15) && (tam <= 17)) {
+            document.getElementById(id).value = vr.substr(0, tam - 14) + '.' + vr.substr(tam - 14, 3) + '.' + vr.substr(
+                tam - 11, 3) + '.' + vr.substr(tam - 8, 3) + '.' + vr.substr(tam - 5, 3) + ',' + vr.substr(tam - 2,
+                tam);
+        }
+    }
+}
+</script>
+
+
+/**Script em PHP para formatar o valor para gravar no banco de dados usando a função str_replace**/
+<?php
+$valor = $_POST["valor"];
+    str_replace(",", ".", str_replace(".", "", $valor));
+    ?>
+/**
+- O primeiro str_replace [ que contem o $valor nao formatado ]
+ira retirar os "." pontos
+- o segundo str_replace ira trocar a "," por "."
+**/
 <script type="text/javascript">
 function adicionarDado(idprocesso) {
 
