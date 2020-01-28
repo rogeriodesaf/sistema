@@ -42,7 +42,7 @@ if (isset($_SESSION['usuario'])) {
 
 
                     <label> Valor do 2º Grau</label>
-                    <input type="number" class="form-control input-sm" id="valor_2" name="valor_2">
+                    <input type="text" class="form-control input-sm" id="valor_2" name="valor_2">
 
                     <label>Recurso</label>
                     <select class="form-control input-sm" id="recurso" name="recurso">
@@ -55,15 +55,11 @@ if (isset($_SESSION['usuario'])) {
 
                         <option>-----</option>
                         <option>Demetrius</option>
-                        <option>Edson</option>
                         <option>Filipe</option>
-                        <option>Emannuel</option>
                         <option>Cyro</option>
-                        <option>Juliana</option>
-                        <option>Sérgio</option>
-                        <option>Fernando</option>
-                        <option>Rogério</option>
-                        <option>Cláudio</option>
+                        <option>Fábio</option>
+
+
                     </select>
                     <label>Data De Julgamento</label>
                     <input type="date" class="form-control input-sm" id="data" name="data">
@@ -109,7 +105,7 @@ if (isset($_SESSION['usuario'])) {
                         <input type="text" class="form-control input-sm" id="valorU" name="valorU">
 
                         <label> Valor do 2º Grau</label>
-                        <input type="number" class="form-control input-sm" id="valor_2U" name="valor_2U">
+                        <input type="text" class="form-control input-sm" id="valor_2U" name="valor_2U">
                         <label>Recurso</label>
                         <select class="form-control input-sm" id="recursoU" name="recursoU">
                             <option>Tempestivo </option>
@@ -150,6 +146,20 @@ $('#valor').mask('000.000.000.000.000,00', {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script>
 $('#valorU').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_2').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_2U').mask('000.000.000.000.000,00', {
     reverse: true
 });
 </script>

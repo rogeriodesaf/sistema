@@ -16,7 +16,7 @@ $dados = array(
 
     $_POST['relator'],
     limpar_texto($_POST['valor']),
-    $_POST['valor_2'],
+    limpar_texto($_POST['valor_2']),
     $_POST['data'],
     $_POST['ano'],
     $_POST['recurso'],

@@ -3,32 +3,46 @@ session_start();
 if (isset($_SESSION['usuario'])) {
 
     ?>
+<!--verificação para saber se existe usuário logado-->
 
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>fornecedores</title>
+    <title>Processos Maio</title>
     <?php require_once "menu.php";?>
+
 </head>
 
+
+
 <body>
+
+
     <div class="container">
         <h1>Processos Maio</h1>
         <div class="row">
             <div class="col-sm-4">
                 <form id="frmProcessos">
                     <label>N° FA</label>
-                    <input type="number" class="form-control input-sm" id="nrofa" name="nrofa">
+                    <input type="text" class="form-control input-sm" id="nrofa" name="nrofa">
                     <label>Consumidor</label>
                     <input type="text" class="form-control input-sm" id="consumidor" name="consumidor">
                     <label>Fornecedor</label>
                     <input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
-                    <label>Valor do 1º Grau</label></label>
-                    <input type="number" class="form-control input-sm" id="valor" name="valor">
-                    <label>Valor do 2º Grau</label></label>
-                    <input type="number" class="form-control input-sm" id="valor_2" name="valor_2">
+
+
+                    <label>Valor do 1 º Grau</label>
+
+
+
+                    <input type="text" class="form-control input-sm" id="valor" name="valor">
+
+
+
+                    <label> Valor do 2º Grau</label>
+                    <input type="text" class="form-control input-sm" id="valor_2" name="valor_2">
 
                     <label>Recurso</label>
                     <select class="form-control input-sm" id="recurso" name="recurso">
@@ -41,27 +55,22 @@ if (isset($_SESSION['usuario'])) {
 
                         <option>-----</option>
                         <option>Demetrius</option>
-
                         <option>Filipe</option>
-
                         <option>Cyro</option>
-
-
-
                         <option>Fábio</option>
+
+
                     </select>
-
-
-
                     <label>Data De Julgamento</label>
                     <input type="date" class="form-control input-sm" id="data" name="data">
                     <label>Ano</label>
                     <input type="number" class="form-control input-sm" id="data" name="ano">
                     <p></p>
+                    <!-- essa span é onde está o botão salvar. Ao ser clicado será acionado o id btnAdicionarFornecedores -->
                     <span class="btn btn-primary" id="btnAdicionarProcessos">Salvar</span>
-                    <!-- btnAcidionarFornecedores é o botão entrar que ao ser clicado carregará a div tabelaFornecedores na linha 138 -->
                 </form>
             </div>
+            <!--div que carrega do lado direito da página e recebe os valores digitados do lado esquerdo. Note que uma tem col-sm-4 e a outra col-sm-8, o que soma 12-->
             <div class="col-sm-8">
                 <div id="tabelaProcessosLoad"></div>
             </div>
@@ -78,7 +87,7 @@ if (isset($_SESSION['usuario'])) {
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Atualizar Registro</h4>
+                    <h4 class="modal-title" id="myModalLabel">Atualizar Processo</h4>
                 </div>
                 <div class="modal-body">
                     <form id="frmProcessosU">
@@ -89,24 +98,21 @@ if (isset($_SESSION['usuario'])) {
                         <input type="text" class="form-control input-sm" id="consumidorU" name="consumidorU">
                         <label>Fornecedor</label>
                         <input type="text" class="form-control input-sm" id="fornecedorU" name="fornecedorU">
-                        <label>Valor do 1º Grau</label>
+
+
+
+                        <label>Valor do 1ª Grau</label>
                         <input type="text" class="form-control input-sm" id="valorU" name="valorU">
-                        <label>Valor do 2º Grau</label>
-                        <input type="number" class="form-control input-sm" id="valor_2U" name="valor_2U">
+
+                        <label> Valor do 2º Grau</label>
+                        <input type="text" class="form-control input-sm" id="valor_2U" name="valor_2U">
                         <label>Recurso</label>
                         <select class="form-control input-sm" id="recursoU" name="recursoU">
                             <option>Tempestivo </option>
                             <option> Intempestivo </option>
                         </select>
                         <label>Relator</label>
-
-                        <select class="form-control input-sm" id="relatorU" name="relatorU">
-
-                            <option> Demetrius</option>
-                            <option>Filipe</option>
-                            <option>Cyro</option>
-                            <option>Fábio</option>
-                        </select>
+                        <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
 
 
                         <label>Data De julgamento</label>
@@ -128,7 +134,42 @@ if (isset($_SESSION['usuario'])) {
 
 </html>
 
+
 <!-- Adicionar dados -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valorU').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_2').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_2U').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+/**Script em PHP para formatar o valor para gravar no banco de dados usando a função str_replace**/
+
+/**
+- O primeiro str_replace [ que contem o $valor nao formatado ]
+ira retirar os "." pontos
+- o segundo str_replace ira trocar a "," por "."
+**/
 <script type="text/javascript">
 function adicionarDado(idprocesso) {
 
@@ -147,17 +188,24 @@ function adicionarDado(idprocesso) {
             $('#nrofaU').val(dado['nrofa']);
             $('#consumidorU').val(dado['consumidor']);
             $('#fornecedorU').val(dado['fornecedor']);
+            $('#relatorU').val(dado['relator']);
             $('#valorU').val(dado['valor']);
             $('#valor_2U').val(dado['valor_2']);
-            $('#relatorU').val(dado['relator']);
             $('#dataU').val(dado['data']);
             $('#anoU').val(dado['ano']);
             $('#recursoU').val(dado['recurso']);
 
 
+
+
+
+
+
         }
     });
 }
+
+
 // Eliminar fornecedores
 function eliminar(idprocesso) {
     alertify.confirm('Deseja Excluir este registro?', function() {
@@ -182,6 +230,8 @@ function eliminar(idprocesso) {
     });
 }
 </script>
+
+
 <!-- Código que está na div tabelaFornecedores -->
 <script type="text/javascript">
 $(document).ready(function() {
@@ -209,7 +259,9 @@ $(document).ready(function() {
 
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
-                    $('#tabelaProcessosLoad').load("processos/tabelaProcessosMaio.php");
+                    $('#tabelaProcessosLoad').load(
+                        "processos/tabelaProcessosMaio.php"
+                    ); //para adicionar novo registro
                     alertify.success("Registro Adicionado");
                 } else {
                     alertify.error("Não foi possível adicionar");
@@ -234,7 +286,8 @@ $(document).ready(function() {
 
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
-                    $('#tabelaProcessosLoad').load("processos/tabelaProcessosMaio.php");
+                    $('#tabelaProcessosLoad').load(
+                        "processos/tabelaProcessosMaio.php");
                     alertify.success("Registro atualizado com sucesso!");
                 } else {
                     alertify.error("Não foi possível atualizar registro");
@@ -245,9 +298,19 @@ $(document).ready(function() {
 })
 </script>
 
-
 <?php
 } else {
     header("location:../index.php");
 }
 ?>
+
+
+
+
+<!-- <script type="text/javascript">
+    $(document).ready(function() {
+        $("#valor1").mask("999.999.999,00", {
+            reverse: true
+        })
+    })
+    </script> -->

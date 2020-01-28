@@ -12,7 +12,7 @@ $dados = array(
     $_POST['fornecedorU'],
     $_POST['relatorU'],
     limpar_texto($_POST['valorU']),
-    $_POST['valor_2U'],
+    limpar_texto($_POST['valor_2U']),
     $_POST['dataU'],
     $_POST['anoU'],
     $_POST['recursoU'],
