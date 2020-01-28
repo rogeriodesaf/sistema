@@ -15,7 +15,7 @@ $dados = array(
     $_POST['fornecedor'],
 
     $_POST['relator'],
-    $_POST['valor'],
+    limpar_texto($_POST['valor']),
     $_POST['valor_2'],
     $_POST['data'],
     $_POST['ano'],
@@ -24,3 +24,12 @@ $dados = array(
 );
 
 echo $obj->adicionar($dados);
+
+function limpar_texto($str)
+{
+    $source = array('.', ',');
+    $replace = array('', '.');
+    $valor = str_replace($source, $replace, $str); //remove os pontos e substitui a virgula pelo ponto
+    return $valor; //retorna o valor formatado para gravar no banco
+
+}

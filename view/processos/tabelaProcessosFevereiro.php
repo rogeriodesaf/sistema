@@ -42,9 +42,7 @@ $total = 0;
         <td><?php echo $mostrar[2]; ?></td>
         <td><?php echo $mostrar[3]; ?></td>
         <td><?php echo $mostrar[4]; ?></td>
-        <td> R$<?php echo $mostrar[5];
-
-?></td>
+        <td>R$<?php echo number_format($mostrar[5], 2, ',', '.'); ?></td>
         <td>R$<?php echo number_format($mostrar[6], 2, ',', '.'); ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
@@ -84,24 +82,30 @@ $total = 0;
             <?php
 //código php para somar os valores da primeira sessão se o mês for Janeiro.
 
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where  MONTH(data) = '2' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
+$total2Grau = "SELECT sum(valor) as valor from fornecedores where  MONTH(data) = '2' and year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
+
     $valor = $valor + $array3['valor'];
 
+    // public static function moeda($get_valor) {
+
+    //     $source = array('.', ',');
+    //     $replace = array('', '.');
+    //     $valor = str_replace($source, $replace, $get_valor); //remove os pontos e substitui a virgula pelo ponto
+    //     return $valor;
     ?>
 
             <?php }?>
-            R$ <?php echo $valor ?>
-        </td>
+
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+
     </tr>
 
 
-
 </table>
-
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total 2ª Grau.</td>

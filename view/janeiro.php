@@ -140,7 +140,7 @@ if (isset($_SESSION['usuario'])) {
 <!-- Adicionar dados -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script>
-$('#valor').mask('000.000.000.000.000,00', {
+$('#valor').mask('000,000,000,000,000.00', {
     reverse: true
 });
 </script>

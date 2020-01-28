@@ -69,7 +69,7 @@ INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nrofa`, `consumidor`
 (262, 7, '1', 'joao', 'tim', 'Demetrius', '1.20', 11200.00, '2020-11-11', 2018, 'Tempestivo', 0),
 (264, 7, '1', 'joao', 'tim', 'Demetrius', '200.00', 200.00, '2020-01-01', 2018, 'Tempestivo', 0),
 (267, 7, '1', '1', 'tim', 'Demetrius', '300.00', 300.00, '2020-01-01', 2018, 'Tempestivo', 0),
-(269, 7, '1', 'joao', 'tim', 'Demetrius', '100.00', 100.00, '2020-01-01', 2018, 'Tempestivo', 0),
+(269, 7, '1', 'joao', 'tim', 'Demetrius', '100000.00', 100.00, '2020-01-01', 2018, 'Tempestivo', 0),
 (270, 7, '1', '1', 'tim', 'Demetrius', '111.00', 111.11, '2020-01-01', 2018, 'Tempestivo', 0),
 (274, 7, '1', 'joao', 'tim', 'Demetrius', '2.00', 22.00, '2020-01-01', 2020, 'Tempestivo', 0),
 (276, 7, '', '', '', '', '', 0.00, '0000-00-00', 0, '', 0),

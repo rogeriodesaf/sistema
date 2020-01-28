@@ -11,7 +11,7 @@ $dados = array(
     $_POST['consumidorU'],
     $_POST['fornecedorU'],
     $_POST['relatorU'],
-    $_POST['valorU'],
+    limpar_texto($_POST['valorU']),
     $_POST['valor_2U'],
     $_POST['dataU'],
     $_POST['anoU'],
@@ -20,3 +20,11 @@ $dados = array(
 );
 
 echo $obj->atualizar($dados);
+
+function limpar_texto($str)
+{
+    $source = array('.', ',');
+    $replace = array('', '.');
+    $valor = str_replace($source, $replace, $str); //remove os pontos e substitui a virgula pelo ponto
+    return $valor; //retorna o valor formatado para gravar no banc
+}
