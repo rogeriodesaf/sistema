@@ -19,52 +19,52 @@ if (isset($_SESSION['usuario'])) {
 
 <body>
 
+
     <div class="container">
-        <h1>Processos</h1>
+        <h1>Processos Janeiro</h1>
         <div class="row">
             <div class="col-sm-4">
                 <form id="frmProcessos">
                     <label>N° FA</label>
-                    <input type="text" class="form-control input-sm" id="nrofa2" name="nrofa2">
+                    <input type="text" class="form-control input-sm" id="nrofa" name="nrofa">
                     <label>Consumidor</label>
-                    <input type="text" class="form-control input-sm" id="consumidor2" name="consumidor2">
+                    <input type="text" class="form-control input-sm" id="consumidor" name="consumidor">
                     <label>Fornecedor</label>
-                    <input type="text" class="form-control input-sm" id="fornecedor2" name="fornecedor2">
+                    <input type="text" class="form-control input-sm" id="fornecedor" name="fornecedor">
 
 
                     <label>Valor do 1 º Grau</label>
-                    <input type=" text " class="form-control input-sm" id=" valor2 " name="valor2">
+
+
+
+                    <input type="text" class="form-control input-sm" id="valor" name="valor">
+
 
 
                     <label> Valor do 2º Grau</label>
-                    <input type="number" class="form-control input-sm" id="valor_seg" name="valor_seg">
+                    <input type="text" class="form-control input-sm" id="valor_2" name="valor_2">
 
                     <label>Recurso</label>
-                    <select class="form-control input-sm" id="recurso2" name="recurso2">
+                    <select class="form-control input-sm" id="recurso" name="recurso">
                         <option>Tempestivo </option>
                         <option> Intempestivo </option>
                     </select>
                     <label>Relatores</label>
-                    <select class="form-control input-sm" id="relator2" name="relator2">
+                    <select class="form-control input-sm" id="relator" name="relator">
 
 
                         <option>-----</option>
-                        <option>Kaio</option>
+                        <option>Demetrius</option>
+                        <option>Filipe</option>
+                        <option>Cyro</option>
+                        <option>Fábio</option>
 
-                        <option>Emannuel</option>
-
-                        <option>Juliana</option>
-                        <option>Sérgio</option>
-                        <option>Fernando</option>
 
                     </select>
-
-
-
                     <label>Data De Julgamento</label>
-                    <input type="date" class="form-control input-sm" id="data2" name="data2">
+                    <input type="date" class="form-control input-sm" id="data" name="data">
                     <label>Ano</label>
-                    <input type="number" class="form-control input-sm" id="data2" name="ano2">
+                    <input type="number" class="form-control input-sm" id="data" name="ano">
                     <p></p>
                     <!-- essa span é onde está o botão salvar. Ao ser clicado será acionado o id btnAdicionarFornecedores -->
                     <span class="btn btn-primary" id="btnAdicionarProcessos">Salvar</span>
@@ -81,44 +81,44 @@ if (isset($_SESSION['usuario'])) {
 
 
     <!-- Modal -->
-    <div class="modal fade" id="abremodalProcessosUpdate2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="abremodalProcessosUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Atualizar Fornecedor</h4>
+                    <h4 class="modal-title" id="myModalLabel">Atualizar Processo</h4>
                 </div>
                 <div class="modal-body">
                     <form id="frmProcessosU">
-                        <input type="text" hidden="" id="idprocesso2U" name="idprocesso2U">
+                        <input type="text" hidden="" id="idprocessoU" name="idprocessoU">
                         <label>nroFA</label>
-                        <input type="number" class="form-control input-sm" id="nrofa2U" name="nrofa2U">
+                        <input type="number" class="form-control input-sm" id="nrofaU" name="nrofaU">
                         <label>Consumidor</label>
-                        <input type="text" class="form-control input-sm" id="consumidor2U" name="consumidor2U">
+                        <input type="text" class="form-control input-sm" id="consumidorU" name="consumidorU">
                         <label>Fornecedor</label>
-                        <input type="text" class="form-control input-sm" id="fornecedor2U" name="fornecedor2U">
+                        <input type="text" class="form-control input-sm" id="fornecedorU" name="fornecedorU">
 
 
-                        <div class="form-row">
-                            <label>Valor do 1ª Grau</label>
-                            <input type="number" class="form-control input-sm" id="valor2U" name="valor2U">
 
-                            <label> Valor do 2º Grau</label>
-                            <input type="number" class="form-control input-sm" id="valor_segU" name="valor_segU">
-                            <label>Recurso</label>
-                            <select class="form-control input-sm" id="recurso2U" name="recurso2U">
-                                <option>Tempestivo </option>
-                                <option> Intempestivo </option>
-                            </select>
-                            <label>Relator</label>
-                            <input type="text" class="form-control input-sm" id="relator2U" name="relator2U">
+                        <label>Valor do 1ª Grau</label>
+                        <input type="text" class="form-control input-sm" id="valorU" name="valorU">
+
+                        <label> Valor do 2º Grau</label>
+                        <input type="text" class="form-control input-sm" id="valor_2U" name="valor_2U">
+                        <label>Recurso</label>
+                        <select class="form-control input-sm" id="recursoU" name="recursoU">
+                            <option>Tempestivo </option>
+                            <option> Intempestivo </option>
+                        </select>
+                        <label>Relator</label>
+                        <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
 
 
-                            <label>Data De julgamento</label>
-                            <input type="date" class="form-control input-sm" id="data2U" name="data2U">
-                            <label>Ano</label>
-                            <input type="number" class="form-control input-sm" id="ano2U" name="ano2U">
+                        <label>Data De julgamento</label>
+                        <input type="date" class="form-control input-sm" id="dataU" name="dataU">
+                        <label>Ano</label>
+                        <input type="number" class="form-control input-sm" id="anoU" name="anoU">
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -136,14 +136,41 @@ if (isset($_SESSION['usuario'])) {
 
 
 <!-- Adicionar dados -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valorU').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_2').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_2U').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
 
 <script type="text/javascript">
-function adicionarDado(idprocesso2) {
+function adicionarDado(idprocesso) {
 
     $.ajax({
         type: "POST",
-        data: "idprocesso2=" + idprocesso2,
-        url: "../procedimentos/processos/obterDadosProcessos2.php",
+        data: "idprocesso=" + idprocesso,
+        url: "../procedimentos/processos/obterDadosProcessos.php",
         success: function(r) {
 
 
@@ -151,19 +178,19 @@ function adicionarDado(idprocesso2) {
             dado = jQuery.parseJSON(r);
 
 
-            $('#idprocesso2U').val(dado['id_fornecedor2']);
-            $('#nrofa2U').val(dado['nrofa2']);
-            $('#consumidor2U').val(dado['consumidor2']);
-            $('#fornecedor2U').val(dado['fornecedor2']);
-            $('#relator2U').val(dado['relator2']);
+            $('#idprocessoU').val(dado['id_fornecedor']);
+            $('#nrofaU').val(dado['nrofa']);
+            $('#consumidorU').val(dado['consumidor']);
+            $('#fornecedorU').val(dado['fornecedor']);
+            $('#relatorU').val(dado['relator']);
+            $('#valorU').val(dado['valor']);
+            $('#valor_2U').val(dado['valor_2']);
+            $('#dataU').val(dado['data']);
+            $('#anoU').val(dado['ano']);
+            $('#recursoU').val(dado['recurso']);
 
-            $('#valor2U').val(dado['valor2']);
-            $('#valor_segU').val(dado['valor_seg']);
 
 
-            $('#data2U').val(dado['data2']);
-            $('#ano2U').val(dado['ano2']);
-            $('#recurso2U').val(dado['recurso2']);
 
 
 
@@ -174,12 +201,12 @@ function adicionarDado(idprocesso2) {
 
 
 // Eliminar fornecedores
-function eliminar(idprocesso2) {
+function eliminar(idprocesso) {
     alertify.confirm('Deseja Excluir este registro?', function() {
         $.ajax({
             type: "POST",
-            data: "idprocesso2=" + idprocesso2,
-            url: "../procedimentos/processos/eliminarProcessos2.php",
+            data: "idprocesso=" + idprocesso,
+            url: "../procedimentos/processos/eliminarProcessos.php",
             success: function(r) {
 
 
@@ -221,7 +248,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             data: dados,
-            url: "../procedimentos/processos/adicionarProcessos2.php",
+            url: "../procedimentos/processos/adicionarProcessos.php",
             success: function(r) {
 
                 if (r == 1) {
@@ -247,7 +274,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             data: dados,
-            url: "../procedimentos/processos/atualizarProcessos2.php",
+            url: "../procedimentos/processos/atualizarProcessos.php",
             success: function(r) {
 
 

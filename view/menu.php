@@ -35,6 +35,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!--deixa os ícones do menu posicionados à direita -->
 
+
                         <li class="active"><a href="inicio.php"><span class="glyphicon glyphicon-home"></span>
                                 Inicio</a>
                         </li>
@@ -162,7 +163,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false"><span
                                     class="glyphicon glyphicon-user"></span> Consultas <span class="caret"></span></a>
-                            -->
+
                             <ul class="dropdown-menu">
                                 <li><a href="http://procon.pb.gov.br/camararecursal/decisoes">Decisões Proferidas</a>
                                 </li>

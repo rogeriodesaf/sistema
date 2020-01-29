@@ -19,8 +19,9 @@ if (isset($_SESSION['usuario'])) {
 
 <body>
 
+
     <div class="container">
-        <h1>Processos</h1>
+        <h1>Processos Janeiro</h1>
         <div class="row">
             <div class="col-sm-4">
                 <form id="frmProcessos">
@@ -33,7 +34,11 @@ if (isset($_SESSION['usuario'])) {
 
 
                     <label>Valor do 1 º Grau</label>
-                    <input type=" text " class="form-control input-sm" id="valor" name="valor">
+
+
+
+                    <input type="text" class="form-control input-sm" id="valor" name="valor">
+
 
 
                     <label> Valor do 2º Grau</label>
@@ -56,9 +61,6 @@ if (isset($_SESSION['usuario'])) {
 
 
                     </select>
-
-
-
                     <label>Data De Julgamento</label>
                     <input type="date" class="form-control input-sm" id="data" name="data">
                     <label>Ano</label>
@@ -85,7 +87,7 @@ if (isset($_SESSION['usuario'])) {
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Atualizar Fornecedor</h4>
+                    <h4 class="modal-title" id="myModalLabel">Atualizar Processo</h4>
                 </div>
                 <div class="modal-body">
                     <form id="frmProcessosU">
@@ -98,25 +100,25 @@ if (isset($_SESSION['usuario'])) {
                         <input type="text" class="form-control input-sm" id="fornecedorU" name="fornecedorU">
 
 
-                        <div class="form-row">
-                            <label>Valor do 1ª Grau</label>
-                            <input type="text" class="form-control input-sm" id="valorU" name="valorU">
 
-                            <label> Valor do 2º Grau</label>
-                            <input type="text" class="form-control input-sm" id="valor_2U" name="valor_2U">
-                            <label>Recurso</label>
-                            <select class="form-control input-sm" id="recursoU" name="recursoU">
-                                <option>Tempestivo </option>
-                                <option> Intempestivo </option>
-                            </select>
-                            <label>Relator</label>
-                            <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
+                        <label>Valor do 1ª Grau</label>
+                        <input type="text" class="form-control input-sm" id="valorU" name="valorU">
+
+                        <label> Valor do 2º Grau</label>
+                        <input type="text" class="form-control input-sm" id="valor_2U" name="valor_2U">
+                        <label>Recurso</label>
+                        <select class="form-control input-sm" id="recursoU" name="recursoU">
+                            <option>Tempestivo </option>
+                            <option> Intempestivo </option>
+                        </select>
+                        <label>Relator</label>
+                        <input type="text" class="form-control input-sm" id="relatorU" name="relatorU">
 
 
-                            <label>Data de julgamento</label>
-                            <input type="date" class="form-control input-sm" id="dataU" name="dataU">
-                            <label>Ano</label>
-                            <input type="number" class="form-control input-sm" id="anoU" name="anoU">
+                        <label>Data De julgamento</label>
+                        <input type="date" class="form-control input-sm" id="dataU" name="dataU">
+                        <label>Ano</label>
+                        <input type="number" class="form-control input-sm" id="anoU" name="anoU">
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -136,7 +138,7 @@ if (isset($_SESSION['usuario'])) {
 <!-- Adicionar dados -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 <script>
-$('#valor').mask('000,000,000,000,000.00', {
+$('#valor').mask('000.000.000.000.000,00', {
     reverse: true
 });
 </script>
@@ -155,6 +157,19 @@ $('#valor_2').mask('000.000.000.000.000,00', {
 });
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_2U').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+/**Script em PHP para formatar o valor para gravar no banco de dados usando a função str_replace**/
+
+/**
+- O primeiro str_replace [ que contem o $valor nao formatado ]
+ira retirar os "." pontos
+- o segundo str_replace ira trocar a "," por "."
+**/
 <script type="text/javascript">
 function adicionarDado(idprocesso) {
 
@@ -174,14 +189,14 @@ function adicionarDado(idprocesso) {
             $('#consumidorU').val(dado['consumidor']);
             $('#fornecedorU').val(dado['fornecedor']);
             $('#relatorU').val(dado['relator']);
-
             $('#valorU').val(dado['valor']);
             $('#valor_2U').val(dado['valor_2']);
-
-
             $('#dataU').val(dado['data']);
             $('#anoU').val(dado['ano']);
             $('#recursoU').val(dado['recurso']);
+
+
+
 
 
 
@@ -245,7 +260,8 @@ $(document).ready(function() {
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
                     $('#tabelaProcessosLoad').load(
-                        "processos/tabelaProcessos.php"); //para adicionar novo registro
+                        "processos/tabelaProcessos.php"
+                    ); //para adicionar novo registro
                     alertify.success("Registro Adicionado");
                 } else {
                     alertify.error("Não foi possível adicionar");
@@ -270,7 +286,8 @@ $(document).ready(function() {
 
                 if (r == 1) {
                     $('#frmProcessos')[0].reset();
-                    $('#tabelaProcessosLoad').load("processos/tabelaProcessos.php");
+                    $('#tabelaProcessosLoad').load(
+                        "processos/tabelaProcessos.php");
                     alertify.success("Registro atualizado com sucesso!");
                 } else {
                     alertify.error("Não foi possível atualizar registro");

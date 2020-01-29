@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Jan-2020 às 19:28
+-- Tempo de geração: 29-Jan-2020 às 20:04
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.2.20
 
@@ -36,7 +36,7 @@ CREATE TABLE `fornecedores` (
   `fornecedor` varchar(150) NOT NULL,
   `relator` varchar(100) NOT NULL,
   `valor` varchar(100) NOT NULL,
-  `valor_2` float(10,2) NOT NULL,
+  `valor_2` varchar(100) NOT NULL,
   `data` date NOT NULL,
   `ano` int(11) NOT NULL,
   `recurso` varchar(100) NOT NULL,
@@ -48,33 +48,31 @@ CREATE TABLE `fornecedores` (
 --
 
 INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nrofa`, `consumidor`, `fornecedor`, `relator`, `valor`, `valor_2`, `data`, `ano`, `recurso`, `total`) VALUES
-(238, 7, '1', '1', '1', 'Demetrius', '50.00', 4.00, '2020-03-01', 2020, 'Tempestivo', 0),
-(240, 7, '1', '1', '1', 'Demetrius', '1.00', 1.00, '2020-04-01', 2018, 'Tempestivo', 0),
-(241, 7, '1', 'joao', 'tim', 'Filipe', '1.00', 1.00, '2020-03-01', 2018, 'Intempestivo', 0),
-(242, 7, '1', '1', '2', 'Demetrius', '1.00', 0.00, '2020-05-01', 2018, 'Tempestivo', 0),
-(243, 7, '1', 'joao', 'tim', 'Demetrius', '1.00', 0.00, '2020-05-01', 2018, 'Intempestivo', 0),
-(245, 7, '1', '1', '122222222222222', 'Cyro', '1.00', 1.00, '2020-07-01', 2018, 'Tempestivo', 0),
-(246, 7, '1', '1', '1', 'Cyro', '1.00', 2.00, '2020-08-01', 2018, 'Tempestivo', 0),
-(248, 7, '1', '1', '1', 'Demetrius', '1.00', 1.00, '2020-10-01', 2020, 'Tempestivo', 0),
-(249, 7, '2', '1', '1', 'Cyro', '1.00', 1.00, '2020-10-01', 2018, 'Tempestivo', 0),
-(250, 7, '1', '1', 'oi', 'Demetrius', '1.00', 1.00, '2020-11-01', 2020, 'Intempestivo', 0),
-(251, 7, '2521212121212', 'joao', 'tim', 'Cyro', '236565.25', 100000000.00, '2020-12-01', 2020, 'Tempestivo', 0),
-(252, 7, '1', '1', '1', 'Cyro', '1.00', 1.00, '2020-12-01', 2020, 'Tempestivo', 0),
-(253, 7, '1', 'joao', '1', 'Filipe', '1.00', 1.00, '2020-11-01', 2020, 'Tempestivo', 0),
-(254, 7, '1', 'joao', 'tim', 'Cyro', '1.00', 1.00, '2020-09-01', 2020, 'Tempestivo', 0),
-(255, 7, '1', '1', '1', 'Cyro', '1.00', 1.00, '2020-06-01', 52020, 'Tempestivo', 0),
-(258, 7, '1', 'joao', 'tim', 'Demetrius', '1.00', 120.50, '2020-01-01', 2000, 'Intempestivo', 0),
-(259, 7, '1', '1', 'tim', 'Demetrius', '1.20', 1200.00, '2020-01-01', 2020, 'Tempestivo', 0),
-(261, 7, '1', '1', 'tim', 'Demetrius', '111.00', 111.11, '2020-01-10', 2018, 'Tempestivo', 0),
-(262, 7, '1', 'joao', 'tim', 'Demetrius', '1.20', 11200.00, '2020-11-11', 2018, 'Tempestivo', 0),
-(264, 7, '1', 'joao', 'tim', 'Demetrius', '200.00', 200.00, '2020-01-01', 2018, 'Tempestivo', 0),
-(267, 7, '1', '1', 'tim', 'Demetrius', '300.00', 300.00, '2020-01-01', 2018, 'Tempestivo', 0),
-(269, 7, '1', 'joao', 'tim', 'Demetrius', '100000.00', 100.00, '2020-01-01', 2018, 'Tempestivo', 0),
-(270, 7, '1', '1', 'tim', 'Demetrius', '111.00', 111.11, '2020-01-01', 2018, 'Tempestivo', 0),
-(274, 7, '1', 'joao', 'tim', 'Demetrius', '2.00', 22.00, '2020-01-01', 2020, 'Tempestivo', 0),
-(276, 7, '', '', '', '', '', 0.00, '0000-00-00', 0, '', 0),
-(277, 7, '1', '1', '1', 'Demetrius', '1', 1.00, '2020-01-01', 200, 'Tempestivo', 0),
-(278, 7, '', '', '', '', '', 0.00, '0000-00-00', 0, '', 0);
+(242, 7, '1', '1', '2', 'Demetrius', '1', '0.00', '2020-05-01', 2018, 'Tempestivo', 0),
+(243, 7, '1', 'joao', 'tim', 'Demetrius', '123121', '1.23', '2020-05-01', 2018, 'Intempestivo', 0),
+(245, 7, '1', '1', '122222222222222', 'Cyro', '1', '1.00', '2020-07-01', 2018, 'Tempestivo', 0),
+(248, 7, '1', '1', '1', 'Demetrius', '1', '1.00', '2020-10-01', 2020, 'Tempestivo', 0),
+(249, 7, '2', '1', '1', 'Cyro', '1', '1.00', '2020-10-01', 2018, 'Tempestivo', 0),
+(250, 7, '1', '1', 'oi', 'Demetrius', '1', '1.00', '2020-11-01', 2020, 'Intempestivo', 0),
+(251, 7, '2521212121212', 'joao', 'tim', 'Cyro', '236565', '100000000.00', '2020-12-01', 2020, 'Tempestivo', 0),
+(252, 7, '1', '1', '1', 'Cyro', '1', '1.00', '2020-12-01', 2020, 'Tempestivo', 0),
+(253, 7, '1', 'joao', '1', 'Filipe', '1', '1.00', '2020-11-01', 2020, 'Tempestivo', 0),
+(254, 7, '1', 'joao', 'tim', 'Cyro', '1', '1.00', '2020-09-01', 2020, 'Tempestivo', 0),
+(255, 7, '1', '1', '1', 'Cyro', '1', '1.00', '2020-06-01', 52020, 'Tempestivo', 0),
+(262, 7, '1', 'joao', 'tim', 'Demetrius', '1', '11200.00', '2020-11-11', 2018, 'Tempestivo', 0),
+(276, 7, '', '', '', '', '0', '0.00', '0000-00-00', 0, '', 0),
+(278, 7, '', '', '', '', '0', '0.00', '0000-00-00', 0, '', 0),
+(282, 7, '1', '1', '1', 'Demetrius', '11', '22', '2020-11-01', 2020, 'Tempestivo', 0),
+(414, 7, '242344', 'joao', 'tim', 'Demetrius', '231.65', '12', '2020-02-01', 2020, 'Tempestivo', 0),
+(416, 7, '1', '1', 'tim', 'Demetrius', '2000', '1.23', '2020-03-01', 2020, 'Tempestivo', 0),
+(417, 7, '41414134', 'joao', 'vivo', 'Demetrius', '123.56', '1245.66', '2020-04-01', 2020, 'Tempestivo', 0),
+(418, 7, '1323', 'joao', 'vivo', 'Demetrius', '12458', '0', '2020-04-01', 2020, 'Tempestivo', 0),
+(419, 7, '1', 'joao', 'tim', 'Demetrius', '0', '3000.00', '2020-08-01', 20, 'Tempestivo', 0),
+(420, 7, '1', 'joao', 'tim', 'Demetrius', '1', '3000.00', '2020-08-01', 2020, 'Tempestivo', 0),
+(423, 7, '1231321231', 'FAFDÃ‡KJFÃ‡LKJ', 'AFDAKJFAÃ‡FJ', 'Demetrius', '12.32', '12.32', '2020-02-01', 2018, 'Tempestivo', 0),
+(424, 7, '1233', '1213', '12313', 'Demetrius', '123.13', '123.13', '2020-01-01', 2020, 'Tempestivo', 0),
+(425, 7, 'reqqewrw', 'qwerqwrqw', 'erqwrqw', 'Filipe', '414.13', '134.14', '2020-01-01', 2018, 'Tempestivo', 0),
+(426, 7, 'qwerr', 'qwerqwrwq', 'qwerqwr', 'Demetrius', '1234.14', '12341.24', '2020-03-01', 2020, 'Tempestivo', 0);
 
 -- --------------------------------------------------------
 
@@ -102,10 +100,20 @@ CREATE TABLE `fornecedores2` (
 --
 
 INSERT INTO `fornecedores2` (`id_fornecedor2`, `id_usuario`, `nrofa2`, `consumidor2`, `fornecedor2`, `relator2`, `valor2`, `valor_seg`, `data2`, `ano2`, `recurso2`, `total2`) VALUES
-(12, 7, 1, '1', '1', 'Demetrius', '1', '0.00', '2020-03-01', 2020, 'Tempestivo', 0),
-(14, 7, 2147483647, 'maria', 'oi', 'SÃ©rgio', '9882', '0.00', '2020-01-21', 2000, 'Intempestivo', 0),
+(12, 7, 1, '1', '1', 'Kaio', '1', '0.00', '2020-03-01', 2020, 'Tempestivo', 0),
 (15, 7, 1, '1', '1', 'Demetrius', '250', '0.00', '2020-04-01', 2020, 'Tempestivo', 0),
-(16, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-01-01', 2028, 'Tempestivo', 0);
+(16, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-01-01', 2028, 'Tempestivo', 0),
+(17, 7, 12313131, '123123', '12313', 'Kaio', '1233', '12313.00', '2020-11-01', 2020, 'Tempestivo', 0),
+(18, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-12-01', 2020, 'Tempestivo', 0),
+(19, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-09-01', 2020, 'Tempestivo', 0),
+(20, 7, 1, '1', '1', 'Fernando', '1', '1.00', '2020-08-01', 2020, 'Intempestivo', 0),
+(21, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-07-01', 2020, 'Tempestivo', 0),
+(22, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-06-01', 2020, 'Tempestivo', 0),
+(23, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-05-01', 202, 'Tempestivo', 0),
+(24, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-04-01', 2020, 'Tempestivo', 0),
+(25, 7, 1, '1', '1', 'Emannuel', '1', '1.00', '2020-02-01', 2020, 'Tempestivo', 0),
+(26, 7, 1, '1', '1', 'Kaio', '123', '1.00', '2020-07-01', 2020, 'Tempestivo', 0),
+(27, 7, 1, '1', '1', 'Kaio', '123', '123.65', '2020-06-01', 2020, 'Tempestivo', 0);
 
 -- --------------------------------------------------------
 
@@ -183,13 +191,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `fornecedores`
 --
 ALTER TABLE `fornecedores`
-  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=279;
+  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=427;
 
 --
 -- AUTO_INCREMENT de tabela `fornecedores2`
 --
 ALTER TABLE `fornecedores2`
-  MODIFY `id_fornecedor2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_fornecedor2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `relatores`

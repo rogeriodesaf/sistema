@@ -86,7 +86,7 @@ if (isset($_SESSION['usuario'])) {
 
 
 </body>
-
+<?php require_once "footer.php";?>
 
 </html>
 
