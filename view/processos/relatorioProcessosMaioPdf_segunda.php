@@ -359,6 +359,7 @@ while ($array11 = mysqli_fetch_array($buscarrelator2)) {
 
             <?php }?>
             R$ <?php echo number_format($valor2, 2, ',', '.'); ?>
+            
         </td>
 
 
