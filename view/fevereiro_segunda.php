@@ -33,11 +33,11 @@ if (isset($_SESSION['usuario'])) {
 
 
                     <label>Valor do 1 º Grau</label>
-                    <input type=" text " class="form-control input-sm" id=" valor2 " name="valor2">
+                    <input type=" text " class="form-control input-sm" id="valor2" name="valor2">
 
 
                     <label> Valor do 2º Grau</label>
-                    <input type="number" class="form-control input-sm" id="valor_seg" name="valor_seg">
+                    <input type="text" class="form-control input-sm" id="valor_seg" name="valor_seg">
 
                     <label>Recurso</label>
                     <select class="form-control input-sm" id="recurso2" name="recurso2">
@@ -102,10 +102,10 @@ if (isset($_SESSION['usuario'])) {
 
                         <div class="form-row">
                             <label>Valor do 1ª Grau</label>
-                            <input type="number" class="form-control input-sm" id="valor2U" name="valor2U">
+                            <input type="text" class="form-control input-sm" id="valor2U" name="valor2U">
 
                             <label> Valor do 2º Grau</label>
-                            <input type="number" class="form-control input-sm" id="valor_segU" name="valor_segU">
+                            <input type="text" class="form-control input-sm" id="valor_segU" name="valor_segU">
                             <label>Recurso</label>
                             <select class="form-control input-sm" id="recurso2U" name="recurso2U">
                                 <option>Tempestivo </option>
@@ -135,8 +135,35 @@ if (isset($_SESSION['usuario'])) {
 </html>
 
 
-<!-- Adicionar dados -->
+<!--Máscaras para os valores. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor2').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor2U').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_seg').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<script>
+$('#valor_segU').mask('000.000.000.000.000,00', {
+    reverse: true
+});
+</script>
+<!-- Adicionar dados -->
 <script type="text/javascript">
 function adicionarDado(idprocesso2) {
 

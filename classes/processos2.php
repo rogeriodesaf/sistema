@@ -23,7 +23,9 @@ class processos2
         return mysqli_query($conexao, $sql);
         // isso gera por padrão o valor 1. Lá nas páginas dos meses se a função for 1 é porque os dados foram adicionados.
     }
-
+    public function limpar_texto($str)
+    {
+        return preg_replace("/[^0-9]/", "", $str);}
 //função que irá atualizar os dados da janela modal.
     public function obterDados($id)
     { //esse $id tem que ser igual ao da linha 28.

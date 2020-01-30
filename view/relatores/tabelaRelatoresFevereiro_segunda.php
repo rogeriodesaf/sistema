@@ -18,7 +18,7 @@ $conexao = $c->conexao();
 
 
 
-</table> -->
+</table>
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Total por Relator</label></caption>
     <tr>
@@ -245,6 +245,30 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
 
 
     </tr>
+
+</table>
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+    <caption><label>Total de Processos no mês.</label></caption>
+    <tr>
+        <td>
+
+
+            <?php
+$sql21 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where  MONTH(data2) = '2' and year(data2) = '2020'";
+$buscar = mysqli_query($conexao, $sql21);
+$Qtd = 0;
+
+while ($array21 = mysqli_fetch_array($buscar)) {
+    $Qtd = $Qtd + $array21['Qtd'];
+    ?>
+
+            <?php }?>
+            <?php echo $Qtd ?> processo(s).
+
+
+        </td>
+
+
 
 </table>
 

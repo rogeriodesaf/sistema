@@ -1,4 +1,3 @@
-
 <?php
 
 require_once "../../classes/conexao.php";
@@ -14,7 +13,7 @@ $result = mysqli_query($conexao, $sql);
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
     <tr>
-    <td>Nro FA</td>
+        <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
         <td>Relator</td>
@@ -41,7 +40,7 @@ $total = 0;
 
 
 
-    <td><?php echo $mostrar[1]; ?></td>
+        <td><?php echo $mostrar[1]; ?></td>
         <td><?php echo $mostrar[2]; ?></td>
         <td><?php echo $mostrar[3]; ?></td>
         <td><?php echo $mostrar[4]; ?></td>
@@ -182,7 +181,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 <td style="align:center;">
-    <a href="../procedimentos/pdf/criarRelatorioJunho_segundaPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+    <a href="../procedimentos/pdf/criarRelatorioJunhoPdf_segunda.php?idprocesso=<" class="btn btn-danger btn-sm">
         Imprimir <span class="glyphicon glyphicon-print"></span>
     </a>
 </td>

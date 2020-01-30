@@ -101,12 +101,12 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     <tr>
         <td>
             <?php
-$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where  MONTH(data2) = '3' and year(data2) = '2020'";
+$total2Grau = "SELECT sum(valor_seg) as valor_seg from fornecedores2 where  MONTH(data2) = '3' and year(data2) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor2 = 0.00;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
-    $valor2 = $valor2 + $array3['valor2'];
+    $valor2 = $valor2 + $array3['valor_seg'];
     ?>
 
             <?php }?>
@@ -119,7 +119,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
-        <td style="background-color: SlateGrey;">Total dos valor2es no mês.</td>
+        <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
     </tr>
 
     <tr>
@@ -131,7 +131,7 @@ $buscar2 = mysqli_query($conexao, $sql2);
 $valor2 = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
     $id_fornecedor = $array2['id_fornecedor2'];
-    $valor2 = $valor2 + $array2['valor2'];
+    $valor2 = $valor2 + $array2['valor_seg'];
     ?>
 
 
@@ -158,7 +158,7 @@ $buscar2 = mysqli_query($conexao, $sql2);
 $valor2 = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
     $id_fornecedor = $array2['id_fornecedor2'];
-    $valor2 = $valor2 + $array2['valor2'];
+    $valor2 = $valor2 + $array2['valor_seg'];
     ?>
 
 

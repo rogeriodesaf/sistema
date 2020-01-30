@@ -247,7 +247,30 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
     </tr>
 
 </table>
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+    <caption><label>Total de Processos no mês de Setembro.</label></caption>
+    <tr>
+        <td>
 
+
+            <?php
+$sql21 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where  MONTH(data2) = '9' and year(data2) = '2020'";
+$buscar = mysqli_query($conexao, $sql21);
+$Qtd = 0;
+
+while ($array21 = mysqli_fetch_array($buscar)) {
+    $Qtd = $Qtd + $array21['Qtd'];
+    ?>
+
+            <?php }?>
+            <?php echo $Qtd ?> processo(s).
+
+
+        </td>
+
+
+
+</table>
 <td style="align:higth;">
     <a href="setembro_segunda.php" class="btn btn-danger btn-sm">
         Voltar <span class="glyphicon glyphicon glyphicon-share-alt"></span>
