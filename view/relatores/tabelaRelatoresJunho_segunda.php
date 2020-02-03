@@ -60,7 +60,7 @@ $buscarrelator = mysqli_query($conexao, $sql5);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarrelator)) {
-    $valor = $valor + $array3['valovalor_seg'];
+    $valor = $valor + $array3['valor_seg'];
 
     ?>
 

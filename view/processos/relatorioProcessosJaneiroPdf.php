@@ -165,7 +165,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
         </td>
     </tr>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+    <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
         <caption><label>Total por relator</label></caption>
         <tr>
             <td style="background-color: SlateGrey;">--</td>
@@ -431,5 +431,6 @@ while ($array13 = mysqli_fetch_array($buscarrelator2)) {
 
 
         </tr>
+
 
     </table>

@@ -110,14 +110,14 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
 </table>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+<!-- <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
     </tr>
 
     <tr>
         <td>
-            <?php
+            <//?php
 
 $sql2 = "SELECT SUM(valor_seg) as soma FROM fornecedores2 WHERE MONTH(data2) = '5' and Year(data2) = '2020'";
 $busca = mysqli_query($conexao, $sql2);
@@ -127,8 +127,8 @@ while ($array4 = mysqli_fetch_array($busca)) {
     $valor = $valor + $array4['soma'];
 
     ?>
-            <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+            <//?php }?>
+            R$ <//?php echo number_format($valor, 2, ',', '.'); ?>
 
 
 
@@ -139,7 +139,7 @@ while ($array4 = mysqli_fetch_array($busca)) {
 
     </tr>
 
-</table>
+</table> -->
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
@@ -359,7 +359,7 @@ while ($array11 = mysqli_fetch_array($buscarrelator2)) {
 
             <?php }?>
             R$ <?php echo number_format($valor2, 2, ',', '.'); ?>
-            
+
         </td>
 
 
