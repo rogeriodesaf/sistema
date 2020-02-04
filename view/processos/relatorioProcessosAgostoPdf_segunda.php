@@ -72,7 +72,7 @@ $result = mysqli_query($conexao, $sql);
 
 $total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where  MONTH(data2) = '8' and year(data2) = '2020'"; //SELECT sum(valor2) as valor2 from fornecedores2 where camara2='1'"
 $buscarDb = mysqli_query($conexao, $total2Grau);
-
+$valor2=0;
 while ($array3 = mysqli_fetch_array($buscarDb)) {
     $valor2 = $valor2 + $array3['valor2'];
     ?>
