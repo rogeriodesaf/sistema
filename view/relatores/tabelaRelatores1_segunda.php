@@ -18,7 +18,7 @@ $conexao = $c->conexao();
 
 
 
-</table> -->
+
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Total por Relator</label></caption>
     <tr>
