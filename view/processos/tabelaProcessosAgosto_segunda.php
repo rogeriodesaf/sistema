@@ -13,7 +13,7 @@ $result = mysqli_query($conexao, $sql);
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
-    <tr>
+    <tr style="background-color: SlateGrey;">
     <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
@@ -123,14 +123,14 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
 </table>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+<!-- <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valor2es no mês.</td>
     </tr>
 
     <tr>
         <td>
-            <?php
+            <//?php
 
 $sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '8' and year(data2) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
@@ -143,13 +143,13 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 
-            <?php }?>
-            R$ <?php echo number_format($valor2, 2, ',', '.'); ?>
+            <//?php }?>
+            R$ <//?php echo number_format($valor2, 2, ',', '.'); ?>
 
     </tr>
 
 
-</table>
+</table> -->
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valores anual.</td>
@@ -164,7 +164,7 @@ $buscar2 = mysqli_query($conexao, $sql2);
 $valor2 = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
     $id_fornecedor = $array2['id_fornecedor2'];
-    $valor2 = $valor2 + $array2['valor2'];
+    $valor2 = $valor2 + $array2['valor_seg'];
     ?>
 
 
@@ -182,7 +182,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 <td style="align:center;">
-    <a href="../procedimentos/pdf/criarRelatorioAgosto_segundaPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+    <a href="../procedimentos/pdf/criarRelatorioAgostoPdf_segunda.php?idprocesso=<" class="btn btn-danger btn-sm">
         Imprimir <span class="glyphicon glyphicon-print"></span>
     </a>
 </td>
