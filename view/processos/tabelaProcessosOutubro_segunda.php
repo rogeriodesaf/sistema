@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '8' and Year(data2) = '2020' ";
+$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '10' and Year(data2) = '2020' ";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -12,8 +12,8 @@ $result = mysqli_query($conexao, $sql);
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
-    <tr>
-    <td>Nro FA</td>
+    <tr style="background-color: SlateGrey;">
+        <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
         <td>Relator</td>
@@ -40,12 +40,13 @@ $total = 0;
 
 
 
+
         <td><?php echo $mostrar[1]; ?></td>
         <td><?php echo $mostrar[2]; ?></td>
         <td><?php echo $mostrar[3]; ?></td>
         <td><?php echo $mostrar[4]; ?></td>
-        <td><?php echo $mostrar[5]; ?></td>
-        <td><?php echo $mostrar[6]; ?></td>
+        <td> R$<?php echo number_format($mostrar[5], 2, ',', '.'); ?></td>
+        <td>R$<?php echo number_format($mostrar[6], 2, ',', '.'); ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
         <td><?php echo $mostrar[9]; ?></td>
@@ -53,8 +54,9 @@ $total = 0;
 
 
 
+
         <td>
-            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate"
+            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate2"
                 onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
                 <span class="glyphicon glyphicon-pencil"></span>
             </span>
@@ -106,12 +108,12 @@ while ($array10 = mysqli_fetch_array($buscarDb)) {
     <tr>
         <td>
             <?php
-$total2Grau = "SELECT sum(valor2) as valor2 from fornecedores2 where MONTH(data2) = '10' and year(data2) = '2020'";
+$total2Grau = "SELECT sum(valor_seg) as valor_seg from fornecedores2 where MONTH(data2) = '10' and year(data2) = '2020'";
 $buscarDb = mysqli_query($conexao, $total2Grau);
 $valor = 0.00;
 
 while ($array10 = mysqli_fetch_array($buscarDb)) {
-    $valor = $valor + $array10['valor2'];
+    $valor = $valor + $array10['valor_seg'];
     ?>
 
             <?php }?>
@@ -122,33 +124,7 @@ while ($array10 = mysqli_fetch_array($buscarDb)) {
 
 </table>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-    <tr>
-        <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
-    </tr>
 
-    <tr>
-        <td>
-            <?php
-
-$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '10' and year(data2) = '2020'";
-$buscar2 = mysqli_query($conexao, $sql2);
-$valor = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor'];
-    $valor = $valor + $array2['valor'];
-    ?>
-
-
-
-
-            <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-
-    </tr>
-
-
-</table>
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valores anual.</td>
@@ -162,8 +138,8 @@ $sql2 = "SELECT * FROM fornecedores2 WHERE YEAR(data2) = '2020' ";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor2'];
-    $valor = $valor + $array2['valor2'];
+
+    $valor = $valor + $array2['valor_seg'];
     ?>
 
 
@@ -181,7 +157,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 <td style="align:center;">
-    <a href="../procedimentos/pdf/criarRelatorioOutubroPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+    <a href="../procedimentos/pdf/criarRelatorioOutubro_segundaPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
         Imprimir <span class="glyphicon glyphicon-print"></span>
     </a>
 </td>

@@ -4,7 +4,6 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-
 $sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '11' and Year(data2) = '2020' ";
 $result = mysqli_query($conexao, $sql);
 
@@ -12,8 +11,8 @@ $result = mysqli_query($conexao, $sql);
 
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
-    <tr>
-<td>Nro FA</td>
+    <tr style="background-color: SlateGrey;">
+        <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
         <td>Relator</td>
@@ -40,7 +39,7 @@ $total = 0;
 
 
 
-    <td><?php echo $mostrar[1]; ?></td>
+        <td><?php echo $mostrar[1]; ?></td>
         <td><?php echo $mostrar[2]; ?></td>
         <td><?php echo $mostrar[3]; ?></td>
         <td><?php echo $mostrar[4]; ?></td>
@@ -54,7 +53,7 @@ $total = 0;
 
 
         <td>
-            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate"
+            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate2"
                 onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
                 <span class="glyphicon glyphicon-pencil"></span>
             </span>
@@ -122,33 +121,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
 </table>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-    <tr>
-        <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
-    </tr>
 
-    <tr>
-        <td>
-            <?php
-
-$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '11' and year(data2) = '2020'";
-$buscar2 = mysqli_query($conexao, $sql2);
-$valor2 = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
-    
-    $valor2 = $valor2 + $array2['valor_seg'];
-    ?>
-
-
-
-
-            <?php }?>
-            R$ <?php echo number_format($valor2, 2, ',', '.'); ?>
-
-    </tr>
-
-
-</table>
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valores anual.</td>

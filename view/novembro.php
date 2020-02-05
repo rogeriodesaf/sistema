@@ -163,13 +163,7 @@ $('#valor_2U').mask('000.000.000.000.000,00', {
     reverse: true
 });
 </script>
-/**Script em PHP para formatar o valor para gravar no banco de dados usando a função str_replace**/
 
-/**
-- O primeiro str_replace [ que contem o $valor nao formatado ]
-ira retirar os "." pontos
-- o segundo str_replace ira trocar a "," por "."
-**/
 <script type="text/javascript">
 function adicionarDado(idprocesso) {
 

@@ -29,12 +29,7 @@ if (isset($_SESSION['usuario'])) {
                     <label>Senha</label>
                     <input type="text" class="form-control input-sm" name="senha" id="senha">
                     <br>
-                    <label>Permissão: </label>
-                    <br>
-                    <label>Usuário</label>
-                    <input type="radio" name="permissao" id="usuario" value="usuario">
-                    <label>Admin</label>
-                    <input type="radio" name="permissao" id="admin" value="admin">
+                    
                     <p></p>
                     <span class="btn btn-primary" id="registro">Salvar</span>
 

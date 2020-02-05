@@ -130,36 +130,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
         </td>
     </tr>
 
-    <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-        <tr>
-            <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
-        </tr>
 
-        <tr>
-            <td>
-                <?php
-
-$sql2 = "SELECT SUM(valor + valor_2 ) as soma FROM fornecedores WHERE MONTH(data) = '2' and Year(data) = '2020'";
-$busca = mysqli_query($conexao, $sql2);
-$valor = 0;
-
-while ($array4 = mysqli_fetch_array($busca)) {
-    $valor = $valor + $array4['soma'];
-
-    ?>
-                <?php }?>
-                R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-
-
-
-
-
-
-            </td>
-
-        </tr>
-
-    </table>
 
     <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
         <tr>
@@ -171,7 +142,7 @@ while ($array4 = mysqli_fetch_array($busca)) {
                 <?php
 //código php para somar o total dos valores .
 
-$sql2 = "SELECT SUM(valor + valor_2 ) as soma FROM fornecedores WHERE  Year(data) = '2020'";
+$sql2 = "SELECT SUM( valor_2 ) as soma FROM fornecedores WHERE  Year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {

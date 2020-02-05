@@ -19,7 +19,10 @@
     <div id="nav">
         <div class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="100">
             <div class="container">
+
                 <div class="navbar-header">
+
+
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -27,8 +30,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail"
-                            src="../img/logo procon.png" alt="" width="170px" height="150px"></a>
+                    <a class="navbar-brand" href="inicio.php"><img class=" img-responsive logo    "
+                            src="../img/logo procon.png" alt="" width="200px" height="200px"></a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
 
@@ -40,7 +43,7 @@
                                 Inicio</a>
                         </li>
 
-                        <!-- <li class="dropdown">
+                        <!-- <li class="dropdown">  img-thumbnail
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false"><span
                                     class="glyphicon glyphicon-list-alt"></span> Gestão Produtos <span

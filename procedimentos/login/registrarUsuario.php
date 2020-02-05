@@ -9,7 +9,7 @@ $senha = sha1($_POST['senha']);
 
 $dados = array(
     $_POST['nome'],
-    $_POST['permissao'],
+
     $_POST['usuario'],
     $_POST['email'],
 

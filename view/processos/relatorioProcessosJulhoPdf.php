@@ -4,19 +4,18 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor,  relator, valor,valor_2, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '7' and Year(data) = '2020'";
+$sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, relator, valor, valor_2, data, ano, recurso FROM fornecedores  WHERE MONTH(data) = '7' and year(data) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
 ?>
 
 <link rel="stylesheet" type="text/css" href="../../lib/bootstrap/css/bootstrap.css">
 
-<img src="../../img/marca_procon.jpg" width="200" height="120">
+<img src="../../img/images.png" width="200" height="120">
 <br>
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
-    <tr>
-
+    <tr style="background-color: SlateGrey;">
         <td>Nro FA</td>
         <td>Consumidor</td>
         <td>Fornecedor</td>
@@ -26,7 +25,6 @@ $result = mysqli_query($conexao, $sql);
         <td>Data</td>
         <td>Ano</td>
         <td>Recurso</td>
-
 
 
 
@@ -43,11 +41,12 @@ $result = mysqli_query($conexao, $sql);
         <td><?php echo $mostrar[2]; ?></td>
         <td><?php echo $mostrar[3]; ?></td>
         <td><?php echo $mostrar[4]; ?></td>
-        <td><?php echo number_format($mostrar[5], 2, ',', '.'); ?></td>
-        <td><?php echo number_format($mostrar[6], 2, ',', '.'); ?></td>
+        <td> R$<?php echo number_format($mostrar[5], 3, ',', '.'); ?></td>
+        <td>R$<?php echo number_format($mostrar[6], 3, ',', '.'); ?></td>
         <td><?php echo date("d/m/Y", strtotime($mostrar[7])) ?></td>
         <td><?php echo $mostrar[8]; ?></td>
         <td><?php echo $mostrar[9]; ?></td>
+
 
 
 
@@ -70,8 +69,8 @@ $result = mysqli_query($conexao, $sql);
         <td>
             <?php
 
-$total2Grau = "SELECT sum(valor) as valor from fornecedores where  MONTH(data) = '7' and Year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
-$buscarDb = mysqli_query($conexao, $total2Grau);
+$total3Grau = "SELECT sum(valor) as valor from fornecedores where  MONTH(data) = '7' and year(data) = '2020'"; //SELECT sum(valor) as valor from fornecedores where camara='1'"
+$buscarDb = mysqli_query($conexao, $total3Grau);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
@@ -80,7 +79,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
             <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-        </td>
+
     </tr>
 
 
@@ -94,8 +93,8 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
     <tr>
         <td>
             <?php
-$total2Grau = "SELECT sum(valor_2) as valor_2 from fornecedores where  MONTH(data) = '7' and Year(data) = '2020'";
-$buscarDb = mysqli_query($conexao, $total2Grau);
+$total3Grau = "SELECT sum(valor_2) as valor_2 from fornecedores where  MONTH(data) = '7' and year(data) = '2020'";
+$buscarDb = mysqli_query($conexao, $total3Grau);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarDb)) {
@@ -110,33 +109,33 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
 </table>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+<!-- <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valores no mês.</td>
     </tr>
 
     <tr>
         <td>
-            <?php
+            <//?php
 
-$sql2 = "SELECT sum(valor + valor_2) as soma FROM fornecedores WHERE MONTH(data) = '7' and Year(data) = '2020'";
-$buscar2 = mysqli_query($conexao, $sql2);
+$sql3 = "SELECT sum(valor+valor_2) as soma   FROM fornecedores WHERE MONTH(data) = '3' and year(data) = '2020'";
+$buscar3 = mysqli_query($conexao, $sql3);
 $valor = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
+while ($array3 = mysqli_fetch_array($buscar3)) {
 
-    $valor = $valor + $array2['soma'];
+    $valor = $valor + $array3['soma'];
     ?>
 
 
 
 
-            <?php }?>
-            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-        </td>
+            <//?php }?>
+            R$ <//?php echo number_format($valor, 2, ',', '.'); ?>
+
     </tr>
 
 
-</table>
+</table> -->
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valores anual.</td>
@@ -146,12 +145,12 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
         <td>
             <?php
 
-$sql2 = "SELECT * FROM fornecedores WHERE Year(data) = '2020'";
-$buscar2 = mysqli_query($conexao, $sql2);
+$sql3 = "SELECT sum(valor_2) as soma FROM fornecedores WHERE YEAR(data) = '2020' ";
+$buscar3 = mysqli_query($conexao, $sql3);
 $valor = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
+while ($array3 = mysqli_fetch_array($buscar3)) {
 
-    $valor = $valor + $array2['valor'];
+    $valor = $valor + $array3['soma'];
     ?>
 
 
@@ -159,15 +158,15 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
             <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
-        </td>
 
     </tr>
 
 
 </table>
+
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Total por Relator</label></caption>
-    <tr>
+    <tr style="background-color: SlateGrey;">
         <td>--</td>
         <td>Total de Processos por relator</td>
         <td>Valor por Relator</td>
@@ -180,7 +179,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
         <td>Demetrius</td>
         <td>
             <?php
-$sql6 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Demetrius' and MONTH(data) = '7' and year(data) = '2020'";
+$sql6 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Demetrius' and MONTH(data) = '7'and year(data) = '2020'";
 $buscar = mysqli_query($conexao, $sql6);
 $Qtd = 0;
 
@@ -201,7 +200,7 @@ while ($array4 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql5 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Demetrius' and MONTH(data) = '7' and year(data) = '2020'";
+$sql5 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Demetrius' and MONTH(data) = '7'and year(data) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql5);
 $valor = 0;
 
@@ -218,8 +217,6 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
 
 
     </tr>
-
-
 
     <tr>
 
@@ -242,7 +239,7 @@ while ($array9 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql5 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Filipe' and MONTH(data) = '7' and year(data) = '2020'";
+$sql5 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Filipe' and MONTH(data) = '7'and year(data) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql5);
 $valor = 0;
 
@@ -262,8 +259,10 @@ while ($array3 = mysqli_fetch_array($buscarrelator)) {
         <td>Cyro</td>
         <td>
             <?php
-$sql10 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Cyro' and MONTH(data) = '7' and year(data) = '2020'";
+$sql10 = "SELECT  relator, COUNT(relator) as Qtd from fornecedores where relator='Cyro' and MONTH(data) = '7'and year(data) = '2020'";
+$buscar = mysqli_query($conexao, $sql10);
 $Qtd = 0;
+
 while ($array10 = mysqli_fetch_array($buscar)) {
     $Qtd = $Qtd + $array10['Qtd'];
     ?>
@@ -274,7 +273,7 @@ while ($array10 = mysqli_fetch_array($buscar)) {
         <td>
 
             <?php
-$sql11 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Cyro' and MONTH(data) = '7' and year(data) = '2020'";
+$sql11 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Cyro' and MONTH(data) = '7'and year(data) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql11);
 $valor = 0;
 
@@ -291,10 +290,12 @@ while ($array11 = mysqli_fetch_array($buscarrelator)) {
     </tr>
 
     <tr>
+
         <td>Fábio</td>
         <td>
             <?php
-$sql14 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Fábio' and MONTH(data) = '7' and year(data) = '2020'";
+$sql14 = "SELECT  relator, COUNT(relator) as Qtd from fornecedores where relator='Fábio' and MONTH(data) = '7'and year(data) = '2020'";
+$buscar = mysqli_query($conexao, $sql14);
 $Qtd = 0;
 
 while ($array14 = mysqli_fetch_array($buscar)) {
@@ -306,7 +307,8 @@ while ($array14 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql16 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Fábio' and MONTH(data) = '7' and year(data) = '2020'";
+$sql16 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Fábio' and MONTH(data) = '7'and year(data) = '2020'";
+$buscarrelator = mysqli_query($conexao, $sql16);
 $valor = 0;
 
 while ($array13 = mysqli_fetch_array($buscarrelator)) {
@@ -323,6 +325,42 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
 
     </tr>
 
+
 </table>
-<br><br>
-<p> Núcleo de Tecnologia da Infomação PROCON/PB</p>
+<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+    <caption><label>Total de Processos no mês.</label></caption>
+    <tr>
+        <td>
+
+
+            <?php
+$sql21 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where  MONTH(data) = '7' and year(data) = '2020'";
+$buscar = mysqli_query($conexao, $sql21);
+$Qtd = 0;
+
+while ($array21 = mysqli_fetch_array($buscar)) {
+    $Qtd = $Qtd + $array21['Qtd'];
+    ?>
+
+            <?php }?>
+            <?php echo $Qtd ?> processo(s).
+
+
+        </td>
+
+
+
+</table>
+</tr>
+<footer class="page-footer">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright: Núcleo de Tecnologia da Informação PROCON/PB
+        <p>Tel:(83)3214-1713</p>
+
+
+
+    </div>
+    <!-- Copyright -->
+
+</footer>
