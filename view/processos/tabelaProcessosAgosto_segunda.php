@@ -13,7 +13,11 @@ $result = mysqli_query($conexao, $sql);
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
     <tr style="background-color: SlateGrey;">
+<<<<<<< HEAD
         <td>Nro FA</td>
+=======
+    <td>Nro FA</td>
+>>>>>>> f872b20a4bbbf2916b999f86eb5f344ac7b914c7
         <td>Consumidor</td>
         <td>Fornecedor</td>
         <td>Relator</td>
@@ -181,7 +185,7 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
 
 
 <td style="align:center;">
-    <a href="../procedimentos/pdf/criarRelatorioAgosto_segundaPdf.php?idprocesso=<" class="btn btn-danger btn-sm">
+    <a href="../procedimentos/pdf/criarRelatorioAgostoPdf_segunda.php?idprocesso=<" class="btn btn-danger btn-sm">
         Imprimir <span class="glyphicon glyphicon-print"></span>
     </a>
 </td>
