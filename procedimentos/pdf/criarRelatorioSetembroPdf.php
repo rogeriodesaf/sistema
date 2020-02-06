@@ -25,7 +25,7 @@ $html = file_get_contents("http://localhost/sistema/view/processos/relatorioProc
 $pdf = new DOMPDF();
 
 // Definimos o tamanho do papel e orientação.
-$pdf->set_paper('A4', 'portrait');
+$pdf->set_paper('A4', 'landscape');
 //$pdf->set_paper(array(0,0,104,250));
 
 // Carregar o conteúdo html.
