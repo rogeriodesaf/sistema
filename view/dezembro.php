@@ -55,15 +55,9 @@ if (isset($_SESSION['usuario'])) {
 
                         <option>-----</option>
                         <option>Demetrius</option>
-                        <option>Edson</option>
                         <option>Filipe</option>
-                        <option>Emannuel</option>
                         <option>Cyro</option>
-                        <option>Juliana</option>
-                        <option>Sérgio</option>
-                        <option>Fernando</option>
-                        <option>Rogério</option>
-                        <option>Cláudio</option>
+                        <option>Fábio</option>
                     </select>
                     <label>Data De Julgamento</label>
                     <input type="date" class="form-control input-sm" id="data" name="data">

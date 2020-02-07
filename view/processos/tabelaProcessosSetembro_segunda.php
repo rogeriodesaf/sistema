@@ -122,37 +122,6 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
 
 </table>
 
-<<<<<<< HEAD
-
-=======
-<!-- <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-    <tr>
-        <td style="background-color: SlateGrey;">Total dos valor2es no mês.</td>
-    </tr>
-
-    <tr>
-        <td>
-            <//?php
-
-$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '9' and year(data2) = '2020'";
-$buscar2 = mysqli_query($conexao, $sql2);
-$valor2 = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor2'];
-    $valor2 = $valor2 + $array2['valor2'];
-    ?>
-
-
-
-
-            <//?php }?>
-            R$ <//?php echo number_format($valor2, 2, ',', '.'); ?>
-
-    </tr>
-
-
-</table> -->
->>>>>>> f872b20a4bbbf2916b999f86eb5f344ac7b914c7
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <tr>
         <td style="background-color: SlateGrey;">Total dos valores anual.</td>

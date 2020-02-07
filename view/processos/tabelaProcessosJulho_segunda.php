@@ -158,21 +158,13 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
         <td>
             <?php
 
-<<<<<<< HEAD
-$sql2 = "SELECT * FROM fornecedores2 WHERE YEAR(data2) = '2020' ";
-$buscar2 = mysqli_query($conexao, $sql2);
-$valor2 = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor2'];
-    $valor2 = $valor2 + $array2['valor_seg'];
-=======
 $sql3 = "SELECT sum(valor_seg) as soma FROM fornecedores2 WHERE YEAR(data2) = '2020' ";
 $buscar3 = mysqli_query($conexao, $sql3);
 $valor = 0;
 while ($array3 = mysqli_fetch_array($buscar3)) {
 
     $valor = $valor + $array3['soma'];
->>>>>>> f872b20a4bbbf2916b999f86eb5f344ac7b914c7
+
     ?>
 
 

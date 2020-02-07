@@ -69,8 +69,6 @@ class processos
 
         echo mysqli_query($conexao, $sql);
     }
-    
-
 
     public function excluir($id)
     {

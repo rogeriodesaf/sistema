@@ -4,7 +4,7 @@ require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
 
-$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '8' and Year(data2) = '2020' ";
+$sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '7' and Year(data2) = '2020' ";
 $result = mysqli_query($conexao, $sql);
 
 ?>
@@ -13,11 +13,7 @@ $result = mysqli_query($conexao, $sql);
 <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
     <caption><label>Processos</label></caption>
     <tr style="background-color: SlateGrey;">
-<<<<<<< HEAD
         <td>Nro FA</td>
-=======
-    <td>Nro FA</td>
->>>>>>> f872b20a4bbbf2916b999f86eb5f344ac7b914c7
         <td>Consumidor</td>
         <td>Fornecedor</td>
         <td>Relator</td>
@@ -135,7 +131,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
         <td>
             <//?php
 
-$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '8' and year(data2) = '2020'";
+$sql2 = "SELECT * FROM fornecedores2 WHERE MONTH(data2) = '6' and year(data2) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor2 = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
@@ -162,19 +158,20 @@ while ($array2 = mysqli_fetch_array($buscar2)) {
         <td>
             <?php
 
-$sql2 = "SELECT * FROM fornecedores2 WHERE YEAR(data2) = '2020' ";
-$buscar2 = mysqli_query($conexao, $sql2);
-$valor2 = 0;
-while ($array2 = mysqli_fetch_array($buscar2)) {
-    $id_fornecedor = $array2['id_fornecedor2'];
-    $valor2 = $valor2 + $array2['valor_seg'];
+$sql3 = "SELECT sum(valor_seg) as soma FROM fornecedores2 WHERE YEAR(data2) = '2020' ";
+$buscar3 = mysqli_query($conexao, $sql3);
+$valor = 0;
+while ($array3 = mysqli_fetch_array($buscar3)) {
+
+    $valor = $valor + $array3['soma'];
+
     ?>
 
 
 
 
             <?php }?>
-            R$ <?php echo number_format($valor2, 2, ',', '.'); ?>
+            R$ <?php echo number_format($valor, 2, ',', '.'); ?>
 
     </tr>
 

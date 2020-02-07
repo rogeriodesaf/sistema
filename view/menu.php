@@ -30,11 +30,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="inicio.php"><img class=" img-responsive logo    "
-                            src="../img/logo procon.png" alt="" width="200px" height="200px"></a>
+
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
-
+                    <a href="inicio.php">
+                        <img class="d-inline-block align-top img-thumbnail " src="../img/logo procon.png" alt=""
+                            width="100px" height="70px"></a>
                     <ul class="nav navbar-nav navbar-right">
                         <!--deixa os ícones do menu posicionados à direita -->
 
@@ -43,7 +44,7 @@
                                 Inicio</a>
                         </li>
 
-                        <!-- <li class="dropdown">  img-thumbnail
+                        <!-- <li class="dropdown">  img-thumbnail    img-responsive logo
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false"><span
                                     class="glyphicon glyphicon-list-alt"></span> Gestão Produtos <span
@@ -175,9 +176,9 @@
                             </ul>
                         </li>
 
-                        <li class="active"><a href="menu3.php"><span class="glyphicon glyphicon-home"></span>
+                        <!-- <li class="active"><a href="menu3.php"><span class="glyphicon glyphicon-home"></span>
                                 Câmaras recursais</a>
-                        </li>
+                        </li> -->
 
 
                         </li>

@@ -3,10 +3,7 @@
 require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
-<<<<<<< HEAD
 
-=======
->>>>>>> f872b20a4bbbf2916b999f86eb5f344ac7b914c7
 $sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2,  relator2, valor2, valor_seg,data2, ano2, recurso2 FROM fornecedores2 WHERE MONTH(data2) = '7' and year(data2) = '2020'";
 $result = mysqli_query($conexao, $sql);
 
@@ -388,21 +385,18 @@ while ($array21 = mysqli_fetch_array($buscar)) {
 
             <?php }?>
             <?php echo $Qtd ?> processo(s).
-<<<<<<< HEAD
+        </td>
+
+
+
+
 
 
         </td>
 
 
 
-=======
 
-
-        </td>
-
-
-
->>>>>>> f872b20a4bbbf2916b999f86eb5f344ac7b914c7
 </table>
 </tr>
 <br><br><br><br>
