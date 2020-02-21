@@ -1,17 +1,14 @@
-<?php 
+<?php
 
-	require_once "../../classes/conexao.php";
-	require_once "../../classes/usuarios.php";
+require_once "../../classes/conexao.php";
+require_once "../../classes/usuarios.php";
 
-	$obj= new usuarios;
+$obj = new usuarios;
 
-	$dados=array(
-			$_POST['idUsuario'],  
-		    $_POST['nomeU'] , 
-		    $_POST['usuarioU'],  
-		    $_POST['emailU']
-				);  
-	echo $obj->atualizar($dados);
-
-
- ?>
+$dados = array(
+    $_POST['idUsuario'],
+    $_POST['nomeU'],
+    $_POST['usuarioU'],
+    $_POST['emailU'],
+);
+echo $obj->atualizar($dados);

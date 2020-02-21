@@ -352,9 +352,9 @@ if (isset($_SESSION['usuario'])) {
                                         <table class="table table-condensed">
                                             <tbody>
                                                 <tr>
-                                                    <td><a class="internal-link" href="janeiro.php" target="_blank"
+                                                    <td><a class="internal-link" href="janeiro.php" target=""
                                                             title=""><span class="internal-link">JAN</span></a></td>
-                                                    <td><a class="internal-link" href="fevereiro.php" target="_blank"
+                                                    <td><a class="internal-link" href="fevereiro.php" target=""
                                                             title="Link publicações 1ª Câmara / Fevereiro de 2019">FEV</a>
                                                     </td>
                                                     <td><a class="internal-link" href="marco.php" target="_self"
@@ -508,43 +508,43 @@ if (isset($_SESSION['usuario'])) {
                                             <tbody>
                                                 <tr>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/6431035b570143c98342898022737a4a"
-                                                            target="_blank" title="">JAN</a></td>
+                                                            href="resolveuid/6431035b570143c98342898022737a4a" target=""
+                                                            title="">JAN</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/a46bfd36f27b431b9cb3fd9550aa975d"
-                                                            target="_blank" title="">FEV</a></td>
+                                                            href="resolveuid/a46bfd36f27b431b9cb3fd9550aa975d" target=""
+                                                            title="">FEV</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/77b43d1ed8e048e98dd2892f72de87ed"
-                                                            target="_blank" title="">MAR</a></td>
+                                                            href="resolveuid/77b43d1ed8e048e98dd2892f72de87ed" target=""
+                                                            title="">MAR</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/5e5316538b7b4547900da192d41fc821"
-                                                            target="_blank" title="">ABR</a></td>
+                                                            href="resolveuid/5e5316538b7b4547900da192d41fc821" target=""
+                                                            title="">ABR</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/90895c71bd924052af2865ec3c238bc1"
-                                                            target="_blank" title="">MAI</a></td>
+                                                            href="resolveuid/90895c71bd924052af2865ec3c238bc1" target=""
+                                                            title="">MAI</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/ae470eecca1d40d79afa5763cec8eda8"
-                                                            target="_blank" title="">JUN</a></td>
+                                                            href="resolveuid/ae470eecca1d40d79afa5763cec8eda8" target=""
+                                                            title="">JUN</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/5fa3028f71f24caa9c8d79250f9951fa"
-                                                            target="_blank" title="">JUL</a></td>
+                                                            href="resolveuid/5fa3028f71f24caa9c8d79250f9951fa" target=""
+                                                            title="">JUL</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/8a11d27088d74dd991a02f586dfadb0d"
-                                                            target="_blank" title="">AGO</a></td>
+                                                            href="resolveuid/8a11d27088d74dd991a02f586dfadb0d" target=""
+                                                            title="">AGO</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/23d485caec754811ba601ba7d82a6749"
-                                                            target="_blank" title="">SET</a></td>
+                                                            href="resolveuid/23d485caec754811ba601ba7d82a6749" target=""
+                                                            title="">SET</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/7fb12ad1e5eb4024a12f88de57711aa0"
-                                                            target="_blank" title="">OUT</a></td>
+                                                            href="resolveuid/7fb12ad1e5eb4024a12f88de57711aa0" target=""
+                                                            title="">OUT</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/a9ef93bd484641b799cd6f580cd7798f"
-                                                            target="_blank" title="">NOV</a></td>
+                                                            href="resolveuid/a9ef93bd484641b799cd6f580cd7798f" target=""
+                                                            title="">NOV</a></td>
                                                     <td><a class="internal-link"
-                                                            href="resolveuid/8500606fe6e04db0992a96f296a725f8"
-                                                            target="_blank" title="">DEZ</a></td>
+                                                            href="resolveuid/8500606fe6e04db0992a96f296a725f8" target=""
+                                                            title="">DEZ</a></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -638,34 +638,25 @@ if (isset($_SESSION['usuario'])) {
                                                     </td>
                                                     <td><a class="internal-link" href="marco_segunda.php" target="_self"
                                                             title="">MAR</a></td>
-                                                    <td><a class="internal-link"
-                                                            href="abril_segunda.php"
-                                                            target="_self" title="">ABR</a></td>
-                                                    <td><a class="internal-link"
-                                                            href="maio_segunda.php"
-                                                            target="_self" title="">MAI</a></td>
-                                                    <td><a class="internal-link"
-                                                            href="junho_segunda.php"
-                                                            target="_self" title="">JUN</a></td>
+                                                    <td><a class="internal-link" href="abril_segunda.php" target="_self"
+                                                            title="">ABR</a></td>
+                                                    <td><a class="internal-link" href="maio_segunda.php" target="_self"
+                                                            title="">MAI</a></td>
+                                                    <td><a class="internal-link" href="junho_segunda.php" target="_self"
+                                                            title="">JUN</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a class="internal-link"
-                                                            href="julho_segunda.php"
-                                                            target="_self" title="">JUL</a></td>
-                                                    <td><a class="internal-link"
-                                                            href="agosto_segunda.php"
+                                                    <td><a class="internal-link" href="julho_segunda.php" target="_self"
+                                                            title="">JUL</a></td>
+                                                    <td><a class="internal-link" href="agosto_segunda.php"
                                                             target="_self" title="">AGO</a></td>
-                                                    <td><a class="internal-link"
-                                                            href="setembro_segunda.php"
+                                                    <td><a class="internal-link" href="setembro_segunda.php"
                                                             target="_self" title="">SET</a></td>
-                                                    <td><a class="internal-link"
-                                                            href="outubro_segunda.php"
+                                                    <td><a class="internal-link" href="outubro_segunda.php"
                                                             target="_self" title="">OUT</a></td>
-                                                    <td><a class="internal-link"
-                                                            href="novembro_segunda.php"
+                                                    <td><a class="internal-link" href="novembro_segunda.php"
                                                             target="_self" title="">NOV</a></td>
-                                                    <td><a class="internal-link"
-                                                            href="dezembro_segunda.php"
+                                                    <td><a class="internal-link" href="dezembro_segunda.php"
                                                             target="_self" title="">DEZ</a></td>
                                                 </tr>
                                             </tbody>

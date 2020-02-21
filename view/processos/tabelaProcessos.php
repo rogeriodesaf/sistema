@@ -3,6 +3,7 @@
 require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
+session_start();
 
 $sql = "SELECT id_fornecedor, nrofa, consumidor, fornecedor, relator, valor,valor_2, data, ano, recurso  FROM fornecedores  WHERE MONTH(data) = '1' and Year(data) = '2020' ";
 $result = mysqli_query($conexao, $sql);
@@ -24,9 +25,11 @@ $result = mysqli_query($conexao, $sql);
         <td>Recurso</td>
 
 
+        <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "evandersonaraujo@hotmail.com"):
+?>
         <td>Adicionar</td>
         <td>Excluir</td>
-
+        <?php endif;?>
     </tr>
 
     <?php
@@ -51,7 +54,7 @@ $total = 0;
 
 
 
-
+        <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "evandersonaraujo@hotmail.com"): ?>
         <td>
             <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate"
                 onclick="adicionarDado('<?php echo $mostrar[0]; ?>')">
@@ -63,7 +66,7 @@ $total = 0;
                 <span class="glyphicon glyphicon-remove"></span>
             </span>
         </td>
-
+        <?php endif;?>
     </tr>
 
 
@@ -171,7 +174,7 @@ while ($array4 = mysqli_fetch_array($busca)) {
                 <?php
 //código php para somar o total dos valores .
 
-$sql2 = "SELECT SUM(valor + valor_2 ) as soma FROM fornecedores WHERE  Year(data) = '2020'";
+$sql2 = "SELECT SUM( valor_2 ) as soma FROM fornecedores WHERE  Year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {

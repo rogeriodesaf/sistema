@@ -163,7 +163,7 @@ $buscar2 = mysqli_query($conexao, $sql2);
 $valor2 = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {
     $id_fornecedor = $array2['id_fornecedor2'];
-    $valor2 = $valor2 + $array2['valor2'];
+    $valor2 = $valor2 + $array2['valor_seg'];
     ?>
 
 

@@ -55,12 +55,12 @@ while ($array4 = mysqli_fetch_array($buscar)) {
         </td>
         <td>
             <?php
-$sql5 = "SELECT sum(valor) as valor from fornecedores where relator='Kaio' and MONTH(data) = '2' and year(data) = '2020'";
+$sql5 = "SELECT sum(valor_seg) as valor_seg from fornecedores2 where relator2='Kaio' and MONTH(data2) = '2' and year(data2) = '2020'";
 $buscarrelator = mysqli_query($conexao, $sql5);
 $valor = 0;
 
 while ($array3 = mysqli_fetch_array($buscarrelator)) {
-    $valor = $valor + $array3['valor'];
+    $valor = $valor + $array3['valor_seg'];
 
     ?>
 

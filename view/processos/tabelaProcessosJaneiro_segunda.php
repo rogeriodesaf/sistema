@@ -3,7 +3,7 @@
 require_once "../../classes/conexao.php";
 $c = new conectar();
 $conexao = $c->conexao();
-
+session_start();
 $sql = "SELECT id_fornecedor2, nrofa2, consumidor2, fornecedor2, relator2, valor2,valor_seg, data2, ano2, recurso2  FROM fornecedores2  WHERE MONTH(data2) = '1' and Year(data2) = '2020' ";
 $result = mysqli_query($conexao, $sql);
 
@@ -23,10 +23,10 @@ $result = mysqli_query($conexao, $sql);
         <td>Ano</td>
         <td>Recurso</td>
 
-
+        <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "teste@camara2"): ?>
         <td>Adicionar</td>
         <td>Excluir</td>
-
+        <?php endif;?>
     </tr>
 
     <?php
@@ -52,7 +52,7 @@ $total = 0;
 
 
 
-
+        <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "teste@camara2"): ?>
 
         <td>
             <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate2"
@@ -65,7 +65,7 @@ $total = 0;
                 <span class="glyphicon glyphicon-remove"></span>
             </span>
         </td>
-
+        <?php endif;?>
     </tr>
 
 

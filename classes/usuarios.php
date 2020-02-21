@@ -27,7 +27,7 @@ class usuarios
         $sql = "SELECT * from usuarios where email = '$dados[0]' and senha = '$senha' ";
 
         $result = mysqli_query($conexao, $sql);
-
+        $_SESSION['nome'] = $dados[1];
         //echo $sql;
 
         if (mysqli_num_rows($result) > 0) {

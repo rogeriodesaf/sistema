@@ -23,7 +23,9 @@ if (isset($_SESSION['usuario'])) {
     <div class="container">
         <h1>Processos Janeiro</h1>
         <div class="row">
-            <div class="col-sm-4">
+            <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "evandersonaraujo@hotmail.com"):
+    ?>
+            <div class="col-sm-2">
                 <form id="frmProcessos">
                     <label>N° FA</label>
                     <input type="text" class="form-control input-sm" id="nrofa" name="nrofa">
@@ -58,6 +60,7 @@ if (isset($_SESSION['usuario'])) {
                         <option>Filipe</option>
                         <option>Cyro</option>
                         <option>Fábio</option>
+                        <option>Kaio_Suplente</option>
 
 
                     </select>
@@ -70,6 +73,7 @@ if (isset($_SESSION['usuario'])) {
                     <span class="btn btn-primary" id="btnAdicionarProcessos">Salvar</span>
                 </form>
             </div>
+            <?php endif;?>
             <!--div que carrega do lado direito da página e recebe os valores digitados do lado esquerdo. Note que uma tem col-sm-4 e a outra col-sm-8, o que soma 12-->
             <div class="col-sm-8">
                 <div id="tabelaProcessosLoad"></div>

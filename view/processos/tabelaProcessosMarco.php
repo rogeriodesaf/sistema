@@ -142,7 +142,7 @@ while ($array3 = mysqli_fetch_array($buscarDb)) {
                 <?php
 //código php para somar o total dos valores .
 
-$sql2 = "SELECT SUM(valor + valor_2 ) as soma FROM fornecedores WHERE  Year(data) = '2020'";
+$sql2 = "SELECT SUM(valor_2 ) as soma FROM fornecedores WHERE  Year(data) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {

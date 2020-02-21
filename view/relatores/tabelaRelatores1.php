@@ -176,6 +176,7 @@ while ($array11 = mysqli_fetch_array($buscarrelator)) {
         <td>
             <?php
 $sql12 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Fábio' and MONTH(data) = '1'and year(data)='2020'";
+$buscar = mysqli_query($conexao, $sql12);
 $Qtd = 0;
 
 while ($array12 = mysqli_fetch_array($buscar)) {
@@ -199,6 +200,47 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
             <?php }?>
             R$ <?php echo number_format($valor, 2, ',', '.'); ?>
         </td>
+
+
+    </tr>
+    <td>Kaio_Suplente</td>
+    <td>
+        <?php
+$sql6 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Kaio_Suplente' and MONTH(data) = '1' and year(data)='2020'";
+$buscar = mysqli_query($conexao, $sql6);
+$Qtd = 0;
+
+while ($array4 = mysqli_fetch_array($buscar)) {
+    $Qtd = $Qtd + $array4['Qtd'];
+    ?>
+
+        <?php }?>
+        <?php echo $Qtd ?>
+
+
+
+
+
+
+
+
+    </td>
+    <td>
+        <?php
+$sql5 = "SELECT sum(valor_2) as valor_2 from fornecedores where relator='Kaio_Suplente' and MONTH(data) = '1'and year(data)='2020'";
+$buscarrelator = mysqli_query($conexao, $sql5);
+$valor = 0;
+
+while ($array3 = mysqli_fetch_array($buscarrelator)) {
+    $valor = $valor + $array3['valor_2'];
+
+    ?>
+
+        <?php }?>
+        R$ <?php echo number_format($valor, 2, ',', '.'); ?>
+
+    </td>
+
 
 
     </tr>
@@ -247,7 +289,7 @@ while ($array14 = mysqli_fetch_array($buscar)) {
 
 
             <?php
-$sql21 = "SELECT relator2, COUNT(relator2) AS Qtd FROM fornecedores2 where  MONTH(data2) = '1' and year(data2) = '2020'";
+$sql21 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where  MONTH(data) = '1' and year(data) = '2020'";
 $buscar = mysqli_query($conexao, $sql21);
 $Qtd = 0;
 
