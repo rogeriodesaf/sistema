@@ -23,7 +23,7 @@ $result = mysqli_query($conexao, $sql);
         <td>Ano</td>
         <td>Recurso</td>
 
-        <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "teste@camara2"): ?>
+        <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "mariapires@procon.pb.gov.br"): ?>
         <td>Adicionar</td>
         <td>Excluir</td>
         <?php endif;?>
@@ -52,7 +52,7 @@ $total = 0;
 
 
 
-        <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "teste@camara2"): ?>
+        <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "mariapires@procon.pb.gov.br"): ?>
 
         <td>
             <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalProcessosUpdate2"
@@ -166,7 +166,7 @@ while ($array4 = mysqli_fetch_array($busca)) {
                 <?php
 //código php para somar o total dos valores .
 
-$sql2 = "SELECT SUM(valor2 + valor_seg ) as soma FROM fornecedores2 WHERE  Year(data2) = '2020'";
+$sql2 = "SELECT SUM( valor_seg ) as soma FROM fornecedores2 WHERE  Year(data2) = '2020'";
 $buscar2 = mysqli_query($conexao, $sql2);
 $valor = 0;
 while ($array2 = mysqli_fetch_array($buscar2)) {

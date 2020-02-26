@@ -58,6 +58,8 @@ if (isset($_SESSION['usuario'])) {
                         <option>Filipe</option>
                         <option>Cyro</option>
                         <option>Fábio</option>
+                        <option>Kaio(Suplente)</option>
+                        <option>Emannuel(Suplente)</option>
 
 
                     </select>

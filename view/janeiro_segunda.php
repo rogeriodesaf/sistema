@@ -22,7 +22,7 @@ if (isset($_SESSION['usuario'])) {
     <div class="container">
         <h1>Processos</h1>
         <div class="row">
-            <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "teste@camara2"):
+            <?php if ($_SESSION['usuario'] == "admin" || $_SESSION['usuario'] == "mariapires@procon.pb.gov.br"):
     ?>
             <div class="col-sm-4">
                 <form id="frmProcessos">

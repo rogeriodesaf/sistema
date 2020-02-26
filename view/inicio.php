@@ -328,7 +328,7 @@ if (isset($_SESSION['usuario'])) {
                 <h1>Registro dos dados referentes aos processos de 1ª e 2ª Câmara</h1>
                 <p>Disponibilizamos nesta sessão o acesso a inserção de dados constantes nos processos das decisões de
                     1ª e
-                    2ª câmara</p>
+                    2ª câmara.</p>
             </div>
             <br />
             <div class="panel-group" id="accordion">
@@ -630,23 +630,23 @@ if (isset($_SESSION['usuario'])) {
                                             <tbody>
                                                 <tr>
                                                     <td><span class="internal-link"><a class="internal-link"
-                                                                href="janeiro_segunda.php" target="_blank"
+                                                                href="janeiro_segunda.php" target=""
                                                                 title="Registro dos Processos de Janeiro de 2020">JAN</a></span>
                                                     </td>
-                                                    <td><a class="internal-link" href="fevereiro_segunda.php"
-                                                            target="_blank" title=" Fevereiro de 2020">FEV</a>
+                                                    <td><a class="internal-link" href="fevereiro_segunda.php" target=""
+                                                            title=" Fevereiro de 2020">FEV</a>
                                                     </td>
-                                                    <td><a class="internal-link" href="marco_segunda.php" target="_self"
+                                                    <td><a class="internal-link" href="marco_segunda.php" target=""
                                                             title="">MAR</a></td>
-                                                    <td><a class="internal-link" href="abril_segunda.php" target="_self"
+                                                    <td><a class="internal-link" href="abril_segunda.php" target=""
                                                             title="">ABR</a></td>
-                                                    <td><a class="internal-link" href="maio_segunda.php" target="_self"
+                                                    <td><a class="internal-link" href="maio_segunda.php" target=""
                                                             title="">MAI</a></td>
-                                                    <td><a class="internal-link" href="junho_segunda.php" target="_self"
+                                                    <td><a class="internal-link" href="junho_segunda.php" target=""
                                                             title="">JUN</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a class="internal-link" href="julho_segunda.php" target="_self"
+                                                    <td><a class="internal-link" href="julho_segunda.php" target=""
                                                             title="">JUL</a></td>
                                                     <td><a class="internal-link" href="agosto_segunda.php"
                                                             target="_self" title="">AGO</a></td>
