@@ -233,7 +233,7 @@ while ($array13 = mysqli_fetch_array($buscarrelator)) {
 
 
     </tr>
-    <td>Emanuuel(Suplente)</td>
+    <td>Emannuel(Suplente)</td>
     <td>
         <?php
 $sql12 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Emannuel(Suplente)' and MONTH(data) = '2'and year(data)='2020'";

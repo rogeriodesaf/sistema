@@ -20,6 +20,7 @@ if (mysqli_num_rows($result) > 0) {
 <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" href="img/Asset 3.png" />
     <script src="lib/jquery-3.2.1.min.js"></script>
     <script src="js/funcoes.js"></script>
 </head>

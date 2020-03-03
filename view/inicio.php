@@ -9,7 +9,8 @@ if (isset($_SESSION['usuario'])) {
 <html>
 
 <head>
-    <title></title>
+    <title>inicio</title>
+    <link rel="shortcut icon" href="../img/Asset 3.png" />
     <?php require_once "menu.php";?>
     <style type="text/css">
     .btn-primary {

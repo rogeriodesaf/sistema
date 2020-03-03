@@ -11,6 +11,7 @@ if (isset($_SESSION['usuario'])) {
 
 <head>
     <title>Processos Janeiro</title>
+    <link rel="shortcut icon" href="../img/Asset 3.png" />
     <?php require_once "menu.php";?>
 
 </head>
