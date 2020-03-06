@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Jan-2020 às 20:04
+-- Tempo de geração: 06-Mar-2020 às 13:45
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.2.20
 
@@ -40,39 +40,88 @@ CREATE TABLE `fornecedores` (
   `data` date NOT NULL,
   `ano` int(11) NOT NULL,
   `recurso` varchar(100) NOT NULL,
-  `total` int(11) NOT NULL
+  `camara` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `fornecedores`
 --
 
-INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nrofa`, `consumidor`, `fornecedor`, `relator`, `valor`, `valor_2`, `data`, `ano`, `recurso`, `total`) VALUES
-(242, 7, '1', '1', '2', 'Demetrius', '1', '0.00', '2020-05-01', 2018, 'Tempestivo', 0),
-(243, 7, '1', 'joao', 'tim', 'Demetrius', '123121', '1.23', '2020-05-01', 2018, 'Intempestivo', 0),
-(245, 7, '1', '1', '122222222222222', 'Cyro', '1', '1.00', '2020-07-01', 2018, 'Tempestivo', 0),
-(248, 7, '1', '1', '1', 'Demetrius', '1', '1.00', '2020-10-01', 2020, 'Tempestivo', 0),
-(249, 7, '2', '1', '1', 'Cyro', '1', '1.00', '2020-10-01', 2018, 'Tempestivo', 0),
-(250, 7, '1', '1', 'oi', 'Demetrius', '1', '1.00', '2020-11-01', 2020, 'Intempestivo', 0),
-(251, 7, '2521212121212', 'joao', 'tim', 'Cyro', '236565', '100000000.00', '2020-12-01', 2020, 'Tempestivo', 0),
-(252, 7, '1', '1', '1', 'Cyro', '1', '1.00', '2020-12-01', 2020, 'Tempestivo', 0),
-(253, 7, '1', 'joao', '1', 'Filipe', '1', '1.00', '2020-11-01', 2020, 'Tempestivo', 0),
-(254, 7, '1', 'joao', 'tim', 'Cyro', '1', '1.00', '2020-09-01', 2020, 'Tempestivo', 0),
-(255, 7, '1', '1', '1', 'Cyro', '1', '1.00', '2020-06-01', 52020, 'Tempestivo', 0),
-(262, 7, '1', 'joao', 'tim', 'Demetrius', '1', '11200.00', '2020-11-11', 2018, 'Tempestivo', 0),
-(276, 7, '', '', '', '', '0', '0.00', '0000-00-00', 0, '', 0),
-(278, 7, '', '', '', '', '0', '0.00', '0000-00-00', 0, '', 0),
-(282, 7, '1', '1', '1', 'Demetrius', '11', '22', '2020-11-01', 2020, 'Tempestivo', 0),
-(414, 7, '242344', 'joao', 'tim', 'Demetrius', '231.65', '12', '2020-02-01', 2020, 'Tempestivo', 0),
-(416, 7, '1', '1', 'tim', 'Demetrius', '2000', '1.23', '2020-03-01', 2020, 'Tempestivo', 0),
-(417, 7, '41414134', 'joao', 'vivo', 'Demetrius', '123.56', '1245.66', '2020-04-01', 2020, 'Tempestivo', 0),
-(418, 7, '1323', 'joao', 'vivo', 'Demetrius', '12458', '0', '2020-04-01', 2020, 'Tempestivo', 0),
-(419, 7, '1', 'joao', 'tim', 'Demetrius', '0', '3000.00', '2020-08-01', 20, 'Tempestivo', 0),
-(420, 7, '1', 'joao', 'tim', 'Demetrius', '1', '3000.00', '2020-08-01', 2020, 'Tempestivo', 0),
-(423, 7, '1231321231', 'FAFDÃ‡KJFÃ‡LKJ', 'AFDAKJFAÃ‡FJ', 'Demetrius', '12.32', '12.32', '2020-02-01', 2018, 'Tempestivo', 0),
-(424, 7, '1233', '1213', '12313', 'Demetrius', '123.13', '123.13', '2020-01-01', 2020, 'Tempestivo', 0),
-(425, 7, 'reqqewrw', 'qwerqwrqw', 'erqwrqw', 'Filipe', '414.13', '134.14', '2020-01-01', 2018, 'Tempestivo', 0),
-(426, 7, 'qwerr', 'qwerqwrwq', 'qwerqwr', 'Demetrius', '1234.14', '12341.24', '2020-03-01', 2020, 'Tempestivo', 0);
+INSERT INTO `fornecedores` (`id_fornecedor`, `id_usuario`, `nrofa`, `consumidor`, `fornecedor`, `relator`, `valor`, `valor_2`, `data`, `ano`, `recurso`, `camara`) VALUES
+(465, 18, '0116-000-556-6', 'FRANCISCO SERGIO RODRIGUES CHAVES', 'GDN VEÃCULOS PEÃ‡AS E SERVIÃ‡OS LTDA', 'Demetrius', '9608.00', '9608.00', '2020-01-22', 2016, 'Tempestivo', 0),
+(466, 18, '0113-013-649-8', 'MARIA JOSE SILVA DOS SANTOS', 'CARDIF DO BRASIL SEGUROS E GARANTIAS S.A E BANCO CSF ', 'Demetrius', '18756.00', '00.00', '2020-01-22', 2013, 'Tempestivo', 0),
+(467, 18, '0112-005-386-9', 'JOSÃ‰ CARNEIRO DA COSTA NETO', 'SECULUS DA AMAZÃ”NIA INDÃšSTRIA E COMERCIO ', 'Demetrius', '10000.00', '10000.00', '2020-01-22', 2012, 'Tempestivo', 0),
+(468, 18, '25.001.001.19-0006050', 'THALIA KELLY SEVERINA LIRA DOS SANTOS', 'LÃTTERA CURSOS', 'Demetrius', '9950.00', '00.00', '2020-01-22', 2019, 'Tempestivo', 0),
+(469, 18, '156/2014', 'MARIA NOELIA FARIAS DA SILVA', 'N. CLAUDINO & CIA LTDA', 'FÃ¡bio', '14412.00', '00.00', '2020-01-22', 2014, 'Tempestivo', 0),
+(470, 18, '172/2012', 'JOBSON LUIZ MOREIRA DE ANDRADE', 'LG ELECTRONICS DO BRASIL ', 'FÃ¡bio', '25000.00', '25000.00', '2020-01-22', 2012, 'Intempestivo', 0),
+(471, 18, '184/2014', 'FRANCISCO JOSE ALEXANDRE MOREIRA', 'JOSÃ‰ ALCINO DE ANDRADE-ME (ITALÃNEA MÃ“VEIS', 'FÃ¡bio', '20000.00', '20000.00', '2020-01-22', 2014, 'Intempestivo', 0),
+(472, 18, '0111-009-260-1', 'JOZANIEL PEREIRA BARBOSA', 'BANCO CRUZEIRO DO SUL ', 'Filipe', '40000.00', '40000.00', '2020-01-22', 2011, 'Intempestivo', 0),
+(473, 18, '70/2012', 'JOSEANE DA SILVA SANTOS', 'N. CLAUDINO & CIA LTDA', 'Filipe', '6000.00', '00.00', '2020-01-22', 2012, 'Tempestivo', 0),
+(474, 18, '0116-000-186-0', 'EDNA BARBOSA DE CASTRO NASCIMENTO', 'CNOVA COMÃ‰RCIO ELETRÃ”NICO ', 'Filipe', '14652.00', '00.00', '2020-01-22', 2016, 'Tempestivo', 0),
+(475, 18, '0113-000-109-1', 'DOMINGA MARIA SOARES FERREIRA', 'ATACADÃƒO DOS ELETRODOMÃ‰STICOS ', 'Filipe', '6000.00', '00.00', '2020-01-22', 2013, 'Tempestivo', 0),
+(476, 18, '25.001.001.19-0010485', 'EVELLYN EMILLY DOS SANTOS HENRIQUE', 'PETSUPERCOMÃ‰RCIO DE PRODUTOS PARA ANIMAIS ', 'Demetrius', '10002.00', '10002.00', '2020-01-22', 2019, 'Tempestivo', 0),
+(477, 18, '25.001.001.19-0000357', 'ALEXANDE FREIRE DE ANDRADE', 'PLAC ENGENHARIA E INCORPORAÃ‡Ã•ES LTDA', 'Demetrius', '12530.00', '12530.00', '2020-01-22', 2019, 'Intempestivo', 0),
+(478, 18, '25.001.011.17-0007752', 'NATANAEL PEREIRA DUARTE', 'ZURICH MINAS BRASIL SEGUROS ', 'Demetrius', '19216.00', '00.00', '2020-01-22', 2017, 'Tempestivo', 0),
+(479, 18, '25.001.001.18-0015342', 'ROMEU OKIDA', 'OCEANAIR LINHAS AÃ‰REAS S.A', 'Demetrius', '12385.00', '12385.00', '2020-01-22', 2018, 'Tempestivo', 0),
+(480, 18, '25.001.004.17-0006906', 'EMANOELLE MARCELINO DE OLIVEIRA', 'ARLI CURSOS TÃ‰CNICO EIRELI (CENTRO DE ENSINO GRAU TÃ‰CNICO', 'Cyro', '9950.00', '3500.00', '2020-01-22', 2017, 'Tempestivo', 0),
+(481, 18, '25.001.021.18-0020980 (AUTO DE INFRAÃ‡ÃƒO 001049', 'PROCON-PB', 'MAGAZINE LUIZA S.A', 'Cyro', '49190.00', '49190.00', '2020-01-22', 2018, 'Intempestivo', 0),
+(482, 18, '25.001.001.18-0020536', 'ALBENI BEZERRA DE MELO JÃšNIOR', 'ELECTROLUX DO BRASIL ', 'Cyro', '9950.00', '00.00', '2020-01-22', 2018, 'Tempestivo', 0),
+(483, 18, '25.001.001.18-0018306', 'ROBERTO BATISTA DA SILVA', 'CNOVA COMÃ‰RCIO ELETRÃ”NICO ', 'Cyro', '9950.00', '9950.00', '2020-01-22', 2018, 'Tempestivo', 0),
+(484, 18, '25.001.001.17-0001403 (AUTO DE INFRAÃ‡ÃƒO 000222', 'PROCON-PB', 'PROCON-PB', 'Filipe', '9220.00', '9220.00', '2020-01-22', 2017, 'Intempestivo', 0),
+(485, 18, '25.001.001.17-0010745 (AUTO DE INFRAÃ‡ÃƒO 000265', 'PROCON-PB', 'ROBSON HERRERO (LOJA HERRERO', 'Filipe', '4623.00', '3500.00', '2020-01-22', 2017, 'Tempestivo', 0),
+(486, 18, '0113-006-366-5', 'MARIA ANUNCIADA DE LIMA FARIAS', 'BANCO DO BRASIL S.A', 'Filipe', '10000.00', '00.00', '2020-01-22', 2013, 'Tempestivo', 0),
+(487, 18, '0113-009-711-7', 'SILVIO LINS DE ARAUJO', 'SAMSUNG ELETRÃ”NICA DA AMAZÃ”NIA ', 'Filipe', '6000.00', '00.00', '2020-01-22', 2013, 'Tempestivo', 0),
+(488, 18, '25.001.001.18-0014329 (AUTO DE INFRAÃ‡ÃƒO 000840', 'PROCON-PB', 'JOÃƒO PEREIRA DA SILVA(PADARIA DONA BINA', 'Demetrius', '7326.00', '00.00', '2020-01-27', 2018, 'Tempestivo', 0),
+(489, 18, '25.001.001.19-0000496', 'FÃBIO QUEIROZ LOPES', 'EATRON COMERCIO DE PRODUTOS ELETROELETRONICOS ', 'Demetrius', '9950.00', '9950.00', '2020-01-27', 2019, 'Tempestivo', 0),
+(490, 18, '0116-000-884-3', 'MARIA CELINA DA SILVA', 'BANCO ITAUCARD S.A', 'Demetrius', '20164.00', '20164.00', '2020-01-27', 2016, 'Tempestivo', 0),
+(491, 18, '25.001.001.16-0009223', 'SILAS FELIX DE ARAUJO SOARES', 'OI S.A', 'Demetrius', '12530.00', '00.00', '2020-01-27', 2016, 'Tempestivo', 0),
+(492, 18, '25.001.001.18-0014795', 'JAILSON LOPES DA SILVA', 'SEB DO BRASIL PRODUTOS DOMÃ‰STICOS ', 'FÃ¡bio', '9882.00', '9882.00', '2020-01-27', 2018, 'Tempestivo', 0),
+(493, 18, '25.001.001.19-0008836', 'LUIS CARLOS SANTOS CARNEIRO', 'BANCO BRADESCO S.A', 'FÃ¡bio', '19900.00', '19900.00', '2020-01-27', 2019, 'Intempestivo', 0),
+(494, 18, '25.001.001.19-0002032', 'GIVANILDO DA SILVA', 'VIRGINIA SURETY COMPANHIA DE SEGUROS ', 'FÃ¡bio', '9950.00', '9950.00', '2020-01-27', 2019, 'Tempestivo', 0),
+(495, 18, '25.001.001.18-0022453', 'ROBERTO VAGNER RODRIGUES DA SILVA', 'CNOVA COMÃ‰RCIO ELETRÃ”NICO ', 'FÃ¡bio', '14925.00', '14925.00', '2020-01-27', 2018, 'Tempestivo', 0),
+(496, 18, '25.001.001.19-0002119', 'MATEUS GONÃ‡ALVES VIEIRA', 'GOL LINHAS AÃ‰REAS S.A', 'Filipe', '20048.00', '00.00', '2020-01-27', 2019, 'Tempestivo', 0),
+(497, 18, '25.001.001.18-0020026', 'INACIA ALVES DA SILVA', 'LUIZASEG SEGUROS S.A', 'Filipe', '14925.00', '00.00', '2020-01-27', 2018, 'Tempestivo', 0),
+(498, 18, '25.001.018.19-0001400', 'ANA CRISTINA MINERVINO SANTOS', 'GLOBAL DISTRIBUIÃ‡ÃƒO DE BENS DE CONSUMO LTDA', 'Filipe', '10082.00', '00.00', '2020-01-27', 2019, 'Tempestivo', 0),
+(499, 18, '0111-010-520-4', 'NOADIVA BARBOSA DE ARAÃšJO', 'DIGIBRAS INDÃšSTRIA DO BRASIL ', 'Filipe', '6000.00', '00.00', '2020-01-27', 2011, 'Tempestivo', 0),
+(500, 18, '25.001.001.19-0006401', 'MARGARETH SILVA DE FRANÃ‡A', 'DECOLAR.COM LTDA', 'Demetrius', '9950.00', '9950.00', '2020-01-29', 2019, 'Tempestivo', 0),
+(501, 18, '25.001.001.18-0003892(AUTO DE INFRAÃ‡ÃƒO 000775', 'PROCON-PB', 'BOMPREÃ‡O SUPERMERCADOS DO NORDESTE ', 'Demetrius', '23865.00', '23865.00', '2020-01-29', 2018, 'Tempestivo', 0),
+(502, 18, '25.001.001.18-0002382(AUTO DE INFRAÃ‡ÃƒO 000701', 'PROCON-PB', 'FELIPPE EVANGELISTA FERREIRA-ME (SUPERMERCADO ÃGUA DOCE', 'Demetrius', '9520.00', '00.00', '2020-01-28', 2018, 'Tempestivo', 0),
+(503, 18, '25.001.001.17-0003703', 'RAFAELA GODOI VIEIRA', 'GRACOM â€“ COMÃ‰RCIO E SERVIÃ‡OS DE ESCOLA DE INFORMÃTICA ', 'Demetrius', '9546.00', '9546.00', '2020-01-29', 2017, 'Tempestivo', 0),
+(504, 18, '25.001.011.19-0005898', 'IRENALDO PEREIRA DE ANDRADE', 'MAGAZINE LUIZA S.A', 'Cyro', '10082.00', '10082.00', '2020-01-29', 2019, 'Tempestivo', 0),
+(505, 18, '25.001.001.18-0019786 (AUTO DE INFRAÃ‡ÃƒO 000938', 'PROCON-PB', 'N. CLAUDINO & CIA LTDA', 'Cyro', '14757.00', '9838.00', '2020-01-29', 2018, 'Tempestivo', 0),
+(506, 18, '25.001.001.17-0013135', 'LUIZA BARBOSA PEREIRA DE OLIVEIRA', 'CARDIF DO BRASIL SEGUROS E GARANTIAS ', 'Cyro', '15123.00', '9378.00', '2020-01-29', 2017, 'Tempestivo', 0),
+(507, 18, '0616-004-096-5', 'AFRANIO DE ARAUJO LISBOA', 'B2W â€“ COMPANHIA GLOBAL DO VAREJO', 'Cyro', '10082.00', '10082.00', '2020-01-29', 2016, 'Tempestivo', 0),
+(508, 18, '25.001.001.18-0013042 (AUTO DE INFRAÃ‡ÃƒO 001019', 'PROCON-PB', 'BANCO BRADESCO S.A', 'Filipe', '72345.00', '72345.00', '2020-01-29', 2018, 'Tempestivo', 0),
+(509, 18, '0116-004-343-9', 'JOSÃ‰ EUGENIO DA SILVA', 'BANCO DO BRASIL S.A', 'Filipe', '20164.00', '20164.00', '2020-01-29', 2016, 'Tempestivo', 0),
+(510, 18, '25.001.001.18-0014579 (AUTO DE INFRAÃ‡ÃƒO 001028', 'PROCON-PB', 'BANCO DO NORDESTE DO BRASIL ', 'Filipe', '48840.00', '48840.00', '2020-01-29', 2018, 'Tempestivo', 0),
+(511, 18, '25.001.018.19-0005510', 'ELIZABETH CARDOSO DE SANTANA', 'BANCO TRIÃ‚NGULO S.A', 'Filipe', '15123.00', '15123.00', '2020-01-29', 2019, 'Tempestivo', 0),
+(517, 18, '25.001.006.18-0004858', 'EURIDICE ALMEIDA DE MEDEIROS', 'BANCO OLÃ‰ BONSUCESSO CONSIGNADO S.A', 'Demetrius', '10094.00', '10094.00', '2020-02-03', 2018, 'Tempestivo', 0),
+(518, 18, '25.001.001.19-0009727', 'DANIEL MONTEIRO DE SOUZA', 'J.J. COMÃ‰RCIO VAREJISTA DE ELETRÃ”NICOS E GAMES LTDA', 'Demetrius', '9950.00', '9950.00', '2020-02-03', 2019, 'Tempestivo', 0),
+(519, 18, '0115-005-065-8', 'MARIA PEREIRA LIMA MOURA', 'PAGSEGURO INTERNET S.A', 'Demetrius', '16596.00', '16596.00', '2020-02-03', 2015, 'Tempestivo', 0),
+(520, 18, '25.001.001.18-0019697 (AUTO DE INFRAÃ‡ÃƒO 001042', 'PROCON-PB', 'BANCO DO NORDESTE DO BRASIL S.A', 'FÃ¡bio', '73785.00', '00.00', '2020-02-03', 2018, 'Tempestivo', 0),
+(521, 18, '25.001.001.18-0012745', 'ROSALIA SOARES LACERDA', 'LUIZASEG SEGUROS S.A', 'FÃ¡bio', '10082.00', '00.00', '2020-02-03', 2018, 'Tempestivo', 0),
+(522, 18, '0116-000-201-8', 'EDMUNDO BEZERRA E SILVA', 'TIM CELULAR S.A', 'FÃ¡bio', '10000.00', '10000.00', '2016-02-03', 2016, 'Intempestivo', 0),
+(523, 18, '25.001.004.19-0004352', 'DAIVDSON SILVA NASCIMENTO', 'EMPRESA BRASILEIRA DE CORREIOS E TELEGRAFOS - ECT', 'FÃ¡bio', '10082.00', '10082.00', '2020-02-03', 2019, 'Tempestivo', 0),
+(524, 18, '', 'PROCON-PB', 'BANCO BRADESCO S.A', 'Filipe', '49000.00', '49000.00', '2020-02-03', 2018, 'Tempestivo', 0),
+(525, 18, '25.001.001.18-0014676 (AUTO DE INFRAÃ‡ÃƒO 001023', 'PROCON-PB', 'BANCO BRADESCO S.A', 'Filipe', '317460.00', '317460.00', '2020-02-03', 2018, 'Tempestivo', 0),
+(526, 18, '25.001.001.17-0010172 (AUTO DE INFRAÃ‡ÃƒO 000506', 'PROCON-PB', 'BANCO BRADESCO S.A', 'Filipe', '47890.00', '47890.00', '2020-02-03', 2017, 'Tempestivo', 0),
+(527, 18, '25.001.001.17-0010172 (AUTO DE INFRAÃ‡ÃƒO 000506', 'PROCON-PB', 'BANCO BRADESCO S.A', 'Filipe', '47890.00', '47890.00', '2020-02-03', 2017, 'Tempestivo', 0),
+(528, 18, '0112-005-524-7', 'CLÃ‰CIO OLIVEIRA DA SILVA', 'CAIXA ECONÃ”MICA FEDERAL', 'Filipe', '60000.00', '00.00', '2020-02-03', 2012, 'Tempestivo', 0),
+(529, 18, '25.001.001.17-0013803 (AUTO DE INFRAÃ‡ÃƒO 000606', 'PROCON-PB', 'BANCO BRADESCO S.A', 'Demetrius', '70470.00', '70470.00', '2020-03-05', 2017, 'Tempestivo', 0),
+(530, 18, '25.001.001.17-0012108', 'PROCON-PB', 'BANCO DO BRASIL S.A', 'Demetrius', '46890.00', '46890.00', '2020-03-05', 2017, 'Tempestivo', 0),
+(531, 18, '0116-004-622-5', 'MARIA DO CARMO DA SILVA PEREIRA', 'BOMPREÃ‡O SUPERMERCADOS DO NORDESTE LTDA', 'Demetrius', '9800.00', '9800.00', '2020-03-05', 2016, 'Tempestivo', 0),
+(532, 18, '25.001.001.18-0014606 (AUTO DE INFRAÃ‡ÃƒO 001026', 'PROCON-PB', 'BANCO SANTANDER (BRASIL) S.A', 'Demetrius', '48840.00', '48840.00', '2020-03-05', 2018, 'Tempestivo', 0),
+(533, 18, '25.001.007.17-0016467', 'SILMARA TAVARES BANDEIRA', 'MAGAZINE LUIZA S.A E MOTOROLA MOBILITY ', 'Cyro', '10082.00', '00.00', '2020-02-05', 2017, 'Tempestivo', 0),
+(534, 18, '25.001.001.18-0013432', 'CLAUDIA ANDREA LISBOA', 'BEL MICRO COMPUTADORES LTDA', 'Cyro', '10082.00', '00.00', '2020-03-05', 2018, 'Tempestivo', 0),
+(535, 18, '25.001.001.18-0007279 (AUTO DE INFRAÃ‡ÃƒO 000820', 'PROCON-PB', 'ATACADÃƒO DOS ELETRODOMÃ‰STICOS DO NORDESTE LTDA', 'Cyro', '23965.00', '00.00', '2020-03-05', 2018, 'Tempestivo', 0),
+(536, 18, '25.001.021.18-0021062 (AUTO DE INFRAÃ‡ÃƒO 000940', 'PROCON-PB', 'ANTUNES PALMEIRA LTDA (NARCISO ENXOVAIS', 'Cyro', '49190.00', '49190.00', '2020-02-05', 2018, 'Tempestivo', 0),
+(537, 18, '25.001.001.17-0010949', 'MARIA DAS GRAÃ‡AS BATISTA DA SILVA', 'ATACADÃƒO DOS ELETRODOMÃ‰STICOS /  BRITÃ‚NIA ELETRODOMÃ‰STICOS', 'Filipe', '14652.00', '00.00', '2020-02-05', 2017, 'Tempestivo', 0),
+(538, 18, '25.001.007.17-0016643', 'JOANA Dâ€™ARC ALVES DE ALBUQUERQUE', 'VIRGINIA SURETY COMPANHIA ', 'Filipe', '10082.00', '00.00', '2020-02-05', 2017, 'Tempestivo', 0),
+(539, 18, '25.001.001.18-0013154', 'ANDREA FARIAS DA SILVA', 'MOTOROLA MOBILITY ', 'Filipe', '10820.00', '00.00', '2020-02-05', 2018, 'Tempestivo', 0),
+(540, 18, '25.001.007.18-0001076', 'GIRLENE DA SILVA SOARES PINHEIRO', 'VIRGINIA SURETY COMPANHIA DE SEGUROS ', 'Filipe', '15123.00', '00.00', '2020-02-05', 2018, 'Tempestivo', 0),
+(541, 18, '25.001.001.19-0010379', 'MARIA ANGELITA DE ALMEIDA', 'NUCLEO DE ESTUDOS E APERFEICOAMENTO ODONTOLOGICOS ', 'Demetrius', '10094.00', '10094.00', '2020-02-10', 2019, 'Tempestivo', 0),
+(542, 18, '25.001.001.16-0009340', 'MARIA REGINA MACIEL', 'FORTBRASIL ADMINISTRADORA DE CARTÃƒO ', 'Demetrius', '10082.00', '10082.00', '2020-02-10', 2016, 'Tempestivo', 0),
+(543, 18, '25.001.001.18-0000076 (AUTO DE INFRAÃ‡ÃƒO 000637', 'PROCON-PB', 'ADONES SUPERMERCADO VAREJÃƒO LTDA (VAREJÃƒO DO PREÃ‡O', 'Demetrius', '14178.00', '14178.00', '2020-02-10', 2018, 'Tempestivo', 0);
 
 -- --------------------------------------------------------
 
@@ -87,33 +136,13 @@ CREATE TABLE `fornecedores2` (
   `consumidor2` varchar(100) NOT NULL,
   `fornecedor2` varchar(100) NOT NULL,
   `relator2` varchar(100) NOT NULL,
-  `valor2` decimal(50,0) NOT NULL,
-  `valor_seg` decimal(10,2) NOT NULL,
+  `valor2` varchar(100) NOT NULL,
+  `valor_seg` varchar(100) NOT NULL,
   `data2` date NOT NULL,
   `ano2` int(11) NOT NULL,
   `recurso2` varchar(100) NOT NULL,
   `total2` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `fornecedores2`
---
-
-INSERT INTO `fornecedores2` (`id_fornecedor2`, `id_usuario`, `nrofa2`, `consumidor2`, `fornecedor2`, `relator2`, `valor2`, `valor_seg`, `data2`, `ano2`, `recurso2`, `total2`) VALUES
-(12, 7, 1, '1', '1', 'Kaio', '1', '0.00', '2020-03-01', 2020, 'Tempestivo', 0),
-(15, 7, 1, '1', '1', 'Demetrius', '250', '0.00', '2020-04-01', 2020, 'Tempestivo', 0),
-(16, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-01-01', 2028, 'Tempestivo', 0),
-(17, 7, 12313131, '123123', '12313', 'Kaio', '1233', '12313.00', '2020-11-01', 2020, 'Tempestivo', 0),
-(18, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-12-01', 2020, 'Tempestivo', 0),
-(19, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-09-01', 2020, 'Tempestivo', 0),
-(20, 7, 1, '1', '1', 'Fernando', '1', '1.00', '2020-08-01', 2020, 'Intempestivo', 0),
-(21, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-07-01', 2020, 'Tempestivo', 0),
-(22, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-06-01', 2020, 'Tempestivo', 0),
-(23, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-05-01', 202, 'Tempestivo', 0),
-(24, 7, 1, '1', '1', 'Kaio', '1', '1.00', '2020-04-01', 2020, 'Tempestivo', 0),
-(25, 7, 1, '1', '1', 'Emannuel', '1', '1.00', '2020-02-01', 2020, 'Tempestivo', 0),
-(26, 7, 1, '1', '1', 'Kaio', '123', '1.00', '2020-07-01', 2020, 'Tempestivo', 0),
-(27, 7, 1, '1', '1', 'Kaio', '123', '123.65', '2020-06-01', 2020, 'Tempestivo', 0);
 
 -- --------------------------------------------------------
 
@@ -144,16 +173,14 @@ CREATE TABLE `usuarios` (
   `user` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(100) NOT NULL,
-  `dataCaptura` date NOT NULL
+  `dataCaptura` date NOT NULL,
+  `camara` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `user`, `email`, `senha`, `dataCaptura`) VALUES
-(7, 'admin', 'admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '2018-05-17'),
-(10, 'RogÃ©rio  de SÃ¡', 'RogÃ©rio', 'rogeriodesaf@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2019-12-26');
 
 --
 -- Índices para tabelas despejadas
@@ -191,13 +218,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `fornecedores`
 --
 ALTER TABLE `fornecedores`
-  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=427;
+  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=544;
 
 --
 -- AUTO_INCREMENT de tabela `fornecedores2`
 --
 ALTER TABLE `fornecedores2`
-  MODIFY `id_fornecedor2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_fornecedor2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de tabela `relatores`
@@ -209,7 +236,7 @@ ALTER TABLE `relatores`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

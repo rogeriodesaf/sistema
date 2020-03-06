@@ -176,6 +176,7 @@ while ($array11 = mysqli_fetch_array($buscarrelator)) {
         <td>
             <?php
 $sql12 = "SELECT relator, COUNT(relator) AS Qtd FROM fornecedores where relator='Fábio' and MONTH(data) = '2'and year(data)='2020'";
+$buscar = mysqli_query($conexao, $sql12);
 $Qtd = 0;
 
 while ($array12 = mysqli_fetch_array($buscar)) {
