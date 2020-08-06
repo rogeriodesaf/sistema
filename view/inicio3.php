@@ -29,13 +29,15 @@ if (isset($_SESSION['usuario'])) {
     <div class="container" style="margin-top: 20px;">
         <div class="page-header">
         
-            <h2>Pesquisa</h2>
+            <h2>Pesquisa  1º Câmara.</h2>
+            <h3>No campo abaixo digite o número da FA, nome do Consumidor ou Fornecedor que deseja
+            encontrar.</h3>
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <h1 style="font-size:1.8em; color:#707070">Digite o número da FA que deseja pesquisar.</h1>
+                <h1 style="font-size:1.8em; color:#707070">O que deseja pesquisar?</h1>
                 <form name="" method="post" action="" enctype="multipart/form-data">
-   <input type="text" name="nrofa" value="" />
+   <input type="text" name="pesquisa" value="" placeholder='Digite aqui' />
    <span class="glyphicon glyphicon-ok img-circle text-primary btn-icon"></span>
    <input class="btn btn-primary btn-custom" type="submit" name="send" value="pesquisar" >
    
@@ -46,19 +48,21 @@ if (isset($_SESSION['usuario'])) {
   </div>
   <?php
 if(isset($_POST['send'])){
-    $nrofa = $_POST['nrofa'];
-}if($nrofa == ''){
+    $pesquisa = $_POST['pesquisa'];
+}if($pesquisa == ''){
     echo "<script language='javascript'> window.alert('Por favor, digite o número da FA!');</script>";
     }else{
         $c = new conectar();
         $conexao = $c->conexao();
-        $sql = "SELECT * FROM fornecedores WHERE nrofa = '$nrofa'  ";
+        $sql = "SELECT * FROM fornecedores WHERE nrofa LIKE '%$pesquisa%' or consumidor LIKE '%$pesquisa%' or fornecedor LIKE '%$pesquisa%' or relator LIKE '%$pesquisa%'";
         $result = mysqli_query($conexao, $sql);
+        
 		if(mysqli_num_rows($result) <= 0){
 			echo "<br><br><br><br><h2> FA não Encontrada, verifique a informação inserida! </h2>";
 			
 		}else{
 			while($res_1 = mysqli_fetch_assoc($result)){
+                $nrofa      = $res_1['nrofa'];
                 $consumidor = $res_1['consumidor'];
                 $fornecedor = $res_1['fornecedor'];
                 $relator = $res_1['relator'];
@@ -67,12 +71,12 @@ if(isset($_POST['send'])){
                 $valor_2   = $res_1['valor_2'];
                 $data   = $res_1['data'];
                 $ano   = $res_1['ano'];
-                $recurso  = $res_1['recurso'];
-       
+                $recurso  = $res_1['recurso'];  
 ?>
-<div class="col-sm-10">
-<table  class="table table-hover table-condensed table-bordered" name="limpar" style="text-align: center;">
+        
+ <table  class="table table-hover table-condensed table-bordered" name="limpar" style="text-align: center;">
 <tr style="background-color: SlateGrey;">
+<td>Número da FA</td>
 <td>Consumidor</td>
 <td>Fornecedor</td>
 <td>Relator</td>
@@ -83,7 +87,11 @@ if(isset($_POST['send'])){
 <td>Ano</td>
 <td>Recurso</td>
 </tr>
+
+
+
 <tr>
+<td><?php echo $nrofa ?></td>
 <td><?php echo $consumidor ?></td>
 <td><?php echo $fornecedor; ?></td>
 <td><?php echo $relator; ?></td>
@@ -98,21 +106,15 @@ if(isset($_POST['send'])){
 
 </table>
 <?php 		}	}   } ?>
-</div>
+
             </div>
             
         
-        <br>
-        <div class="page-header">
-            <h1 style="font-size:1.8em; color:#707070"></h1>
-        </div>
-        <h3><b></b></h3>
+        
         
     </div>
     </div>
-    <!--div que carrega do lado direito da página e recebe os valores digitados do lado esquerdo. Note que uma tem col-sm-4 e a outra col-sm-8, o que soma 12-->
-    <div class="col-sm-8">
-        <div id="tabelaProcessosLoad"></div>
+    
     </div>
     </div>
     </div>
@@ -136,10 +138,10 @@ if(isset($_POST['send'])){
 
 
 
-
+    <?php require_once "footer.php";?>
 
 </body>
-<?php require_once "footer.php";?>
+
 
 </html>
 
@@ -162,7 +164,7 @@ $(window).scroll(function() {
 });
 </script>
 
-});
+
 <script type="text/javascript">
 document.getElementById('limpar').reset();
   </script>

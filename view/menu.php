@@ -173,6 +173,7 @@
                                 </li>
                                 <li><a href="http://procon.pb.gov.br/camararecursal/pautas">Pautas das Câmaras
                                         Recursais</a></li>
+                                        <li><a href="inicio3.php">Pesquisa</a></li>
                             </ul>
                         </li>
 
